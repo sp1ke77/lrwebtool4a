@@ -1,7 +1,7 @@
 {
-  "name": "teste",
-  "version": "1.1.1",
-  "description": "teste: An Ionic project",
+  "name": "LRWEBTOOL 4",
+  "version": "1.0.0",
+  "description": "LR WEB TOOL",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
