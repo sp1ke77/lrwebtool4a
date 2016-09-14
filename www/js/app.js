@@ -25,49 +25,78 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-    .state('app', {
-    url: '/app',
+  // sets up our default state, all views are loaded through here
+  .state('app', {
+    url: "/app",
     abstract: true,
-    templateUrl: 'templates/menu.html',
+    templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
   })
 
-  .state('app.search', {
-    url: '/search',
+  .state('app.intro', {
+    url: "/intro",
     views: {
       'menuContent': {
-        templateUrl: 'templates/search.html'
+        templateUrl: "templates/intro.html",
+        controller: 'IntroCtrl'
       }
     }
   })
 
-  .state('app.browse', {
-      url: '/browse',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/browse.html'
-        }
-      }
-    })
-    .state('app.playlists', {
-      url: '/playlists',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
-  .state('app.single', {
-    url: '/playlists/:playlistId',
+  .state('app.login', {
+    url: "/login",
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: "templates/login.html",
+      }
+    }
+  })
+  
+    .state('app.sindicancia', {
+    url: "/sindicancia",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/sindicancia.html",
+      }
+    }
+  })
+  
+    .state('app.recrutar', {
+    url: "/recrutar",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/recrutar.html",
+      }
+    }
+  })
+  
+    .state('app.m4m', {
+    url: "/m4m",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/m4m.html",
+      }
+    }
+  })
+  
+    .state('app.contatos', {
+    url: "/contatos",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/contatos.html",
+      }
+    }
+  })
+
+  .state('app.suporte', {
+    url: "/suporte",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/suporte.html"
       }
     }
   });
+  
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/intro');
 });

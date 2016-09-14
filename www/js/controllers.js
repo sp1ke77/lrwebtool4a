@@ -41,16 +41,28 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-})
+.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicHistory) {
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+		  // $ionicSlideBoxDelegate.update();
+
+		  $ionicHistory.nextViewOptions({
+			disableBack: true
+		  });
+		 
+		  // Called to navigate to the main app
+		  $scope.startApp = function() {
+			$state.go('app.login');
+		  };
+		  $scope.next = function() {
+			$ionicSlideBoxDelegate.next();
+		  };
+		  $scope.previous = function() {
+			$ionicSlideBoxDelegate.previous();
+		  };
+
+		  // Called each time the slide changes
+		  $scope.slideChanged = function(index) {
+			$scope.slideIndex = index;
+		  };
+
+	});
