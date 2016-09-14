@@ -65,4 +65,16 @@ angular.module('starter.controllers', [])
 			$scope.slideIndex = index;
 		  };
 
+	})
+	
+	
+.controller('LoginCtrl', function($scope) {
+
+		  $('#foo').ready(function () {
+				$('#loadingMessage').css('display', 'none');
+			});
+			$('#foo').load(function () {
+				$('#loadingMessage').css('display', 'none');
+			});
+
 	});
