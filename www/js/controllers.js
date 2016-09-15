@@ -70,8 +70,12 @@ angular.module('starter.controllers', [])
 	
 .controller('LoginCtrl', function($scope) {
 
-$scope.doLogin = function() {
-   alert("You touched the button!");
-};
-
+	$scope.save = function() {
+        $scope.data = {};
+        username: $scope.data.username,
+		token: $scope.data.token,
+		localforage.setItem("username", $scope.data.username);
+		localforage.setItem("username", $scope.data.token);
 	});
+
+});

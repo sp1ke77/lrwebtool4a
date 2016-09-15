@@ -4,15 +4,15 @@
 
 <div class="list" ng-app="starter" ng-controller="LoginCtrl">
   <label class="item item-input item-floating-label">
-   <span class="input-label">Name</span>
-    <input type="text" placeholder="Name">
+   <span class="input-label">Nome de Utilizador</span>
+    <input type="text" placeholder="webtool" name="username" ng-model="data.username" ng-minlength="4" required>
   </label>
   <label class="item item-input item-floating-label">
-    <span class="input-label">Email</span>
-    <input type="text" placeholder="Email" >
+    <span class="input-label">Chave API</span>
+    <input type="text" placeholder="123456789" name="token" ng-model="data.token" ng-minlength="9" required>
   </label>  
  <div class="padding">
-    <button class="button button-block button-positive" ng-touch="doLogin()">Submit</div>
+    <button class="button button-block button-positive" ng-click="save()">Registar Dispositivo</div>
   </div>  
 </div>
 
