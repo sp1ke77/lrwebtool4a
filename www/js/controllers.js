@@ -65,7 +65,7 @@ angular.module('starter.controllers', [])
 			$scope.slideIndex = index;
 		  };
 
-	})
+})
 	
 	
 .controller('LoginCtrl', function($scope) {
@@ -76,6 +76,6 @@ angular.module('starter.controllers', [])
 		token: $scope.data.token,
 		localforage.setItem("username", $scope.data.username);
 		localforage.setItem("username", $scope.data.token);
-	});
+	};
 
 });
