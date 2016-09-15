@@ -72,5 +72,6 @@ angular.module('starter.controllers', [])
 
 $scope.doLogin = function() {
    alert("You touched the button!");
+};
 
 	});
