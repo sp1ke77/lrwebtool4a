@@ -70,11 +70,7 @@ angular.module('starter.controllers', [])
 	
 .controller('LoginCtrl', function($scope) {
 
-		  $('#foo').ready(function () {
-				$('#loadingMessage').css('display', 'none');
-			});
-			$('#foo').load(function () {
-				$('#loadingMessage').css('display', 'none');
-			});
+$scope.doLogin = function() {
+   alert("You touched the button!");
 
 	});
