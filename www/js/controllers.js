@@ -68,14 +68,29 @@ angular.module('starter.controllers', [])
 })
 	
 	
-.controller('LoginCtrl', function($scope) {
+.controller('LoginCtrl', function($scope, $http) {
 
-	$scope.save = function() {
-        $scope.data = {};
-        username: $scope.data.username,
-		token: $scope.data.token,
-		localforage.setItem("username", $scope.data.username);
-		localforage.setItem("username", $scope.data.token);
+/*	$scope.saveUserinfo = function() {
+        username: $scope.username,
+		token: $scope.token,
+		localforage.setItem("username", $scope.username);
+		localforage.setItem("username", $scope.token);
 	};
-
+	
+$scope.verifyData = function() { }
+	
+	
+	
+	$scope.getData = function() {
+        $http.get("http://lrwebtool.com/example.json", { params: { "key1": "value1", "key2": "value2" } })
+            .success(function(data) {
+                $scope.m4mpt = data.m4mpt;
+                $scope.m4mes = data.m4mpt;
+                $location.path("/account");
+            })
+            .error(function(data) {
+                alert("ERROR");
+            });
+    }
+*/
 });
