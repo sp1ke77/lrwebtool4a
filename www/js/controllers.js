@@ -70,10 +70,8 @@ angular.module('starter.controllers', [])
 	
 .controller('LoginCtrl', function($scope, $http) {
 
-/*	$scope.saveUserinfo = function() {
-        username: $scope.username,
-		token: $scope.token,
-		localforage.setItem("username", $scope.username);
+	$scope.saveUserinfo = function() {
+ 		localforage.setItem("username", $scope.username);
 		localforage.setItem("username", $scope.token);
 	};
 	
@@ -92,5 +90,5 @@ $scope.verifyData = function() { }
                 alert("ERROR");
             });
     }
-*/
+
 });
