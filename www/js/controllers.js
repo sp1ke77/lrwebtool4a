@@ -77,10 +77,20 @@ angular.module('starter.controllers', ['ngSanitize'])
 	
 .controller('SindiCtrl', function($rootScope,$scope) {
 
-	$rootScope.username = 'sp1ke77';
-	$scope.html-link-fb = '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/celebridades/?id={{username}}" >Facebook</a>';
-    
+	$rootScope.username 	= 'sp1ke77';
 
+	$rootScope.titulo1		= 'Celebridades';
+	$rootScope.slug1		= 'celebridades';
+
+	
+	$scope.htmlfacebook1 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" >Facebook</a>';
+    $scope.htmltwitter1 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+    $scope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+    $scope.htmlwhatsapp1 	= '<a class="crunchify-link crunchify-whatsapp" href="whatsapp://send?text=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" data-action="share/whatsapp/share target="_blank">WhatsApp</a>';
+    $scope.htmlsmsios1 		= '<a class="crunchify-link crunchify-sms" href="sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" target="_blank">SMS</a>';
+    $scope.htmlsmsandroid1 	= '<a class="crunchify-link crunchify-sms" href="sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" target="_blank">SMS</a>';
+	
+	
 })
 	
 	
