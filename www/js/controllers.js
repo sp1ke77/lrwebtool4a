@@ -78,7 +78,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 .filter('hrefToJS2', function ($sce, $sanitize) {
     return function (text) {
         var regex = /href="([\S]+)"/g;
-        var newString = $sanitize(text).replace(regex, "$1");
+        var newString = $sanitize(text).replace(regex, "'$1'");
         return $sce.trustAsHtml(newString);
     }
 })
