@@ -76,6 +76,8 @@ angular.module('starter.controllers', ['ngSanitize'])
 })
 	
 .controller('SindiCtrl', function($rootScope,$scope) {
+	
+	var deviceInformation = ionic.Platform.device();
 
 	var isIOS = ionic.Platform.isIOS();
 	var isAndroid = ionic.Platform.isAndroid();
