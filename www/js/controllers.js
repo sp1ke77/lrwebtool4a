@@ -83,6 +83,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	var isAndroid = ionic.Platform.isAndroid();
 	var isWindowsPhone = ionic.Platform.isWindowsPhone();
 
+	$rootScope.htmlurlrecrutamento 	= 'http://lrwebtool.com/recrutar';
 	$rootScope.username 	= 'sp1ke77';
 
 	$rootScope.titulo1		= 'Celebridades';
