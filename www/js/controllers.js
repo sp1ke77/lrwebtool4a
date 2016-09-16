@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngSanitize'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -66,20 +66,33 @@ angular.module('starter.controllers', [])
 		  };
 
 })
-	
-	
-.controller('LoginCtrl', function($scope, $http) {
 
-	$scope.saveUserinfo = function() {
- 		localforage.setItem("username", $scope.username);
-		localforage.setItem("username", $scope.token);
+.filter('hrefToJS', function ($sce, $sanitize) {
+    return function (text) {
+        var regex = /href="([\S]+)"/g;
+        var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
+        return $sce.trustAsHtml(newString);
+    }
+})
+	
+.controller('SindiCtrl', function($rootScope,$scope) {
+
+	$rootScope.username = 'sp1ke77';
+	$scope.html = "This a link: <a href='https://www.google.com'>Google</a> :)";
+    $scope.plaintext = "This is a link: https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/celebridades/?id="+$rootScope.username
+
+})
+	
+	
+.controller('LoginCtrl', function($rootScope, $http) {
+
+	$rootScope.saveUserinfo = function() {
+ 		localforage.setItem("username", $rootScope.username);
+		localforage.setItem("username", $rootScope.token);
 	};
 	
-$scope.verifyData = function() { }
 	
-	
-	
-	$scope.getData = function() {
+	/*$scope.getData = function() {
         $http.get("http://lrwebtool.com/example.json", { params: { "key1": "value1", "key2": "value2" } })
             .success(function(data) {
                 $scope.m4mpt = data.m4mpt;
@@ -89,6 +102,6 @@ $scope.verifyData = function() { }
             .error(function(data) {
                 alert("ERROR");
             });
-    }
+    }*/
 
 });

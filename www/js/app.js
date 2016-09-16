@@ -59,6 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'menuContent': {
         templateUrl: "templates/sindicancia.html",
+        controller: 'SindiCtrl'
       }
     }
   })
