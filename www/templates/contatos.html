@@ -1,5 +1,23 @@
 <ion-view view-title="CONTATOS">
   <ion-content padding="false" overflow-scroll="true">
 
+	<form id="mail4mkt" action="https://mail4mkt.com/index.php/lists/'.$list1_uid.'/subscribe" method="post" accept-charset="utf-8">
+		<div class="form-group">
+			<input id="FNAME" type="text" class="form-control" name="FNAME" placeholder="O Seu Nome" value="" required />
+		</div>
+		<div class="form-group">
+			<input id="EMAIL" type="text" class="form-control" name="EMAIL" placeholder="O Seu Email" value="" required />
+		</div>
+		<div class="form-group">
+			<input id="PHONE" type="text" class="form-control" name="PHONE" placeholder="O Seu Telefone" value=""/>
+		</div>
+		<div class="clearfix"><!-- --></div>
+		<div class="actions">
+			<button id="M4Msubmit" type="submit" class="btn btn-primary btn-submit">SIM, quero saber mais!</button>
+		</div>
+		<div class="clearfix"><!-- --></div>
+	</form>
+
+
   </ion-content>
 </ion-view>

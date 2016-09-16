@@ -75,15 +75,6 @@ angular.module('starter.controllers', ['ngSanitize'])
     }
 })
 
-.filter('hrefToJS2', function ($sce, $sanitize) {
-    return function (text) {
-        var regex = /href="([\S]+)"/g;
-        var newString = $sanitize(text).replace(regex, "'$1'");
-        return $sce.trustAsHtml(newString);
-    }
-})
-
-	
 .controller('SindiCtrl', function($rootScope,$scope) {
 	
 	var deviceInformation = ionic.Platform.device();
@@ -101,9 +92,8 @@ angular.module('starter.controllers', ['ngSanitize'])
     $rootScope.htmltwitter1 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
     $rootScope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
     $rootScope.htmllinkedin1 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1+'" target="_blank">LinkedIn</a>';
-	//$scope.htmlwhatsapp1 	= 'whatsapp://send?text=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&nbsp;'+$rootScope.titulo1;
-	//$rootScope.htmlwhatsapp1 	= 'whatsapp://send?text=http://lrwebtool.com/celebridades/?id=sp1ke77';
-	$rootScope.htmlwhatsapp1 	= '<a class="crunchify-link crunchify-whatsapp" href="whatsapp://send?text='+$rootScope.url1+'" data-action="share/whatsapp/share target="_blank">WhatsApp</a>';
+	$rootScope.htmlwhatsapp1 	= 'whatsapp://send?text='+$rootScope.url1;
+	//$rootScope.htmlwhatsapp1 	= '<a class="crunchify-link crunchify-whatsapp" href="whatsapp://send?text='+$rootScope.url1+'" data-action="share/whatsapp/share target="_blank">WhatsApp</a>';
 	if (isIOS) { $rootScope.htmlsms1 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;} 
     if (isAndroid) { $rootScope.htmlsms1 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;}
 
