@@ -92,18 +92,19 @@ angular.module('starter.controllers', ['ngSanitize'])
     $scope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
     $scope.htmllinkedin1 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1+'" target="_blank">LinkedIn</a>';
 	$scope.htmlwhatsapp1 	= 'whatsapp://send?text=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&nbsp;'+$rootScope.titulo1;
+	$scope.htmlwhatsapp1 	= 'whatsapp://send?text=http://lrwebtool.com/celebridaes/?id=sp1ke77 CELEBRIDADES';
 
-	$rootScope.titulo2		= 'Celebridades';
-	$rootScope.slug2		= 'celebridades';
+	$rootScope.titulo2		= 'Cristina Ferreira';
+	$rootScope.slug2		= 'celebridades-cf';
     
-    $rootScope.titulo3		= 'Celebridades';
-	$rootScope.slug3		= 'celebridades';
+    $rootScope.titulo3		= 'Mickael Carreira';
+	$rootScope.slug3		= 'celebridades-mc';
 	
-	$rootScope.titulo4		= 'Celebridades';
-	$rootScope.slug4		= 'celebridades';
+	$rootScope.titulo4		= 'Ricardo Carriço';
+	$rootScope.slug4		= 'celebridades-rc';
 	
-	$rootScope.titulo5		= 'Celebridades';
-	$rootScope.slug5		= 'celebridades';
+	$rootScope.titulo5		= 'Monica Naranjo';
+	$rootScope.slug5		= 'celebridades-mn';
         
     if (isIOS) {
 		$scope.htmlsms1 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;	
