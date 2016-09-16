@@ -69,6 +69,8 @@
 	<access origin="*" subdomains="true" />
 	<access origin="mailto:*" launch-external="yes" />
 	<access origin="tel:*" launch-external="yes" />
+	<access origin="sms:*" launch-external="yes" />
+	<access origin="whatsapp:*" launch-external="yes" />
 	
 	<allow-navigation href="*" />
 	

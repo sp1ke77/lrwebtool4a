@@ -1,92 +1,46 @@
 <ion-view view-title="SUPORTE">
   <ion-content padding="false" overflow-scroll="true">
 	
-	
-<div class="list">
-  <label class="item item-input item-floating-label">
-   <span class="input-label">Nome</span>
-    <input type="text" placeholder="webtool" name="username" ng-model="username" ng-minlength="4" required>
-  </label>
-  <label class="item item-input item-floating-label">
-    <span class="input-label">ID de Parceiro</span>
-    <input type="text" placeholder="PT12345678" name="idlr" ng-model="idlr" ng-minlength="9" required>
-  </label>  
- <div class="padding">
-    <button class="button button-block button-positive">Registar Dispositivo</div>
-  </div>  
-</div>
-	
-	
-	<div class="TTWForm-container">
-      
-      
-     <form action="process_form.php" class="TTWForm" method="post" novalidate="">
-           
-           
-          <div id="field1-container" class="field f_100">
-               <label for="field1">
-                    Text Field
-               </label>
-               <input type="text" name="field1" id="field1" required="required">
-          </div>
-           
-           
-          <div id="field2-container" class="field f_100">
-               <label for="field2">
-                    Text Field
-               </label>
-               <input type="text" name="field2" id="field2" required="required">
-          </div>
-           
-           
-          <div id="field6-container" class="field f_100">
-               <label for="field6">
-                    Select
-               </label>
-               <select name="field6" id="field6" required="required">
-                    <option id="field6-1" value="Option 1">
-                         Option 1
-                    </option>
-                    <option id="field6-2" value="Option 2">
-                         Option 2
-                    </option>
-                    <option id="field6-3" value="Option 3">
-                         Option 3
-                    </option>
-               </select>
-          </div>
-           
-           
-          <div id="field3-container" class="field f_100">
-               <label for="field3">
-                    Text Field
-               </label>
-               <input type="text" name="field3" id="field3" required="required">
-          </div>
-           
-           
-          <div id="field4-container" class="field f_100">
-               <label for="field4">
-                    Text Field
-               </label>
-               <input type="text" name="field4" id="field4" required="required">
-          </div>
-           
-           
-          <div id="field5-container" class="field f_100">
-               <label for="field5">
-                    Text Field
-               </label>
-               <input type="text" name="field5" id="field5" required="required">
-          </div>
-           
-           
-          <div id="form-submit" class="field f_100 clearfix submit">
-               <input type="submit" value="Submit">
-          </div>
-     </form>
-</div>
-	
+
+	<div class="list">
+
+		<form action="process_form.php" class="TTWForm" method="post" novalidate="">	
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Nome</span>
+				<input type="text" placeholder="webtool" name="username" ng-model="username" required>
+			</label>
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">ID de Parceiro</span>
+				<input type="text" placeholder="PT12345678" name="idlr" ng-model="idlr"  required>
+			</label> 
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Email</span>
+				<input type="text" placeholder="email@email.xxx" name="email" ng-model="email"  required>
+			</label>  
+			
+			 <label for="field6">
+						Select
+				   </label>
+				   <select name="field6" id="field6" required="required">
+						<option id="field6-1" value="Option 1">
+							 Option 1
+						</option>
+						<option id="field6-2" value="Option 2">
+							 Option 2
+						</option>
+						<option id="field6-3" value="Option 3">
+							 Option 3
+						</option>
+				   </select>
+		  
+			<div class="padding"><button class="button button-block button-positive">Registar Dispositivo</div>
+		  
+		</form>  
+	   
+	</div>
 	
   </ion-content>
 </ion-view>
