@@ -77,6 +77,10 @@ angular.module('starter.controllers', ['ngSanitize'])
 	
 .controller('SindiCtrl', function($rootScope,$scope) {
 
+	var isIOS = ionic.Platform.isIOS();
+	var isAndroid = ionic.Platform.isAndroid();
+	var isWindowsPhone = ionic.Platform.isWindowsPhone();
+
 	$rootScope.username 	= 'sp1ke77';
 
 	$rootScope.titulo1		= 'Celebridades';
@@ -87,9 +91,14 @@ angular.module('starter.controllers', ['ngSanitize'])
     $scope.htmltwitter1 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
     $scope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
     $scope.htmlwhatsapp1 	= '<a class="crunchify-link crunchify-whatsapp" href="whatsapp://send?text=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" target="_blank">WhatsApp</a>';
-    $scope.htmlsmsios1 		= '<a class="crunchify-link crunchify-sms" href="sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" target="_blank">SMS</a>';
-    $scope.htmlsmsandroid1 	= '<a class="crunchify-link crunchify-sms" href="sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" target="_blank">SMS</a>';
-	
+    
+    if (isIOS) {
+		$scope.htmlsms1 		= '<a class="crunchify-link crunchify-sms" href="sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" target="_blank">SMS</a>';	
+	} 
+    
+    if (isAndroid) { 
+        $scope.htmlsms1 	= '<a class="crunchify-link crunchify-sms" href="sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" target="_blank">SMS</a>';
+	}
 	
 })
 	
