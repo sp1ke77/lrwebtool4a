@@ -1,29 +1,29 @@
 <ion-view view-title="SUPORTE">
   <ion-content padding="false" overflow-scroll="true">
 	
-
+<div class="padding">
 	<div class="list">
 
 		<form action="process_form.php" class="TTWForm" method="post" novalidate="">	
 
-			<label class="item item-input item-floating-label">
+			<label class="item item-input item-stacked-label">
 				<span class="input-label">Nome</span>
 				<input type="text" placeholder="webtool" name="username" ng-model="username" required>
 			</label>
 
-			<label class="item item-input item-floating-label">
+			<label class="item item-input item-stacked-label">
 				<span class="input-label">ID de Parceiro</span>
 				<input type="text" placeholder="PT12345678" name="idlr" ng-model="idlr"  required>
 			</label> 
 
-			<label class="item item-input item-floating-label">
+			<label class="item item-input item-stacked-label">
 				<span class="input-label">Email</span>
 				<input type="text" placeholder="email@email.xxx" name="email" ng-model="email"  required>
 			</label>  
 			
-			 <label class="item item-input item-floating-label">
-						Departamento:
-				   </label>
+			 <label class="item item-input item-select">
+					<div class="input-label">	Departamento:</div>
+				   
 				   <select name="departamento" id="departamento" required="required">
 						<option id="lrwebtool" value="LR WebTool">
 							LR WebTool
@@ -35,16 +35,17 @@
 							 Email Marketing
 						</option>
 				   </select>
-				   
-			<label class="item item-input item-floating-label">
-				<textarea name="questao" ng-model="questao"  required>Coloque Aqui a Sua Questão</textarea>
+			</label>	   
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Questão</span>
+				<textarea placeholder="Coloque Aqui a Sua Questão" name="questao" ng-model="questao"  required></textarea>
 			</label>  
 		  
-			<div class="padding"><button class="button button-block button-positive">ENVIAR</div>
+			<button class="button button-block button-positive">ENVIAR</button>
 		  
 		</form>  
 	   
 	</div>
-	
+</div>
   </ion-content>
 </ion-view>
