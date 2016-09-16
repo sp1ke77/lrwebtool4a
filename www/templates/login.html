@@ -3,21 +3,25 @@
 
 <div class="padding">
 <div class="list">
+
 	<p>Insira o nome de utilizador e Chave API fornecido no backoffice da LR Webtool para identificar o seu equipamento.</p>
 
   <label class="item item-input item-stacked-label">
    <span class="input-label">Nome de Utilizador</span>
-    <input type="text" placeholder="{{username}}" name="username" ng-model="username" ng-minlength="4" required>
+    <input type="text" placeholder="{{username}}" name="username" ng-model="user.username" ng-minlength="4" required>
   </label>
   <label class="item item-input item-stacked-label">
     <span class="input-label">Chave API</span>
-    <input type="text" placeholder="{{token}}" name="token" ng-model="token" ng-minlength="9" required>
+    <input type="text" placeholder="{{token}}" name="token" ng-model="user.token" ng-minlength="9" required>
   </label>  
 
-    <button class="button button-block button-balanced">Adicionar Dispositivo</button>
-    <button class="button button-block button-assertive">Remover Dispositivo</button>
+    <button class="button button-block button-balanced" ng-click="login()">Adicionar Dispositivo</button>
+    <button class="button button-block button-assertive" ng-controller="LogoutCtrl" >Remover Dispositivo</button>
  
 <p>Os mesmos dados são aplicáveis a qualquer equipamento que possua.</p>
+
+	<div>{{message}}</div>
+
 </div>
 </div>
   </ion-content>

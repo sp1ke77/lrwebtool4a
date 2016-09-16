@@ -1,69 +1,39 @@
 angular.module('starter.controllers', ['ngSanitize'])
 
-.filter('hrefToJS', function ($sce, $sanitize) {
-    return function (text) {
-        var regex = /href="([\S]+)"/g;
-        var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
-        return $sce.trustAsHtml(newString);
-    }
-})
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope) {
 
-  $rootScope.username 	= 'sp1ke77';
-  $rootScope.token 	= '123456789';
-
+.controller('AppCtrl', function($scope, $ionicModal, $state, $timeout, $rootScope) {
 
   $scope.GotoLink = function (url) {
     window.open(url,'_system');
   }
   
-  
+ $ionicModal.fromTemplateUrl('templates/login.html', function(modal) {
+      $scope.loginModal = modal;
+    },
+    {
+      scope: $scope,
+      animation: 'slide-in-up',
+      focusFirstInput: true
+    }
+  );
+  //Be sure to cleanup the modal by removing it from the DOM
+  $scope.$on('$destroy', function() {
+    $scope.loginModal.remove();
+  }); 
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
 
-  // Form data for the login modal
-  $scope.loginData = {};
 
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
 
-  // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
-    $scope.modal.hide();
-  };
-
-  // Open the login modal
-  $scope.login = function() {
-    $scope.modal.show();
-  };
-
-  // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
-    console.log('Doing login', $scope.loginData);
-
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
-  };
   
   
 })
 
-.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicHistory) {
+.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicHistory, $ionicViewService) {
 
 		  // $ionicSlideBoxDelegate.update();
+		  
+		  $ionicViewService.clearHistory();
 
 		  $ionicHistory.nextViewOptions({
 			disableBack: true
@@ -156,24 +126,55 @@ angular.module('starter.controllers', ['ngSanitize'])
 })
 	
 	
-.controller('LoginCtrl', function($rootScope, $http) {
+.controller('LoginCtrl', function($rootScope, $scope, $http, $state, AuthenticationService) {
 
-	$rootScope.saveUserinfo = function() {
- 		localforage.setItem("username", $rootScope.username);
-		localforage.setItem("username", $rootScope.token);
-	};
-	
-	
-	/*$scope.getData = function() {
-        $http.get("http://lrwebtool.com/example.json", { params: { "key1": "value1", "key2": "value2" } })
-            .success(function(data) {
-                $scope.m4mpt = data.m4mpt;
-                $scope.m4mes = data.m4mpt;
-                $location.path("/account");
-            })
-            .error(function(data) {
-                alert("ERROR");
-            });
-    }*/
+$scope.message = "";
+  
+  $scope.user = {
+    username: null,
+    token: null
+  };
+ 
+  $scope.login = function() {
+    AuthenticationService.login($scope.user);
+  };
+ 
+  $scope.$on('event:auth-loginRequired', function(e, rejection) {
+    $scope.loginModal.show();
+  });
+ 
+  $scope.$on('event:auth-loginConfirmed', function() {
+     $scope.username = null;
+     $scope.token = null;
+     $scope.loginModal.hide();
+  });
+  
+  $scope.$on('event:auth-login-failed', function(e, status) {
+    var error = "Login failed.";
+    if (status == 401) {
+      error = "Invalid Username or token.";
+    }
+    $scope.message = error;
+  });
+ 
+  $scope.$on('event:auth-logout-complete', function() {
+    $state.go('app.home', {}, {reload: true, inherit: false});
+  });	
 
+})
+
+.controller('LogoutCtrl', function($scope, AuthenticationService) {
+    AuthenticationService.logout();
+})
+
+.controller('CustomerCtrl', function($scope, $state, $http) {
+    $scope.customers = [];
+    
+    $http.get('https://customers')
+        .success(function (data, status, headers, config) {
+            $scope.customers = data;
+        })
+        .error(function (data, status, headers, config) {
+            console.log("Error occurred.  Status:" + status);
+        });
 });

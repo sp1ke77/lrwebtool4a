@@ -1,28 +1,12 @@
-angular.module('starter.filters', [])
+angular.module('starter.filters', ['ngSanitize'])
 
-.filter('html_filters', function ($sce) {
-
-	return function(text) {
-
-		var htmlObject = document.createElement('div');
-		htmlObject.innerHTML = text;
-
-		var links = htmlObject.getElementsByTagName('a');
-
-		for (var i = 0; i < links.length; i++) {
-
-		    var link = links[i].getAttribute('href');
-
-		    links[i].removeAttribute('href');
-		    links[i].setAttribute('href="#"');
-		    links[i].setAttribute('onclick', 'window.open("'+ link +'", "_self", "location=yes,enableViewportScale=no")');
-		}
-
-		return $sce.trustAsHtml(htmlObject.outerHTML);
-
-	}
-
-})
+.filter('hrefToJS', function ($sce, $sanitize) {
+    return function (text) {
+        var regex = /href="([\S]+)"/g;
+        var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
+        return $sce.trustAsHtml(newString);
+    }
+});
 
 
 
