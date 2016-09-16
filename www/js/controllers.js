@@ -96,11 +96,11 @@ angular.module('starter.controllers', ['ngSanitize'])
     
         
     if (isIOS) {
-		$scope.htmlsms1 		= '<a class="crunchify-link crunchify-sms" href="sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" target="_blank">SMS</a>';	
+		$scope.htmlsms1 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;	
 	} 
     
     if (isAndroid) { 
-        $scope.htmlsms1 	= '<a class="crunchify-link crunchify-sms" href="sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1+'" target="_blank">SMS</a>';
+        $scope.htmlsms1 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;
 	}
 	
 })
