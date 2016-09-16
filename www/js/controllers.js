@@ -78,8 +78,8 @@ angular.module('starter.controllers', ['ngSanitize'])
 .controller('SindiCtrl', function($rootScope,$scope) {
 
 	$rootScope.username = 'sp1ke77';
-	$scope.html = "This a link: <a href='https://www.google.com'>Google</a> :)";
-    $scope.plaintext = "This is a link: https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/celebridades/?id="+$rootScope.username
+	$scope.html-link-fb = '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/celebridades/?id={{username}}" >Facebook</a>';
+    
 
 })
 	
