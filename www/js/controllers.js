@@ -1,6 +1,24 @@
 angular.module('starter.controllers', ['ngSanitize'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.filter('hrefToJS', function ($sce, $sanitize) {
+    return function (text) {
+        var regex = /href="([\S]+)"/g;
+        var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
+        return $sce.trustAsHtml(newString);
+    }
+})
+
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $rootScope) {
+
+  $rootScope.username 	= 'sp1ke77';
+  $rootScope.token 	= '123456789';
+
+
+  $scope.GotoLink = function (url) {
+    window.open(url,'_system');
+  }
+  
+  
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -39,6 +57,8 @@ angular.module('starter.controllers', ['ngSanitize'])
       $scope.closeLogin();
     }, 1000);
   };
+  
+  
 })
 
 .controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicHistory) {
@@ -65,14 +85,6 @@ angular.module('starter.controllers', ['ngSanitize'])
 			$scope.slideIndex = index;
 		  };
 
-})
-
-.filter('hrefToJS', function ($sce, $sanitize) {
-    return function (text) {
-        var regex = /href="([\S]+)"/g;
-        var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
-        return $sce.trustAsHtml(newString);
-    }
 })
 
 .controller('SindiCtrl', function($rootScope,$scope) {

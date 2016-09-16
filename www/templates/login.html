@@ -7,14 +7,15 @@
 
   <label class="item item-input item-stacked-label">
    <span class="input-label">Nome de Utilizador</span>
-    <input type="text" placeholder="webtool" name="username" ng-model="username" ng-minlength="4" required>
+    <input type="text" placeholder="{{username}}" name="username" ng-model="username" ng-minlength="4" required>
   </label>
   <label class="item item-input item-stacked-label">
     <span class="input-label">Chave API</span>
-    <input type="text" placeholder="123456789" name="token" ng-model="token" ng-minlength="9" required>
+    <input type="text" placeholder="{{token}}" name="token" ng-model="token" ng-minlength="9" required>
   </label>  
 
-    <button class="button button-block button-positive">Registar Dispositivo</div>
+    <button class="button button-block button-balanced">Adicionar Dispositivo</button>
+    <button class="button button-block button-assertive">Remover Dispositivo</button>
  
 <p>Os mesmos dados são aplicáveis a qualquer equipamento que possua.</p>
 </div>

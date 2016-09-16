@@ -117,10 +117,12 @@
 /* Added by Isaque */
 
 .iframe-holder {
+  height: 100%;
+  width: 97%;
   position: fixed; 
   right: 0; 
   bottom: 0; 
-  left: 0;
+  
   top: 0;
   -webkit-overflow-scrolling: touch;
   overflow-y: scroll;
@@ -128,7 +130,8 @@
 
 .iframe-holder iframe {
   height: 100%;
-  width: 100%;
+  width: 97%;
+
 }
 
 	/* Disable WhatsApp button on Desktop - Tutorial link: http://crunchify.me/1VIxAsz */

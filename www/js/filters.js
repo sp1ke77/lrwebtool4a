@@ -1,4 +1,4 @@
-angular.module('wpIonic.filters', [])
+angular.module('starter.filters', [])
 
 .filter('html_filters', function ($sce) {
 
@@ -23,5 +23,7 @@ angular.module('wpIonic.filters', [])
 	}
 
 })
+
+
 
 

@@ -39,7 +39,7 @@
           Redes Sociais
         </ion-item>
         
-        <ion-item class="item item-icon-left" nav-clear menu-close ng-bind-html="htmlurlrecrutamento | hrefToJS" href="#">
+        <ion-item class="item item-icon-left" nav-clear menu-close ng-click="GotoLink('http://lrwebtool.com/recrutar')">
           <i class="icon ion-person-add"></i>
           Recrutar
         </ion-item>
@@ -58,16 +58,12 @@
           <i class="icon ion-android-chat"></i>
           Suporte
         </ion-item>
-        
-       <ion-item class="item item-icon-left" nav-clear menu-close>
-          2016, L4Marketing LLC
-        </ion-item>
-        
-       <ion-item class="item item-icon-left" nav-clear menu-close>
-          {{username}} : token
-        </ion-item>        
-        
       </ion-list>
+      <div class="padding">
+	  <p>&nbsp;</p>
+      <p>{{username}} : {{token}}</p>
+      <p>2016, L4Marketing LLC</p>
+      </div>
     </ion-content>
   </ion-side-menu>
 </ion-side-menus>
