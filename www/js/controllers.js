@@ -87,13 +87,23 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 	$rootScope.titulo1		= 'Celebridades';
 	$rootScope.slug1		= 'celebridades';
-
-	
 	$scope.htmlfacebook1 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" >Facebook</a>';
     $scope.htmltwitter1 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
     $scope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
     $scope.htmllinkedin1 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1+'" target="_blank">LinkedIn</a>';
+	$scope.htmlwhatsapp1 	= 'whatsapp://send?text='+$rootScope.titulo1+' http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username;
+
+	$rootScope.titulo2		= 'Celebridades';
+	$rootScope.slug2		= 'celebridades';
     
+    $rootScope.titulo3		= 'Celebridades';
+	$rootScope.slug3		= 'celebridades';
+	
+	$rootScope.titulo4		= 'Celebridades';
+	$rootScope.slug4		= 'celebridades';
+	
+	$rootScope.titulo5		= 'Celebridades';
+	$rootScope.slug5		= 'celebridades';
         
     if (isIOS) {
 		$scope.htmlsms1 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;	
