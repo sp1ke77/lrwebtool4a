@@ -14,6 +14,7 @@ angular.module('wpIonic.filters', [])
 		    var link = links[i].getAttribute('href');
 
 		    links[i].removeAttribute('href');
+		    links[i].setAttribute('href="#"');
 		    links[i].setAttribute('onclick', 'window.open("'+ link +'", "_self", "location=yes,enableViewportScale=no")');
 		}
 
