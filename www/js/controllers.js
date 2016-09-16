@@ -91,7 +91,7 @@ angular.module('starter.controllers', ['ngSanitize'])
     $scope.htmltwitter1 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
     $scope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
     $scope.htmllinkedin1 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1+'" target="_blank">LinkedIn</a>';
-	$scope.htmlwhatsapp1 	= '"whatsapp://send?text='+$rootScope.titulo1+' http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'"';
+	$scope.htmlwhatsapp1 	= 'whatsapp://send?text=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&nbsp;'+$rootScope.titulo1;
 
 	$rootScope.titulo2		= 'Celebridades';
 	$rootScope.slug2		= 'celebridades';
