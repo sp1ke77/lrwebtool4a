@@ -92,7 +92,7 @@ angular.module('starter.controllers', ['ngSanitize'])
     $scope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
     $scope.htmllinkedin1 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1+'" target="_blank">LinkedIn</a>';
 	//$scope.htmlwhatsapp1 	= 'whatsapp://send?text=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&nbsp;'+$rootScope.titulo1;
-	$scope.htmlwhatsapp1 	= 'whatsapp://send?text=http://lrwebtool.com/celebridaes/?id=sp1ke77 CELEBRIDADES';
+	$scope.htmlwhatsapp1 	= 'whatsapp://send?text=http://lrwebtool.com/celebridaes/?id=sp1ke77%20CELEBRIDADES';
 	if (isIOS) { $scope.htmlsms1 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;} 
     if (isAndroid) { $scope.htmlsms1 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;}
 
