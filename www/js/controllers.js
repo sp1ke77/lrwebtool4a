@@ -1,39 +1,27 @@
 angular.module('starter.controllers', ['ngSanitize'])
 
-
-
 .controller('AppCtrl', function($scope, $ionicModal, $state, $timeout, $rootScope) {
 
   $scope.GotoLink = function (url) {
     window.open(url,'_system');
   }
   
- $ionicModal.fromTemplateUrl('templates/login.html', function(modal) {
-      $scope.loginModal = modal;
-    },
-    {
-      scope: $scope,
-      animation: 'slide-in-up',
-      focusFirstInput: true
-    }
-  );
-  //Be sure to cleanup the modal by removing it from the DOM
-  $scope.$on('$destroy', function() {
-    $scope.loginModal.remove();
-  }); 
-
-
-
-
-  
-  
+  $rootScope.username 	= localStorage.getItem("username");
+  $rootScope.token 		= localStorage.getItem("token");
+   
 })
 
-.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicHistory, $ionicViewService) {
+.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicHistory) {
 
-		  // $ionicSlideBoxDelegate.update();
+			/*$scope.isLoggedIn = function() {
+				if(window.localStorage.getItem("username") !== undefined && window.localStorage.getItem("token") !== undefined) {
+					return true;
+				} else {
+					return false;
+				}
+			};*/
 		  
-		  $ionicViewService.clearHistory();
+		  // $ionicSlideBoxDelegate.update();
 
 		  $ionicHistory.nextViewOptions({
 			disableBack: true
@@ -41,7 +29,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 		 
 		  // Called to navigate to the main app
 		  $scope.startApp = function() {
-			$state.go('app.login');
+			$state.go('app.api');
 		  };
 		  $scope.next = function() {
 			$ionicSlideBoxDelegate.next();
@@ -66,7 +54,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	var isWindowsPhone = ionic.Platform.isWindowsPhone();
 
 	$rootScope.htmlurlrecrutamento 	= 'http://lrwebtool.com/recrutar';
-	$rootScope.username 	= 'sp1ke77';
+	$rootScope.username 	= localStorage.getItem("username");
 
 	$rootScope.titulo1		= 'Celebridades';
 	$rootScope.slug1		= 'celebridades';
@@ -126,55 +114,36 @@ angular.module('starter.controllers', ['ngSanitize'])
 })
 	
 	
-.controller('LoginCtrl', function($rootScope, $scope, $http, $state, AuthenticationService) {
-
-$scope.message = "";
-  
-  $scope.user = {
-    username: null,
-    token: null
-  };
- 
-  $scope.login = function() {
-    AuthenticationService.login($scope.user);
-  };
- 
-  $scope.$on('event:auth-loginRequired', function(e, rejection) {
-    $scope.loginModal.show();
-  });
- 
-  $scope.$on('event:auth-loginConfirmed', function() {
-     $scope.username = null;
-     $scope.token = null;
-     $scope.loginModal.hide();
-  });
-  
-  $scope.$on('event:auth-login-failed', function(e, status) {
-    var error = "Login failed.";
-    if (status == 401) {
-      error = "Invalid Username or token.";
-    }
-    $scope.message = error;
-  });
- 
-  $scope.$on('event:auth-logout-complete', function() {
-    $state.go('app.home', {}, {reload: true, inherit: false});
-  });	
+.controller('RegisterCtrl', function($rootScope, $scope) {
+	
+	$scope.registerdevice = function() {
+		if(typeof(Storage) != "undefined") {
+			localStorage.setItem("username", $scope.username);
+			localStorage.setItem("token", $scope.token);
+			alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"));
+			$state.go('app.api');
+		} else {
+			alert("Desculpe, este dispositivo é imcompativel com a aplicação");
+			$state.go('app.suporte');
+		}
+	};
 
 })
 
-.controller('LogoutCtrl', function($scope, AuthenticationService) {
-    AuthenticationService.logout();
-})
 
-.controller('CustomerCtrl', function($scope, $state, $http) {
-    $scope.customers = [];
-    
-    $http.get('https://customers')
-        .success(function (data, status, headers, config) {
-            $scope.customers = data;
-        })
-        .error(function (data, status, headers, config) {
-            console.log("Error occurred.  Status:" + status);
-        });
+.controller('UnregisterCtrl', function($rootScope, $scope) {
+	
+	$scope.unregisterdevice = function() {
+		if(window.localStorage.getItem("username") !== undefined && window.localStorage.getItem("token") !== undefined) {
+			window.localStorage.removeItem("username");
+			window.localStorage.removeItem("token");
+			alert("Dispositivo removido");
+			$state.go('app.api');
+		} else {
+			alert("Desculpe, Não tem dispositivos registados");
+			$state.go('app.api');
+		}
+	};
+
+
 });

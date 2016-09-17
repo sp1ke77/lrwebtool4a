@@ -20,20 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.filters', 's
       StatusBar.styleDefault();
     }
     
-    if(window.Connection) {
-		if(navigator.connection.type == Connection.NONE) {
-			$ionicPopup.confirm({
-				title: "Internet Disconnected",
-				content: "The internet is disconnected on your device."
-			})
-			.then(function(result) {
-				if(!result) {
-					ionic.Platform.exitApp();
-				}
-			});
-		}
-	}
-            
+           
   });
 })
 
@@ -58,13 +45,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.filters', 's
     }
   })
 
-  .state('app.login', {
-    url: "/login",
+  .state('app.api', {
+    url: "/api",
     views: {
       'menuContent': {
-        templateUrl: "templates/login.html",
-        controller: 'LoginCtrl'
-
+        templateUrl: "templates/api.html",
       }
     }
   })
