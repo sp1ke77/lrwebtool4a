@@ -34,33 +34,37 @@
           API
         </ion-item>
         
-        <ion-item class="item item-icon-left" nav-clear menu-close href="#/app/sindicancia">
-          <i class="icon ion-ios-world"></i>
-          Redes Sociais
-        </ion-item>
+        <div ng-if="username" ng-if="token">
+			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/sindicancia">
+			  <i class="icon ion-ios-world"></i>
+			  Redes Sociais
+			</ion-item>
+			
+			<ion-item class="item item-icon-left" nav-clear menu-close ng-click="GotoLink('http://lrwebtool.com/recrutar')">
+			  <i class="icon ion-person-add"></i>
+			  Recrutar
+			</ion-item>
+			
+			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/m4m">
+			  <i class="icon ion-android-drafts"></i>
+			  Email Marketing
+			</ion-item>
+			
+			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/contatos">
+			  <i class="icon ion-android-contacts"></i>
+			  Registar Contato
+			</ion-item>
         
-        <ion-item class="item item-icon-left" nav-clear menu-close ng-click="GotoLink('http://lrwebtool.com/recrutar')">
-          <i class="icon ion-person-add"></i>
-          Recrutar
-        </ion-item>
-        
-        <ion-item class="item item-icon-left" nav-clear menu-close href="#/app/m4m">
-          <i class="icon ion-android-drafts"></i>
-          Email Marketing
-        </ion-item>
-        
-        <ion-item class="item item-icon-left" nav-clear menu-close href="#/app/contatos">
-          <i class="icon ion-android-contacts"></i>
-          Registar Contato
-        </ion-item>
-        
-        <ion-item class="item item-icon-left" nav-clear menu-close href="#/app/suporte">
-          <i class="icon ion-android-chat"></i>
-          Suporte
-        </ion-item>
+			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/suporte">
+			<i class="icon ion-android-chat"></i>
+			Suporte
+			</ion-item>
+		</div>
+		
       </ion-list>
+      
       <div class="padding">
-      <p>{{username}} : {{token}}</p>
+      <div ng-if="username" ng-if="token"><p>{{username}} : {{token}}</p></div>
       <p>2016, L4Marketing LLC</p>
       </div>
     </ion-content>

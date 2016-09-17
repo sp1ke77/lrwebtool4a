@@ -1,15 +1,13 @@
 <ion-view view-title="Inicio">
-  
-  <ion-slide-box on-slide-changed="slideChanged(index)">
+	<ion-slide-box on-slide-changed="slideChanged(index)">
 
-    <ion-slide>
-      <div class="slide-content">
-		  <img src="http://lrwebtool.com/wp-content/uploads/2016/04/LR-logoverde-e1470797571461.png" />
-        <h3>BEM VINDO</h3>
-        <button class="button button-block button-balanced" ng-click="startApp()">Continuar</button>
-      </div>
-    </ion-slide>
+		<ion-slide>
+			<div class="slide-content">
+				<h3><strong>BEM VINDO</strong></h3>
+				<button class="button button-block button-balanced" ng-if="!username" ng-if="!token" ng-click="startApp()">Registar Dispositivo</button>
+				<button class="button button-block button-balanced" ng-if="username" ng-if="token" ng-click="toggleLeftSideMenu()">Ver Menu</button>
+			</div>
+		</ion-slide>
    
-  </ion-slide-box>
-
+	</ion-slide-box>
 </ion-view>

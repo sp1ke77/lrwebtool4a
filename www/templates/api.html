@@ -1,26 +1,30 @@
-<ion-view view-title="API">
-  <ion-content padding="false" overflow-scroll="true">
+<ion-view view-title="API" cache-view="false">
+	<ion-content padding="false" overflow-scroll="true">
 
-<div class="padding">
-<div class="list">
+		<div class="padding">
+		<div class="list">
 
-	<p>Insira o nome de utilizador e Chave API fornecido no backoffice da LR Webtool para identificar o seu equipamento.</p>
+			<br/>
+			<p>Insira o nome de utilizador e Chave API fornecido no backoffice da LR Webtool para identificar o seu equipamento.</p><br/>
 
-  <label class="item item-input item-stacked-label">
-   <span class="input-label">Nome de Utilizador</span>
-    <input type="text" placeholder="{{username}}" name="username" ng-model="username" ng-minlength="4" required>
-  </label>
-  <label class="item item-input item-stacked-label">
-    <span class="input-label">Chave API</span>
-    <input type="text" placeholder="{{token}}" name="token" ng-model="token" ng-minlength="9" required>
-  </label>  
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Nome de Utilizador</span>
+					<input type="text" placeholder="{{username}}" name="username" ng-model="username" ng-minlength="4" required>
+				</label>
 
-    <button class="button button-block button-balanced" ng-controller="RegisterCtrl" ng-click="registerdevice()">Adicionar Dispositivo</button>
-    <button class="button button-block button-assertive" ng-controller="UnregisterCtrl" ng-click="unregisterdevice()">Remover Dispositivo</button>
- 
-<p>Os mesmos dados são aplicáveis a qualquer equipamento que possua.</p>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Chave API</span>
+					<input type="tel" placeholder="{{token}}" name="token" ng-model="token" ng-minlength="9" ng-maxlength="9" required>
+				</label>  
 
-</div>
-</div>
-  </ion-content>
+				<button class="button button-block button-balanced" ng-if="username" ng-if="token" ng-controller="RegisterCtrl" ng-click="registerdevice()">Adicionar Dispositivo</button>
+				<button class="button button-block button-assertive" ng-if="username" ng-if="token" ng-controller="UnregisterCtrl" ng-click="unregisterdevice()">Remover Dispositivo</button>
+
+			<br/><br/> 
+			<p>Os mesmos dados são aplicáveis a qualquer equipamento que possua.</p>
+
+		</div>
+		</div>
+		
+	</ion-content>
 </ion-view>
