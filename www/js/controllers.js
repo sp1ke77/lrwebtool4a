@@ -129,12 +129,24 @@ angular.module('starter.controllers', ['ngSanitize'])
 })
 	
 	
-.controller('RegisterCtrl', function($rootScope, $scope) {
+.controller('RegisterCtrl', function($rootScope, $scope, $http) {
 	
 	$scope.registerdevice = function() {
 		if(typeof(Storage) != "undefined") {
 			localStorage.setItem("username", $scope.username);
 			localStorage.setItem("token", $scope.token);
+
+				$http.get("http://lrwebtool.com/wp-json/wp/v2/pages/14488", { params: { "lg": $scope.username,  "token": $scope.token } })
+				.success(function(data) {
+					$scope.profile = data;
+					window.localStorage.setItem("profile", JSON.stringify(data));
+				})
+				.error(function(data) {
+					if(window.localStorage.getItem("profile") !== undefined) {
+						$scope.profile = JSON.parse(window.localStorage.getItem("profile"));
+					}
+				});	
+        
 			if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){} 
 			else window.location.reload();
 		} else {
