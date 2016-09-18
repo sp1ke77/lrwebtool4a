@@ -1,15 +1,15 @@
 angular.module('starter.controllers', ['ngSanitize'])
 
-.controller('AppCtrl', function($scope, $rootScope) {
+.controller('AppCtrl', function($scope, $rootScope, $state) {
 
 	// External Links Redir
 	$scope.GotoLink = function (url) {
 		window.open(url,'_system');
 	}
 	
-	// Internal Redir : LOCKED
-	$scope.lockedApp = function() {
-		$state.go('app.locked');
+	// Internal Redir : SUPORTE
+	$scope.GoToSuporte = function() {
+		$state.go('app.suporte');
 	}
 	
 	// Load Registry

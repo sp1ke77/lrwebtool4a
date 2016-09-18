@@ -1,6 +1,17 @@
-<ion-view view-title="EMAIL MARKETING">
-	<ion-content scroll="true" overflow-scroll="true" class="iframe-wrapper">
+<ion-view view-title="EMAIL MARKETING" >
+	<ion-content scroll="true" overflow-scroll="true"  class="iframe-wrapper">
 		<ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
-		<iframe data-tap-disabled="true" src="https://mail4mkt.com"></iframe>
+		<ion-pane>
+			<iframe data-tap-disabled="true" src="https://mail4mkt.com"></iframe>
+		</ion-pane>
 	</ion-content>
+	<ion-footer-bar align-title="center" class="bar-balanced">
+		<div class="buttons" ng-click="ionic.Platform.exitApp();">
+			<button class="button">Sair</button>
+		</div>
+		<h1 class="title">LR WEBTOOL</h1>
+		<div class="buttons" ng-click="GoToSuporte()">
+			<button class="button">Suporte</button>
+		</div>
+	</ion-footer-bar>
 </ion-view>
