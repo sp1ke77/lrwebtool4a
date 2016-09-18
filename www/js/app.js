@@ -82,7 +82,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/suporte",
     views: {
       'menuContent': {
-        templateUrl: "templates/suporte.html"
+        templateUrl: "templates/suporte.html",
+        controller: 'SuporteCtrl'
       }
     }
   })

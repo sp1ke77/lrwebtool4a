@@ -10,8 +10,8 @@ angular.module('starter.controllers', ['ngSanitize'])
 	// Internal Redir : LOCKED
 	$scope.lockedApp = function() {
 		$state.go('app.locked');
-	};
-
+	}
+	
 	// Load Registry
 	$rootScope.username 	= localStorage.getItem("username");
 	$rootScope.token 		= localStorage.getItem("token");
@@ -21,7 +21,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 })
 
 
-.controller('IntroCtrl', function($scope,$rootScope, $state, $ionicSlideBoxDelegate, $ionicHistory, $ionicSideMenuDelegate) {
+.controller('IntroCtrl', function($scope,$rootScope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
 
 				$scope.profile = localStorage.getItem('profile');
 				
@@ -37,9 +37,6 @@ angular.module('starter.controllers', ['ngSanitize'])
 				console.log('INTROCTRL: ' + $rootScope.profilename);
 
 	
-	$ionicHistory.nextViewOptions({
-		disableBack: true
-	});
 
 	// Called to navigate to the main app
 	$scope.startApp = function() {
@@ -101,6 +98,24 @@ angular.module('starter.controllers', ['ngSanitize'])
 	};
 	
 })
+
+.controller('SuporteCtrl', function($scope, $rootScope) {
+
+	$scope.profile = localStorage.getItem('profile');
+	
+	if($scope.profile != undefined && $scope.profile != null){
+		$scope.profilesplit 		= $scope.profile.split(',');
+		$rootScope.profilename 		= $scope.profilesplit[4];
+		$rootScope.profileidlr 		= $scope.profilesplit[5];
+		$rootScope.profilemail 		= $scope.profilesplit[6];
+	}
+	
+	console.log('SUPORTECTRL 1: ' + $rootScope.profilename);
+	console.log('SUPORTECTRL 2: ' + $rootScope.profileidlr);
+	console.log('SUPORTECTRL 3: ' + $rootScope.profilemail);
+
+})
+
 
 .controller('SindiCtrl', function($rootScope, $scope, $filter) {
 	
@@ -285,14 +300,6 @@ angular.module('starter.controllers', ['ngSanitize'])
     return function (text) {
         var regex = /href="([\S]+)"/g;
         var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
-        return $sce.trustAsHtml(newString);
-    }
-})
-
-.filter('actionToJS', function ($sce, $sanitize) {
-    return function (text) {
-        var regex = /action="([\S]+)"/g;
-        var newString = $sanitize(text).replace(regex, "action=\'$1'");
         return $sce.trustAsHtml(newString);
     }
 });
