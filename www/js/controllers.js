@@ -66,10 +66,26 @@ angular.module('starter.controllers', ['ngSanitize'])
 	
 })
 
-.controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate) {
+.controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate, $sce) {
 
-	$rootScope.formPT		= encodeURIComponent('https://mail4mkt.com/index.php/lists/{{profile|split:',':2}}/subscribe');
-	$rootScope.formES		= encodeURIComponent('https://mail4mkt.com/index.php/lists/{{profile|split:',':3}}/subscribe');
+	$scope.profile = localStorage.getItem('profile');
+	
+	if($scope.profile != undefined && $scope.profile != null){
+		$scope.profilesplit 		= $scope.profile.split(',');
+		$rootScope.profilelistapt 	= $scope.profilesplit[2];
+		$rootScope.profilelistaes 	= $scope.profilesplit[3];
+	}
+	
+	console.log('CONTACTCTRL 1: ' + $rootScope.profilelistapt);
+	console.log('CONTACTCTRL 2: ' + $rootScope.profilelistaes);
+
+	$scope.fpt1	= 'https://mail4mkt.com/index.php/lists/' + $rootScope.profilelistapt + '/subscribe';
+	$scope.fes1	= 'https://mail4mkt.com/index.php/lists/' + $rootScope.profilelistaes + '/subscribe';
+	
+	$rootScope.formPT = $sce.trustAsResourceUrl($scope.fpt1);
+	$rootScope.formES = $sce.trustAsResourceUrl($scope.fes1);
+	
+	console.log('CONTACTCTRL 3: ' + $rootScope.formPT);
 	
 	$scope.next = function() {
 		$ionicSlideBoxDelegate.next();
@@ -261,16 +277,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 .controller('AdminCtrl', function($rootScope, $scope, $http, $filter) {
 	
-	$scope.result = "";
-
-	$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U=sp1ke77&T=595060878&V=afhrfae74tr8348we4ftn23f8')
-		.success(function(data, status, headers,config){
-				console.log('ADMINCTRL: data success');
-				$scope.result = data.content.rendered; // for UI
-				$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
-				$scope.profile = localStorage.getItem('profile');
-				console.log('ADMINCTRL 2: ' + $scope.profile);
-	});
+	
 	
 })
  
@@ -278,6 +285,14 @@ angular.module('starter.controllers', ['ngSanitize'])
     return function (text) {
         var regex = /href="([\S]+)"/g;
         var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
+        return $sce.trustAsHtml(newString);
+    }
+})
+
+.filter('actionToJS', function ($sce, $sanitize) {
+    return function (text) {
+        var regex = /action="([\S]+)"/g;
+        var newString = $sanitize(text).replace(regex, "action=\'$1'");
         return $sce.trustAsHtml(newString);
     }
 });
