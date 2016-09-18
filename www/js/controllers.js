@@ -8,6 +8,13 @@ angular.module('starter.controllers', ['ngSanitize'])
     }
 })
 
+/*.filter('split', function() {
+        return function(input, splitChar, splitIndex) {
+            // do some bounds checking here to ensure it has that index
+            return input.split(splitChar)[splitIndex];
+        }
+})*/
+
 .controller('AppCtrl', function($scope, $rootScope) {
 
 	// External Links Redir
@@ -135,17 +142,18 @@ angular.module('starter.controllers', ['ngSanitize'])
 		if(typeof(Storage) != "undefined") {
 			localStorage.setItem("username", $scope.username);
 			localStorage.setItem("token", $scope.token);
+			$scope.verifycode = "afhrfae74tr8348we4ftn23f8";
 
-				$http.get("http://lrwebtool.com/wp-json/wp/v2/pages/14488", { params: { "lg": $scope.username,  "token": $scope.token } })
-				.success(function(data) {
-					$scope.profile = data;
-					window.localStorage.setItem("profile", JSON.stringify(data));
-				})
-				.error(function(data) {
-					if(window.localStorage.getItem("profile") !== undefined) {
-						$scope.profile = JSON.parse(window.localStorage.getItem("profile"));
-					}
-				});	
+				$scope.result = "";
+
+				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U=sp1ke77&T=22256573534&V=afhrfae74tr8348we4ftn23f8')
+					.success(function(data, status, headers,config){
+						console.log('data success');
+						console.log(data); // for browser console
+						$scope.result = data; // for UI
+				});
+				
+				localStorage.setItem("profile", $scope.result);
         
 			if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){} 
 			else window.location.reload();
@@ -168,9 +176,34 @@ angular.module('starter.controllers', ['ngSanitize'])
 		else if(window.localStorage.getItem("username") !== undefined && window.localStorage.getItem("token") !== undefined) {
 			window.localStorage.removeItem("username");
 			window.localStorage.removeItem("token");
+			window.localStorage.removeItem("profile");
 			if(alert("Dispositivo removido")){} 
 			else window.location.reload();
 		}
 
 	};
+})
+
+.controller('AdminCtrl', function($rootScope, $scope, $http) {
+	
+	$scope.result = "";
+
+	$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U=sp1ke77&T=22256573534&V=afhrfae74tr8348we4ftn23f8')
+		.success(function(data, status, headers,config){
+			console.log('data success');
+			console.log(data); // for browser console
+			$scope.result = data; // for UI
+
+			/*var data = $scope.API.data.split(",");
+			
+			$scope.API.username = data[0].trim();
+			$scope.API.token 	= data[1].trim();
+			$scope.API.listPT 	= data[2].trim();
+			$scope.API.listES 	= data[3].trim();
+			$scope.API.fullname	= data[4].trim();*/
+
+	});
+		
+		
+	
 });

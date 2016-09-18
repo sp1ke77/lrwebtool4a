@@ -72,7 +72,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/contatos",
     views: {
       'menuContent': {
-        templateUrl: "templates/contatos.html",
+        templateUrl: "templates/contatos.html"
       }
     }
   })
@@ -82,6 +82,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     views: {
       'menuContent': {
         templateUrl: "templates/suporte.html"
+      }
+    }
+  })
+  
+  .state('app.admin', {
+    url: "/admin",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/admin.html",
+        controller: 'AdminCtrl'
       }
     }
   });
