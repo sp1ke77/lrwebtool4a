@@ -34,7 +34,7 @@
           API
         </ion-item>
         
-        <div ng-if="username" ng-if="token">
+        <div ng-if="account == 'OK'">
 			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/sindicancia">
 			  <i class="icon ion-ios-world"></i>
 			  Redes Sociais
@@ -69,7 +69,7 @@
       </ion-list>
       
       <div class="padding">
-      <div ng-if="username" ng-if="token"><p>{{profilename}}</p></div>
+      <div ng-if="account == 'OK'"><p>{{profilename}}</p></div>
       <p>2016, L4Marketing LLC</p>
       </div>
     </ion-content>

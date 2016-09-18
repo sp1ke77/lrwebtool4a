@@ -15,6 +15,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	// Load Registry
 	$rootScope.username 	= localStorage.getItem("username");
 	$rootScope.token 		= localStorage.getItem("token");
+	$rootScope.account 		= localStorage.getItem("account");
 	
    
 })
@@ -95,12 +96,12 @@ angular.module('starter.controllers', ['ngSanitize'])
 	// PC 1
 	$rootScope.titulo1		= 'Celebridades';
 	$rootScope.slug1		= 'celebridades';
-	$rootScope.url1			= encodeURIComponent('http://lrwebtool.com/celebridades/?id=sp1ke77');
+	//$rootScope.url1			= encodeURIComponent('http://lrwebtool.com/celebridades/?id=sp1ke77');
 	$rootScope.htmlfacebook1 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" >Facebook</a>';
 	$rootScope.htmltwitter1 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
 	$rootScope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
 	$rootScope.htmllinkedin1 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1+'" target="_blank">LinkedIn</a>';
-	$rootScope.htmlwhatsapp1 	= 'whatsapp://send?text='+$rootScope.url1;
+	//$rootScope.htmlwhatsapp1 	= 'whatsapp://send?text='+$rootScope.url1;
 	//$rootScope.htmlwhatsapp1 	= '<a class="crunchify-link crunchify-whatsapp" href="whatsapp://send?text='+$rootScope.url1+'" data-action="share/whatsapp/share target="_blank">WhatsApp</a>';
 	if (isIOS) { $rootScope.htmlsms1 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;} 
 	if (isAndroid) { $rootScope.htmlsms1 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;}
@@ -152,45 +153,82 @@ angular.module('starter.controllers', ['ngSanitize'])
 })
 	
 	
-.controller('RegisterCtrl', function($rootScope, $scope, $http, $filter) {
+.controller('RegisterCtrl', function($rootScope, $scope, $http, $state, $filter) {
 	
 	$scope.registerdevice = function() {
 
 			localStorage.setItem("username", $scope.username);
 			localStorage.setItem("token", $scope.token);
 			$scope.verifycode = "afhrfae74tr8348we4ftn23f8";
+			localStorage.removeItem('account');
 			console.log('REGISTERCTRL 1: ' + $scope.username);
 			console.log('REGISTERCTRL 2: ' + $scope.token);
 			console.log('REGISTERCTRL 3: ' + $scope.verifycode);
 
-				$scope.result = "";
+			$scope.result = "";
+							
+			if ($scope.username == undefined){ if(alert("Dados Invalidos")){} else window.location.reload();} 
+			if ($scope.username == null ){ if(alert("Dados Invalidos")){} else window.location.reload();} 
+			else if ($scope.token == undefined ){ if(alert("Dados Invalidos")){} else window.location.reload();}
+			else if ($scope.token == null ){ if(alert("Dados Invalidos")){} else window.location.reload();}
+			else if ($scope.verifycode == null ){ if(alert("Dados Invalidos")){} else window.location.reload();}
+			else if ($scope.verifycode == undefined ){ if(alert("Dados Invalidos")){} else window.location.reload();}
+			else 
 
 				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$scope.username+'&T='+$scope.token+'&V='+$scope.verifycode)
 					.success(function(data, status, headers,config){
-				
-					console.log('REGISTERCTRL 4: data success');
-					$scope.result = data.content.rendered; // for UI
-					console.log('REGISTERCTRL 5: ' + $scope.result);
-					$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
-					$scope.profile = localStorage.getItem('profile');
-					
-					if($scope.profile != undefined && $scope.profile != null){
-						$scope.profilesplit 		= $scope.profile.split(',');
-						$rootScope.profileusername 	= $scope.profilesplit[0];
-						$rootScope.profiletoken 	= $scope.profilesplit[1];
-						$rootScope.profilelistapt 	= $scope.profilesplit[2];
-						$rootScope.profilelistaes 	= $scope.profilesplit[3];
-						$rootScope.profilename 		= $scope.profilesplit[4];
-					}
-					
-					console.log('REGISTERCTRL: ' + $rootScope.profilename);
-					
-					if($scope.profile != undefined && $scope.profile != null){
-						if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){} 
-						else window.location.reload();
-					}
+						console.log('REGISTERCTRL 1a: ' + $scope.username);
+						console.log('REGISTERCTRL 2b: ' + $scope.token);
+						console.log('REGISTERCTRL 3c: ' + $scope.verifycode);
+						console.log('REGISTERCTRL 4: data success');
+						$scope.result = data.content.rendered; // for UI
+						console.log('REGISTERCTRL 5: ' + $scope.result);
 						
+						if($scope.result == undefined){
+							window.localStorage.removeItem("username");
+							window.localStorage.removeItem("token");
+							localStorage.removeItem("profile");
+							if(alert('Dados Invalidos')){} 
+							else window.location.reload();
+						} 
+						if($scope.result == null){
+							window.localStorage.removeItem("username");
+							window.localStorage.removeItem("token");
+							localStorage.removeItem("profile");
+							if(alert("Dados Invalidos")){} 
+							else window.location.reload();
+						} 
+						if($scope.result == 'ERRO'){
+							window.localStorage.removeItem("username");
+							window.localStorage.removeItem("token");
+							localStorage.removeItem("profile");
+							if(alert("Dados Invalidos")){} 
+							else window.location.reload();
+						} 
+						
+						
+						
+						if($scope.result != undefined && $scope.result != null){
+							
+						$scope.openaccount = localStorage.setItem('account', 'OK');
+						$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
+						$scope.profile = localStorage.getItem('profile');
+						
+							$scope.profilesplit 		= $scope.profile.split(',');
+							$rootScope.profileusername 	= $scope.profilesplit[0];
+							$rootScope.profiletoken 	= $scope.profilesplit[1];
+							$rootScope.profilelistapt 	= $scope.profilesplit[2];
+							$rootScope.profilelistaes 	= $scope.profilesplit[3];
+							$rootScope.profilename 		= $scope.profilesplit[4];
+							
+						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
+
+							if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){ } 
+							else window.location.reload();
+						}
 					});
+
+			
 
 	};
 
@@ -208,6 +246,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 			window.localStorage.removeItem("username");
 			window.localStorage.removeItem("token");
 			localStorage.removeItem("profile");
+			localStorage.removeItem('account');
 			if(alert("Dispositivo removido")){} 
 			else window.location.reload();
 		}
@@ -219,7 +258,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	
 	$scope.result = "";
 
-	$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U=sp1ke77&T=22256573534&V=afhrfae74tr8348we4ftn23f8')
+	$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U=sp1ke77&T=595060878&V=afhrfae74tr8348we4ftn23f8')
 		.success(function(data, status, headers,config){
 				console.log('ADMINCTRL: data success');
 				$scope.result = data.content.rendered; // for UI
