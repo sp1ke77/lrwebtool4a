@@ -22,11 +22,17 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 .controller('IntroCtrl', function($scope,$rootScope, $state, $ionicSlideBoxDelegate, $ionicHistory, $ionicSideMenuDelegate) {
 
-				$rootScope.profile = localStorage.getItem('profile');
-				$rootScope.profilesplit = $rootScope.profile.split(',');
-				if($rootScope.profilename!==undefined){
-					$rootScope.profilename = $rootScope.profilesplit[0];
-				} else { $rootScope.profilename = ''; }
+				$scope.profile = localStorage.getItem('profile');
+				
+				if($scope.profile != undefined && $scope.profile != null){
+					$scope.profilesplit 		= $scope.profile.split(',');
+					$rootScope.profileusername 	= $scope.profilesplit[0];
+					$rootScope.profiletoken 	= $scope.profilesplit[1];
+					$rootScope.profilelistapt 	= $scope.profilesplit[2];
+					$rootScope.profilelistaes 	= $scope.profilesplit[3];
+					$rootScope.profilename 		= $scope.profilesplit[4];
+				}
+				
 				console.log('INTROCTRL: ' + $rootScope.profilename);
 
 	
@@ -146,34 +152,46 @@ angular.module('starter.controllers', ['ngSanitize'])
 })
 	
 	
-.controller('RegisterCtrl', function($rootScope, $scope, $http) {
+.controller('RegisterCtrl', function($rootScope, $scope, $http, $filter) {
 	
 	$scope.registerdevice = function() {
-		if(typeof(Storage) != "undefined") {
+
 			localStorage.setItem("username", $scope.username);
 			localStorage.setItem("token", $scope.token);
 			$scope.verifycode = "afhrfae74tr8348we4ftn23f8";
+			console.log('REGISTERCTRL 1: ' + $scope.username);
+			console.log('REGISTERCTRL 2: ' + $scope.token);
+			console.log('REGISTERCTRL 3: ' + $scope.verifycode);
 
 				$scope.result = "";
 
-				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U=sp1ke77&T=22256573534&V=afhrfae74tr8348we4ftn23f8')
-					.success(function(data, status, headers ,config){
-				console.log('REGISTERCTRL: data success');
-				$scope.result = data.content.rendered; // for UI
-				$scope.saveresult = localStorage.setItem('profile', JSON.stringify(data.content.rendered));
-				$scope.profile = localStorage.getItem('profile');
-				console.log('REGISTERCTRL: ' + $scope.profile);
+				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$scope.username+'&T='+$scope.token+'&V='+$scope.verifycode)
+					.success(function(data, status, headers,config){
+				
+					console.log('REGISTERCTRL 4: data success');
+					$scope.result = data.content.rendered; // for UI
+					console.log('REGISTERCTRL 5: ' + $scope.result);
+					$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
+					$scope.profile = localStorage.getItem('profile');
 					
-				});
-				
-				
-        
-			if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){} 
-			else window.location.reload();
-		} else {
-			if(alert("Desculpe, este dispositivo é imcompativel com a aplicação")){} 
-			else window.location.reload();
-		}
+					if($scope.profile != undefined && $scope.profile != null){
+						$scope.profilesplit 		= $scope.profile.split(',');
+						$rootScope.profileusername 	= $scope.profilesplit[0];
+						$rootScope.profiletoken 	= $scope.profilesplit[1];
+						$rootScope.profilelistapt 	= $scope.profilesplit[2];
+						$rootScope.profilelistaes 	= $scope.profilesplit[3];
+						$rootScope.profilename 		= $scope.profilesplit[4];
+					}
+					
+					console.log('REGISTERCTRL: ' + $rootScope.profilename);
+					
+					if($scope.profile != undefined && $scope.profile != null){
+						if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){} 
+						else window.location.reload();
+					}
+						
+					});
+
 	};
 
 })
@@ -218,13 +236,4 @@ angular.module('starter.controllers', ['ngSanitize'])
         var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
         return $sce.trustAsHtml(newString);
     }
-})
-
-.filter('split', function() {
-        return function(input, splitChar, splitIndex) {
-            // do some bounds checking here to ensure it has that index
-            if(input!==undefined){
-				return input.split(splitChar)[splitIndex];
-			}
-        }
 });
