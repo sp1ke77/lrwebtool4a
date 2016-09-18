@@ -72,7 +72,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/contatos",
     views: {
       'menuContent': {
-        templateUrl: "templates/contatos.html"
+        templateUrl: "templates/contatos.html",
+        controller: 'ContactCtrl'
       }
     }
   })

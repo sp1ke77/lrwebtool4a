@@ -4,10 +4,15 @@
 		<div class="padding">
 			<div class="list">
 				<h2>Ionic GET Json Example</h2>
-				<p>Username: {{API.username}}</p>
-				<p>Token: {{result.content.rendered|split:',':1}}</p>
-			</div>
+				<p>Username: {{profile}}</p>
+								<p>Username: {{result}}</p>
+				<p>Token: {{profile.content.rendered | split:',':1}}</p>
+				<p>Lista PT: {{result.content.rendered | split:',':2}}</p>
+				<p>Lista ES: {{result.content.rendered | split:',':3}}</p>
+				<p>Nome: {{result.content.rendered | split:',':4}}</p>
+			</div> 
 		</div>
-		
-	</ion-content>
+		 
+	</ion-content> 
 </ion-view>
+  

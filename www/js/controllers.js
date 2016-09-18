@@ -1,20 +1,5 @@
 angular.module('starter.controllers', ['ngSanitize'])
 
-.filter('hrefToJS', function ($sce, $sanitize) {
-    return function (text) {
-        var regex = /href="([\S]+)"/g;
-        var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
-        return $sce.trustAsHtml(newString);
-    }
-})
-
-/*.filter('split', function() {
-        return function(input, splitChar, splitIndex) {
-            // do some bounds checking here to ensure it has that index
-            return input.split(splitChar)[splitIndex];
-        }
-})*/
-
 .controller('AppCtrl', function($scope, $rootScope) {
 
 	// External Links Redir
@@ -30,12 +15,17 @@ angular.module('starter.controllers', ['ngSanitize'])
 	// Load Registry
 	$rootScope.username 	= localStorage.getItem("username");
 	$rootScope.token 		= localStorage.getItem("token");
+	
    
 })
 
 
-.controller('IntroCtrl', function($scope, $state, $ionicSlideBoxDelegate, $ionicHistory, $ionicSideMenuDelegate) {
+.controller('IntroCtrl', function($scope,$rootScope, $state, $ionicSlideBoxDelegate, $ionicHistory, $ionicSideMenuDelegate) {
 
+				$rootScope.profile = localStorage.getItem('profile');
+				console.log('INTROCTRL: ' + $scope.profile);
+
+	
 	$ionicHistory.nextViewOptions({
 		disableBack: true
 	});
@@ -62,10 +52,26 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$scope.toggleLeftSideMenu = function() {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
-
+	
 })
 
-.controller('SindiCtrl', function($rootScope,$scope) {
+.controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate) {
+
+	$rootScope.formPT		= encodeURIComponent('https://mail4mkt.com/index.php/lists/{{profile|split:',':2}}/subscribe');
+	$rootScope.formES		= encodeURIComponent('https://mail4mkt.com/index.php/lists/{{profile|split:',':3}}/subscribe');
+	
+	$scope.next = function() {
+		$ionicSlideBoxDelegate.next();
+	};
+	
+	$scope.previous = function() {
+		$ionicSlideBoxDelegate.previous();
+	};
+
+	
+})
+
+.controller('SindiCtrl', function($rootScope, $scope, $filter) {
 	
 	var deviceInformation = ionic.Platform.device();
 
@@ -147,13 +153,16 @@ angular.module('starter.controllers', ['ngSanitize'])
 				$scope.result = "";
 
 				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U=sp1ke77&T=22256573534&V=afhrfae74tr8348we4ftn23f8')
-					.success(function(data, status, headers,config){
-						console.log('data success');
-						console.log(data); // for browser console
-						$scope.result = data; // for UI
+					.success(function(data, status, headers ,config){
+				console.log('REGISTERCTRL: data success');
+				$scope.result = data.content.rendered; // for UI
+				$scope.saveresult = localStorage.setItem('profile', JSON.stringify(data.content.rendered));
+				$scope.profile = localStorage.getItem('profile');
+				console.log('REGISTERCTRL: ' + $scope.profile);
+					
 				});
 				
-				localStorage.setItem("profile", $scope.result);
+				
         
 			if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){} 
 			else window.location.reload();
@@ -176,7 +185,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 		else if(window.localStorage.getItem("username") !== undefined && window.localStorage.getItem("token") !== undefined) {
 			window.localStorage.removeItem("username");
 			window.localStorage.removeItem("token");
-			window.localStorage.removeItem("profile");
+			localStorage.removeItem("profile");
 			if(alert("Dispositivo removido")){} 
 			else window.location.reload();
 		}
@@ -184,26 +193,34 @@ angular.module('starter.controllers', ['ngSanitize'])
 	};
 })
 
-.controller('AdminCtrl', function($rootScope, $scope, $http) {
+.controller('AdminCtrl', function($rootScope, $scope, $http, $filter) {
 	
 	$scope.result = "";
 
 	$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U=sp1ke77&T=22256573534&V=afhrfae74tr8348we4ftn23f8')
 		.success(function(data, status, headers,config){
-			console.log('data success');
-			console.log(data); // for browser console
-			$scope.result = data; // for UI
-
-			/*var data = $scope.API.data.split(",");
-			
-			$scope.API.username = data[0].trim();
-			$scope.API.token 	= data[1].trim();
-			$scope.API.listPT 	= data[2].trim();
-			$scope.API.listES 	= data[3].trim();
-			$scope.API.fullname	= data[4].trim();*/
-
+				console.log('ADMINCTRL: data success');
+				$scope.result = data.content.rendered; // for UI
+				$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
+				$scope.profile = localStorage.getItem('profile');
+				console.log('ADMINCTRL 2: ' + $scope.profile);
 	});
-		
-		
 	
+})
+ 
+.filter('hrefToJS', function ($sce, $sanitize) {
+    return function (text) {
+        var regex = /href="([\S]+)"/g;
+        var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
+        return $sce.trustAsHtml(newString);
+    }
+})
+
+.filter('split', function() {
+        return function(input, splitChar, splitIndex) {
+            // do some bounds checking here to ensure it has that index
+            if(input!==undefined){
+				return input.split(splitChar)[splitIndex];
+			}
+        }
 });

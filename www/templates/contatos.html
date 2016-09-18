@@ -1,8 +1,12 @@
 <ion-view view-title="CONTATOS">
-  <ion-content padding="false" overflow-scroll="true">
-		 <div class="padding">
-		<div class="list">
-			<form id="mail4mkt" action="https://mail4mkt.com/index.php/lists/ng422y0zf14cb/subscribe" method="post" accept-charset="utf-8">
+  <ion-slide-box>
+	  
+	<ion-slide class="slider-slide2">
+			<div class="slide-content2">
+				<h3><strong>PORTUGAL</strong></h3>
+			<div class="padding">
+			<div class="list">
+			<form id="mail4mkt" action="{{formPT}}" method="post" accept-charset="utf-8">
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">O Seu Nome</span>
@@ -24,6 +28,38 @@
 			</form>
 		</div>
 		</div>
-
-  </ion-content>
+			</div>
+		</ion-slide>
+		
+		<ion-slide class="slider-slide2">
+			<div class="slide-content2">
+				<h3><strong>ESPANHA</strong></h3>
+		 <div class="padding">
+		<div class="list">
+			<form id="mail4mkt" action="{{formES}}" method="post" accept-charset="utf-8">
+				
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">O Seu Nome</span>
+					<input id="FNAME" type="text" class="form-control" name="FNAME" placeholder="Primeiro e Ultimo Nome" value="" required />
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">O Seu Email</span>
+					<input id="EMAIL" type="email" class="form-control" name="EMAIL" placeholder="exemplo@exemplo.xyz" value="" required />
+				</label>
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">O Seu Telefone</span>
+					<input id="PHONE" type="tel" class="form-control" name="PHONE" placeholder="999888777" value=""/>
+				</label>
+				<div class="clearfix"><!-- --></div>
+				<div class="actions">
+					<button id="M4Msubmit" type="submit" class="button button-block button-positive">SIM, quero saber mais!</button>
+				</div>
+				<div class="clearfix"><!-- --></div>
+			</form>
+		</div>
+		</div>
+			</div>
+		</ion-slide>
+		
+	</ion-slide-box> 
 </ion-view>
