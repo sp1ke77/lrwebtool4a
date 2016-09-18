@@ -23,7 +23,11 @@ angular.module('starter.controllers', ['ngSanitize'])
 .controller('IntroCtrl', function($scope,$rootScope, $state, $ionicSlideBoxDelegate, $ionicHistory, $ionicSideMenuDelegate) {
 
 				$rootScope.profile = localStorage.getItem('profile');
-				console.log('INTROCTRL: ' + $scope.profile);
+				$rootScope.profilesplit = $rootScope.profile.split(',');
+				if(input!==undefined){
+					$rootScope.profilename = $rootScope.profilesplit[0];
+				} else { $rootScope.profilename = ''; }
+				console.log('INTROCTRL: ' + $rootScope.profilename);
 
 	
 	$ionicHistory.nextViewOptions({
