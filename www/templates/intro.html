@@ -3,7 +3,7 @@
 
 		<ion-slide>
 			<div class="slide-content">
-				<h3><strong>BEM VINDO <br>{{profile|split:',':4}}</strong></h3>
+				<h3><strong>BEM VINDO <br>{{profilename}}</strong></h3>
 				<button class="button button-block button-balanced" ng-if="!username" ng-if="!token" ng-click="startApp()">Registar Dispositivo</button>
 				<button class="button button-block button-balanced" ng-if="username" ng-if="token" ng-click="toggleLeftSideMenu()">Ver Menu</button>
 			</div>

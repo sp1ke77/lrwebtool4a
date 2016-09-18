@@ -24,7 +24,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 				$rootScope.profile = localStorage.getItem('profile');
 				$rootScope.profilesplit = $rootScope.profile.split(',');
-				if(input!==undefined){
+				if($rootScope.profilename!==undefined){
 					$rootScope.profilename = $rootScope.profilesplit[0];
 				} else { $rootScope.profilename = ''; }
 				console.log('INTROCTRL: ' + $rootScope.profilename);
