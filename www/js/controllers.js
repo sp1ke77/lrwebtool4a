@@ -79,6 +79,10 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$ionicSlideBoxDelegate.previous();
 	};
 
+	// Open side menu
+	$scope.toggleLeftSideMenu = function() {
+		$ionicSideMenuDelegate.toggleLeft();
+	};
 	
 })
 
@@ -153,7 +157,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 })
 	
 	
-.controller('RegisterCtrl', function($rootScope, $scope, $http, $state, $filter) {
+.controller('RegisterCtrl', function($rootScope, $scope, $http, $state, $filter, $ionicSideMenuDelegate) {
 	
 	$scope.registerdevice = function() {
 
@@ -198,7 +202,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 							if(alert("Dados Invalidos")){} 
 							else window.location.reload();
 						} 
-						if($scope.result == 'ERRO'){
+						if($scope.result == 'ERRO\n'){
 							window.localStorage.removeItem("username");
 							window.localStorage.removeItem("token");
 							localStorage.removeItem("profile");
@@ -208,7 +212,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 						
 						
 						
-						if($scope.result != undefined && $scope.result != null){
+						if(($scope.result != undefined) && ($scope.result != null) && ($scope.result != 'ERRO\n')){
 							
 						$scope.openaccount = localStorage.setItem('account', 'OK');
 						$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
@@ -224,8 +228,9 @@ angular.module('starter.controllers', ['ngSanitize'])
 						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
 
 							if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){ } 
-							else window.location.reload();
+							else $scope.openmenu = $ionicSideMenuDelegate.toggleLeft();
 						}
+						
 					});
 
 			
