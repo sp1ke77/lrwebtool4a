@@ -1,7 +1,7 @@
 <ion-side-menus enable-menu-with-back-views="true">
   <ion-side-menu-content>
 
-    <ion-nav-bar class="bar-balanced">
+    <ion-nav-bar class="bar-balanced custom-lrwine">
 		  <ion-nav-back-button>	</ion-nav-back-button>
      
       <ion-nav-buttons side="left">
@@ -12,17 +12,17 @@
     
     <ion-nav-view name="menuContent"></ion-nav-view>
     
-  </ion-side-menu-content edge-drag-threshold="true">
+  </ion-side-menu-content edge-drag-threshold="false">
 
   <ion-side-menu side="left">
-    <ion-header-bar class="bar-balanced">
+    <ion-header-bar class="bar-balanced custom-lrwine">
       
     </ion-header-bar>
     <ion-content>
 
       <ion-list>
-        <ion-item class="item item-icon-left" nav-clear menu-close">
-		<img src="http://lrwebtool.com/wp-content/uploads/2016/04/LR-logoverde-e1470797571461.png" width="40%"/>
+        <ion-item nav-clear menu-close">
+		<center><img src="http://lrwebtool.com/wp-content/uploads/2016/04/LR-logoverde-e1470797571461.png" width="35%"/></center>
         </ion-item>
         
         <ion-item class="item item-icon-left" nav-clear menu-close href="#/app/intro">
@@ -32,7 +32,7 @@
 
         <ion-item class="item item-icon-left" nav-clear menu-close href="#/app/api">
           <i class="icon ion-android-list"></i>
-          Configuração
+          Ativação
         </ion-item>
         
         <div ng-if="account == 'OK'">
@@ -64,15 +64,18 @@
 		<div ng-if="username == 'sp1ke77'">
 			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/admin">
 			<i class="icon ion-locked"></i>
-			ADMIN
+			Device Info
 			</ion-item>
 		</div>
       </ion-list>
       
       <div class="padding">
-      <div ng-if="account == 'OK'"><p>{{profilename}}</p></div>
-      <p>2016, L4Marketing LLC</p>
+      <div class="title3" ng-if="account == 'OK'">{{profilename}}</div>
       </div>
     </ion-content>
+     	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
+			<h1 class="title2">2016, L4Marketing LLC</h1>
+
+	</ion-footer-bar>
   </ion-side-menu>
 </ion-side-menus>

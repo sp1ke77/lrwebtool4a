@@ -1,6 +1,53 @@
 /* Empty. Add your own CSS if you like */
+
+.custom-lrwine{
+    color : #FFFFFF !important;
+    background-color: #9B2957 !important;
+    border-color: #9B2957 !important;
+}
+
 .item-content p.post-excerpt {
 	white-space: wrap;
+}
+
+.title2 {
+    height: 43px;
+    line-height: 44px;
+    font-size: 10px !important;
+    text-align: center !important;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #fff;
+    
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    margin: 0 10px;
+    min-width: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.title3 {
+    height: 43px;
+    line-height: 44px;
+    font-size: 12px !important;
+    text-align: center !important;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #000 !important;
+    
+    display: block;
+    z-index: 0;
+    overflow: hidden;
+    margin: 0 10px;
+    min-width: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .login-modal .close-button .icon::before {
@@ -163,19 +210,24 @@
 }
 	 
 	.crunchify-link {
-		padding: 2px 8px 4px 8px !important;
+		padding: 10px 10px 10px 10px !important;
 		color: white;
-		font-size: 22px;
+		font-size: 18px;
+		font-weight: 700;
 		border-radius: 2px;
-		margin-right: 2px;
 		cursor: pointer;
 		-moz-background-clip: padding;
 		-webkit-background-clip: padding-box;
 		box-shadow: inset 0 -3px 0 rgba(0,0,0,.2);
 		-moz-box-shadow: inset 0 -3px 0 rgba(0,0,0,.2);
 		-webkit-box-shadow: inset 0 -3px 0 rgba(0,0,0,.2);
-		margin-top: 2px;
+		margin-top: 5px;
 		display: inline-block;
+		margin-left: auto ;
+		margin-right: auto ;
+		width: 30%;
+		text-align: center;
+		text-decoration: none;
 	}
 	 
 	.crunchify-link:hover,.crunchify-link:active {
@@ -247,11 +299,11 @@
 	}
 	 
 	.crunchify-social {
-		margin: 10px 0px 15px 0px;
+		margin: 10px 0px 25px 0px;
 		-webkit-font-smoothing: antialiased;
-		font-size: 15px;
+		font-size: 14px;
 		margin-left: auto ;
 		margin-right: auto ;
-		width: 320px;
+		width: 90%;
 		
 	}
