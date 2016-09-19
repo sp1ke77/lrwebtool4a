@@ -46,12 +46,12 @@
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Nome</span>
-					<input id="FNAME" type="text" class="form-control" name="FNAME" placeholder="Primeiro e Ultimo Nome" value="" ng-required="true" />
+					<input ng-model="FNAME" id="FNAME" type="text" class="form-control" name="FNAME" placeholder="Primeiro e Ultimo Nome" value="" ng-required="true" />
 				</label>
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Email</span>
-					<input id="EMAIL" type="email" class="form-control" name="EMAIL" placeholder="exemplo@exemplo.xyz" value="" ng-required="true" />
+					<input ng-model="EMAIL" id="EMAIL" type="email" class="form-control" name="EMAIL" placeholder="exemplo@exemplo.xyz" value="" ng-required="true" />
 				</label>
 				
 				<label class="item item-input item-stacked-label">
@@ -62,7 +62,7 @@
 				<div class="clearfix"><!-- --></div>
 				
 				<div class="actions">
-					<button id="M4Msubmit" type="submit" class="button button-block button-positive">Registar Contato</button>
+					<button ng-if="FNAME" ng-if="EMAIL" id="M4Msubmit" type="submit" class="button button-block button-positive">Registar Contato</button>
 				</div>
 				
 				<div class="clearfix"><!-- --></div>
