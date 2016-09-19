@@ -4,7 +4,7 @@
 <div class="padding">
 	<div class="list">
 
-		<form action="//lrwebtool.com/wp-content/plugin/L4M-Webtool/app/l4m-process-support-form.php" method="post">	
+		<form action="//lrwebtool.com/wp-content/plugin/L4M-Webtool/api/l4m-process-support-form.php" method="post">	
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Nome</span>
@@ -41,7 +41,7 @@
 				<textarea placeholder="Coloque Aqui a Sua Questão" name="questao" ng-model="questao"  required></textarea>
 			</label>  
 		  
-			<button class="button button-block button-positive">ENVIAR</button>
+			<button ng-disabled="!(!!questao )" class="button button-block button-positive">ENVIAR</button>
 		  
 		</form>  
 	   
