@@ -3,10 +3,9 @@
 
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.wpionic.app" version="1.0.0">
 
-   <name>LRWEBTOOL 4</name>
-   <description>LRWEBTOOL 4</description>
-   <author href="http://l4marketing.com" email="admin@l4marketing.com">L4 Marketing</author>
-
+   <name>LRWEBTOOL</name>
+   <description>Ferramenta Online para Parceiros LR</description>
+   <author href="http://l4marketing.com" email="admin@l4marketing.com">L4 Marketing LLC</author>
 
 	<gap:platform name="ios" />
 	<gap:platform name="android" />
@@ -18,17 +17,13 @@
 	<feature name="http://api.phonegap.com/1.0/device" />
 	<plugin name="cordova-plugin-whitelist" source="npm"/>
 	<plugin name="cordova-plugin-device" source="npm" />
-	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
 	<plugin name="cordova-plugin-dialogs" source="npm" />
 	<plugin name="cordova-plugin-network-information" source="npm" />
 	<plugin name="cordova-plugin-vibration" source="npm" />
 
-	<preference name="AutoHideSplashScreen" value="true" />
-	<preference name="SplashScreenDelay" value="1000" />
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<preference name="keyboardDisplayRequiresUserAction" value="false" />
-	<preference name="ShowSplashScreenSpinner" value="false" />
 	<preference name="DisallowOverscroll" value="true" />
 
 	<icon src="icon.png" />
@@ -39,18 +34,6 @@
         <icon   src="res/icon/android/drawable-xhdpi/icon.png"              density="xhdpi" />
         <icon   src="res/icon/android/drawable-xxhdpi/icon.png"             density="xxhdpi" />
         <icon   src="res/icon/android/drawable-xxxhdpi/icon.png"            density="xxxhdpi" />
-        <splash src="res/screen/android/drawable-land-ldpi/screen.png"      density="land-ldpi" />
-        <splash src="res/screen/android/drawable-land-mdpi/screen.png"      density="land-mdpi" />
-        <splash src="res/screen/android/drawable-land-hdpi/screen.png"      density="land-hdpi" />
-        <splash src="res/screen/android/drawable-land-xhdpi/screen.png"     density="land-xhdpi" />
-        <splash src="res/screen/android/drawable-land-xxhdpi/screen.png"    density="land-xxhdpi" />
-        <splash src="res/screen/android/drawable-land-xxxhdpi/screen.png"   density="land-xxxhdpi" />
-        <splash src="res/screen/android/drawable-port-ldpi/screen.png"      density="port-ldpi" />
-        <splash src="res/screen/android/drawable-port-mdpi/screen.png"      density="port-mdpi" />
-        <splash src="res/screen/android/drawable-port-hdpi/screen.png"      density="port-hdpi" />
-        <splash src="res/screen/android/drawable-port-xhdpi/screen.png"     density="port-xhdpi" />
-        <splash src="res/screen/android/drawable-port-xxhdpi/screen.png"    density="port-xxhdpi" />
-        <splash src="res/screen/android/drawable-port-xxxhdpi/screen.png"   density="port-xxxhdpi" />
     </platform>
 
     <platform name="ios">
