@@ -20,7 +20,6 @@ angular.module('starter.controllers', ['ngSanitize'])
    
 })
 
-
 .controller('IntroCtrl', function($scope,$rootScope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
 
 				$scope.profile = localStorage.getItem('profile');
@@ -118,7 +117,6 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 })
 
-
 .controller('SindiCtrl', function($rootScope, $scope, $filter) {
 	
 	var deviceInformation = ionic.Platform.device();
@@ -188,7 +186,6 @@ angular.module('starter.controllers', ['ngSanitize'])
 	if (isAndroid) { $scope.htmlsms5 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username+' '+$rootScope.titulo5;}
       	
 })
-	
 	
 .controller('RegisterCtrl', function($rootScope, $scope, $http, $state, $filter, $ionicSideMenuDelegate) {
 	
@@ -271,7 +268,6 @@ angular.module('starter.controllers', ['ngSanitize'])
 	};
 
 })
-
 
 .controller('UnregisterCtrl', function($rootScope, $scope) {
 	
