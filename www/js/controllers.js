@@ -65,6 +65,8 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 .controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate, $sce) {
 
+	
+	//local storage data
 	$scope.profile = localStorage.getItem('profile');
 	
 	if($scope.profile != undefined && $scope.profile != null){

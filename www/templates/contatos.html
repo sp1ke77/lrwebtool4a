@@ -5,25 +5,39 @@
 				<h3><strong>PORTUGAL</strong></h3>
 			<div class="padding">
 			<div class="list">
-			<form id="mail4mkt" action="{{formPT}}" method="post" accept-charset="utf-8">			
+			<form id="mail4mkt" action="{{formPT}}" method="post" accept-charset="utf-8" name="FormPT">			
 						
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Nome</span>
-					<input id="FNAME" type="text" class="form-control" name="FNAME" placeholder="Primeiro e Ultimo Nome" value="" required />
+					<input id="FNAME" type="text" class="form-control" name="FNAME" placeholder="Primeiro e Ultimo Nome" value="" ng-required="true"/>
 				</label>
+				<div role="alert">
+				  <span class="error" ng-show="FormPT.FNAME.$error.required">
+				   Preencha este campo!</span>
+				</div>
+				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Email</span>
-					<input id="EMAIL" type="email" class="form-control" name="EMAIL" placeholder="exemplo@exemplo.xyz" value="" required />
+					<input id="EMAIL" type="email" class="form-control" name="EMAIL" placeholder="exemplo@exemplo.xyz" value="" ng-required="true"/>
 				</label>
+				<div role="alert">
+				  <span class="error" ng-show="FormPT.EMAIL.$error.required">
+				   Preencha este campo!</span>
+				</div>
+				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Telefone</span>
 					<input id="PHONE" type="tel" class="form-control" name="PHONE" placeholder="999888777" value=""/>
 				</label>
+				
 				<div class="clearfix"><!-- --></div>
+				
 				<div class="actions">
 					<button id="M4Msubmit" type="submit" class="button button-block button-positive">Registar Contato</button>
 				</div>
+				
 				<div class="clearfix"><!-- --></div>
+			
 			</form>
 		</div>
 		</div>
@@ -36,25 +50,39 @@
 				<h3><strong>ESPANHA</strong></h3>
 		 <div class="padding">
 		<div class="list">
-			<form id="mail4mkt" action="{{formES}}" method="post" accept-charset="utf-8">
+			<form id="mail4mkt" action="{{formES}}" method="post" accept-charset="utf-8" name="FormES">
 				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Nome</span>
-					<input id="FNAME" type="text" class="form-control" name="FNAME" placeholder="Primeiro e Ultimo Nome" value="" required />
+					<input id="FNAME" type="text" class="form-control" name="FNAME" placeholder="Primeiro e Ultimo Nome" value="" ng-required="true" />
 				</label>
+				<div role="alert">
+				  <span class="error" ng-show="FormES.FNAME.$error.required">
+				   Preencha este campo!</span>
+				</div>
+				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Email</span>
-					<input id="EMAIL" type="email" class="form-control" name="EMAIL" placeholder="exemplo@exemplo.xyz" value="" required />
+					<input id="EMAIL" type="email" class="form-control" name="EMAIL" placeholder="exemplo@exemplo.xyz" value="" ng-required="true" />
 				</label>
+				<div role="alert">
+				  <span class="error" ng-show="FormES.EMAIL.$error.required">
+				   Preencha este campo!</span>
+				</div>
+				
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Telefone</span>
 					<input id="PHONE" type="tel" class="form-control" name="PHONE" placeholder="999888777" value=""/>
 				</label>
+				
 				<div class="clearfix"><!-- --></div>
+				
 				<div class="actions">
 					<button id="M4Msubmit" type="submit" class="button button-block button-positive">Registar Contato</button>
 				</div>
+				
 				<div class="clearfix"><!-- --></div>
+			
 			</form>
 		</div>
 		</div>
