@@ -182,8 +182,16 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$scope.htmlgoogleplus5 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
 	$scope.htmllinkedin5 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo5+'" target="_blank">LinkedIn</a>';
 	
-	if (isIOS) { $scope.htmlsms5 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username+' '+$rootScope.titulo5;} 
-	if (isAndroid) { $scope.htmlsms5 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username+' '+$rootScope.titulo5;}
+	// PC 6
+	$rootScope.titulo6		= 'Cristina%20Ferreira%20-%20Para%20Homem';
+	$rootScope.slug6		= 'celebridades-cfh';
+	$scope.htmlfacebook6 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter6 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo6+'&amp;url=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus6 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin6 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo6+'" target="_blank">LinkedIn</a>';
+	
+	if (isIOS) { $scope.htmlsms6 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+' '+$rootScope.titulo6;} 
+	if (isAndroid) { $scope.htmlsms6 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+' '+$rootScope.titulo6;}
       	
 })
 	
@@ -258,7 +266,12 @@ angular.module('starter.controllers', ['ngSanitize'])
 						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
 
 							if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){ } 
-							else window.location.reload();
+							else 
+							//window.location.reload();
+								// Called to navigate to the main app
+								//$scope.GoHome = function() {
+									$state.go('app.intro');
+								//};
 						}
 						
 					});
