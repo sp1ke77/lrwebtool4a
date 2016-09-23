@@ -8,29 +8,29 @@
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Nome</span>
-				<input type="text" placeholder="webtool" name="name" ng-model="suporte.name" ng-required="required">
+				<input type="text" placeholder="webtool" name="name" ng-model="suporte.name" ng-required="true">
 			</label>
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">ID de Parceiro</span>
-				<input type="text" placeholder="PT12345678" name="idlr" ng-model="suporte.idlr"  ng-required="required">
+				<input type="text" placeholder="PT12345678" name="idlr" ng-model="suporte.idlr"  ng-required="true">
 			</label> 
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Email</span>
-				<input type="text" placeholder="email@email.xxx" name="email" ng-model="suporte.email"  ng-required="required">
+				<input type="text" placeholder="email@email.xxx" name="email" ng-model="suporte.email"  ng-required="true">
 			</label>  
 			
 			 <label class="item item-input item-select">
 					<div class="input-label">Departamento:</div>
 				   
-				   <select ng-model="suporte.departamento" ng-options="departamento.value as departamento.nome for departamento in departamentos" ng-required="required">
+				   <select ng-model="suporte.departamento" ng-options="departamento.value as departamento.nome for departamento in departamentos" ng-required="true">
 					<option value="">Escolha o departamento</option>	
 				   </select>
 			</label>	   
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Questão</span>
-				<textarea placeholder="Coloque Aqui a Sua Questão" ng-model="suporte.questao" ng-required="required"></textarea>
+				<textarea placeholder="Coloque Aqui a Sua Questão" ng-model="suporte.questao" ng-required="true"></textarea>
 			</label>  
 		  
 			<button ng-click="submit()" ng-disabled="!(!!suporte.questao )" class="button button-block button-positive">ENVIAR</button>
