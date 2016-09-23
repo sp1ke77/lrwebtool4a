@@ -109,12 +109,17 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$scope.name 		= $scope.profilesplit[4];
 		$scope.idlr 		= $scope.profilesplit[5];
 		$scope.email 		= $scope.profilesplit[6];
-		$scope.departamentos = [ 
+	}
+	
+	$scope.departamentos = [ 
 			{ nome:'Webtool', value:'webtool' },
 			{ nome:'Financeiro', value:'financeiro' },
 			{ nome:'Email Marketing', value:'emailmarketing' } 
 		];
-	}
+	
+	var dept = $scope.departamento;
+	var quest = $scope.questao;
+	
 	
 	$server_url = 'http://lrwebtool.com/wp-content/plugins/L4M-Webtool/api/l4m-process-support-form.php';
 	
