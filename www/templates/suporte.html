@@ -34,7 +34,7 @@
 				<textarea placeholder="Coloque Aqui a Sua Questão" name="questao" ng-model="questao"  required>{{questao}}</textarea>
 			</label>  
 		  
-			<button ng-disabled="!(!!questao )" class="button button-block button-positive">ENVIAR</button>
+			<button ng-click="submit()" ng-disabled="!(!!questao )" class="button button-block button-positive">ENVIAR</button>
 
 		</form>  
 	   
