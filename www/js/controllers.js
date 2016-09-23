@@ -125,7 +125,8 @@ angular.module('starter.controllers', ['ngSanitize'])
 		result = $http.get($server_url + '?name=' +$scope.suporte.name + '&idlr=' +$scope.suporte.idlr + '&email=' +$scope.suporte.email + '&departamento=' +$scope.suporte.departamento + '&questao=' +$scope.suporte.questao)
 	.then(function (result) {
 		var json = JSON.stringify(result);
-		alert('teste1:' + json.data);
+		//alert('teste1:' + json.data);
+		alert(json);
 		
 		}, function (result) {
 			var json = JSON.stringify(result);
