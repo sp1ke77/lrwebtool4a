@@ -124,13 +124,13 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$server_url = 'http://lrwebtool.com/wp-content/plugins/L4M-Webtool/api/l4m-process-support-form.php';
 		result = $http.get($server_url + '?name=' +$scope.suporte.name + '&idlr=' +$scope.suporte.idlr + '&email=' +$scope.suporte.email + '&departamento=' +$scope.suporte.departamento + '&questao=' +$scope.suporte.questao)
 	.then(function (result) {
-		var json = JSON.stringify(result);
+		var json = JSON.parse(result);
 		alert(json.data);
 		//alert(json);
 		
 		}, function (result) {
-			var json = JSON.stringify(result);
-			alert('teste2:' + json.data);
+			var json = JSON.parse(result);
+			alert(json.data);
 			
 		})
 	}
