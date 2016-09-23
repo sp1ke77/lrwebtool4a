@@ -24,7 +24,7 @@
 
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<preference name="keyboardDisplayRequiresUserAction" value="false" />
-	<preference name="DisallowOverscroll" value="true" />
+	<preference name="DisallowOverscroll" value="false" />
 
 	<icon src="icon.png" />
     <platform name="android">
@@ -61,11 +61,13 @@
 	<access origin="sms:*" launch-external="yes" />
 	<access origin="whatsapp:*" launch-external="yes" />
 	
-	<allow-navigation href="*" />
+	<allow-navigation href="http://*/*" />
+	<allow-navigation href="https://*/*" />
 	
-	<allow-intent href="*" />
 	<allow-intent href="http://*/*" />
 	<allow-intent href="https://*/*" />
+	<allow-intent href="tel:*" />
+	<allow-intent href="whatsapp:*" />
 	
 	<content src="index.html" />
 
