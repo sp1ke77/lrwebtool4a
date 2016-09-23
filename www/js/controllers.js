@@ -105,10 +105,11 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$scope.profile = localStorage.getItem('profile');
 	
 	if($scope.profile != undefined && $scope.profile != null){
+		$scope.suporte = {};
 		$scope.profilesplit = $scope.profile.split(',');
-		$scope.name 		= $scope.profilesplit[4];
-		$scope.idlr 		= $scope.profilesplit[5];
-		$scope.email 		= $scope.profilesplit[6];
+		$scope.suporte.name 		= $scope.profilesplit[4];
+		$scope.suporte.idlr 		= $scope.profilesplit[5];
+		$scope.suporte.email 		= $scope.profilesplit[6];
 	}
 	
 	$scope.departamentos = [ 
@@ -117,26 +118,29 @@ angular.module('starter.controllers', ['ngSanitize'])
 			{ nome:'Email Marketing', value:'emailmarketing' } 
 		];
 	
-	var dept = $scope.departamento;
-	var quest = $scope.questao;
 	
-	
-	$server_url = 'http://lrwebtool.com/wp-content/plugins/L4M-Webtool/api/l4m-process-support-form.php';
 	
 	$scope.submit = function() {
-		var result = $http.get($server_url + '?name=' +$scope.name + '&idlr=' +$scope.idlr + '&email=' +$scope.email + '&departamento=' +$scope.departamento + '&questao=' +$scope.questao)
+		$server_url = 'http://lrwebtool.com/wp-content/plugins/L4M-Webtool/api/l4m-process-support-form.php';
+		result = $http.get($server_url + '?name=' +$scope.suporte.name + '&idlr=' +$scope.suporte.idlr + '&email=' +$scope.suporte.email + '&departamento=' +$scope.suporte.departamento + '&questao=' +$scope.suporte.questao)
 	.then(function (result) {
-		alert(result);
+		var json = JSON.stringify(result);
+		alert('teste1:' + json.data);
+		
 		}, function (result) {
-			alert(result);
+			var json = JSON.stringify(result);
+			alert('teste2:' + json.data);
+			
 		})
 	}
 	
-	console.log('SUPORTECTRL 1: ' + $scope.name);
-	console.log('SUPORTECTRL 2: ' + $scope.idlr);
-	console.log('SUPORTECTRL 3: ' + $scope.email);
-	console.log('SUPORTECTRL 4: ' + $scope.departamento);
-	console.log('SUPORTECTRL 5: ' + $scope.questao);
+	console.log('SUPORTECTRL 1: ' + $scope.suporte.name);
+	console.log('SUPORTECTRL 2: ' + $scope.suporte.idlr);
+	console.log('SUPORTECTRL 3: ' + $scope.suporte.email);
+	console.log('SUPORTECTRL 4: ' + $scope.suporte.departamento);
+	console.log('SUPORTECTRL 5: ' + $scope.suporte.questao);
+
+    
 
 })
 

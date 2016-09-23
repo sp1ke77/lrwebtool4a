@@ -8,33 +8,32 @@
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Nome</span>
-				<input type="text" placeholder="webtool" name="name" ng-model="name" required>
+				<input type="text" placeholder="webtool" name="name" ng-model="suporte.name" required>
 			</label>
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">ID de Parceiro</span>
-				<input type="text" placeholder="PT12345678" name="idlr" ng-model="idlr"  required>
+				<input type="text" placeholder="PT12345678" name="idlr" ng-model="suporte.idlr"  required>
 			</label> 
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Email</span>
-				<input type="text" placeholder="email@email.xxx" name="email" ng-model="email"  required>
+				<input type="text" placeholder="email@email.xxx" name="email" ng-model="suporte.email"  required>
 			</label>  
 			
 			 <label class="item item-input item-select">
 					<div class="input-label">Departamento:</div>
 				   
-				   <select name="departamento" name="departamento" value="{{departamento}}" ng-model="departamento" ng-options="departamento.value as departamento.nome for departamento in departamentos" required="required">
+				   <select ng-model="suporte.departamento" ng-options="departamento.value as departamento.nome for departamento in departamentos" required="required">
 					<option value="">Escolha o departamento</option>	
-				   
 				   </select>
 			</label>	   
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Questão</span>
-				<textarea placeholder="Coloque Aqui a Sua Questão" name="questao" ng-model="questao"  required>{{questao}}</textarea>
+				<textarea placeholder="Coloque Aqui a Sua Questão" ng-model="suporte.questao" required></textarea>
 			</label>  
 		  
-			<button ng-click="submit()" ng-disabled="!(!!questao )" class="button button-block button-positive">ENVIAR</button>
+			<button ng-click="submit()" ng-disabled="!(!!suporte.questao )" class="button button-block button-positive">ENVIAR</button>
 
 		</form>  
 	   
