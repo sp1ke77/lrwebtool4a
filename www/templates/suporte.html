@@ -1,49 +1,45 @@
 <ion-view view-title="SUPORTE">
   <ion-content padding="false" overflow-scroll="true">
-	  <ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
+
 <div class="padding">
 	<div class="list">
 
-		<form action="http://lrwebtool.com/wp-content/plugins/L4M-Webtool/api/l4m-process-support-form.php" method="post">	
+		<form method="post">	
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Nome</span>
-				<input type="text" placeholder="webtool" name="name" ng-model="profilename" required>
+				<input type="text" placeholder="webtool" name="name" ng-model="name" required>
 			</label>
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">ID de Parceiro</span>
-				<input type="text" placeholder="PT12345678" name="idlr" ng-model="profileidlr"  required>
+				<input type="text" placeholder="PT12345678" name="idlr" ng-model="idlr"  required>
 			</label> 
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Email</span>
-				<input type="text" placeholder="email@email.xxx" name="email" ng-model="profilemail"  required>
+				<input type="text" placeholder="email@email.xxx" name="email" ng-model="email"  required>
 			</label>  
 			
 			 <label class="item item-input item-select">
-					<div class="input-label">	Departamento:</div>
+					<div class="input-label">Departamento:</div>
 				   
-				   <select name="departamento" id="departamento" required="required">
-						<option id="lrwebtool" value="webtool">
-							LR WebTool
-						</option>
-						<option id="financeiro" value="financeiro">
-							 Financeiro
-						</option>
-						<option id="emailmarketing" value="emailmarketing">
-							 Email Marketing
-						</option>
+				   <select name="departamento" name="departamento" value="{{departamento}}" ng-model="departamento" ng-options="departamento.value as departamento.nome for departamento in departamentos" required="required">
+					<option value="">Escolha o departamento</option>	
+				   
 				   </select>
 			</label>	   
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Questão</span>
-				<textarea placeholder="Coloque Aqui a Sua Questão" name="questao" ng-model="questao"  required></textarea>
+				<textarea placeholder="Coloque Aqui a Sua Questão" name="questao" ng-model="questao"  required>{{questao}}</textarea>
 			</label>  
 		  
 			<button ng-disabled="!(!!questao )" class="button button-block button-positive">ENVIAR</button>
-		  
+
 		</form>  
+	   
+
+	   
 	   
 	</div>
 </div>

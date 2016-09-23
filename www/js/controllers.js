@@ -100,20 +100,36 @@ angular.module('starter.controllers', ['ngSanitize'])
 	
 })
 
-.controller('SuporteCtrl', function($scope, $rootScope) {
+.controller('SuporteCtrl', function($scope, $http) {
 
 	$scope.profile = localStorage.getItem('profile');
 	
 	if($scope.profile != undefined && $scope.profile != null){
-		$scope.profilesplit 		= $scope.profile.split(',');
-		$rootScope.profilename 		= $scope.profilesplit[4];
-		$rootScope.profileidlr 		= $scope.profilesplit[5];
-		$rootScope.profilemail 		= $scope.profilesplit[6];
+		$scope.profilesplit = $scope.profile.split(',');
+		$scope.name 		= $scope.profilesplit[4];
+		$scope.idlr 		= $scope.profilesplit[5];
+		$scope.email 		= $scope.profilesplit[6];
+		$scope.departamentos = [ 
+			{ nome:'Webtool', value:'webtool' },
+			{ nome:'Financeiro', value:'financeiro' },
+			{ nome:'Email Marketing', value:'emailmarketing' } 
+		];
 	}
 	
-	console.log('SUPORTECTRL 1: ' + $rootScope.profilename);
-	console.log('SUPORTECTRL 2: ' + $rootScope.profileidlr);
-	console.log('SUPORTECTRL 3: ' + $rootScope.profilemail);
+	$server_url = 'http://lrwebtool.com/wp-content/plugins/L4M-Webtool/api/l4m-process-support-form.php';
+	
+	$http.get($server_url + '?name=' +$scope.name + '&idlr=' +$scope.idlr + '&email=' +$scope.email + '&departamento=' +$scope.departamento + '&questao=' +$scope.questao)
+	.then(function (result) {
+		alert('Good');
+		}, function (result) {
+			alert('Bad');
+		})
+	
+	console.log('SUPORTECTRL 1: ' + $scope.name);
+	console.log('SUPORTECTRL 2: ' + $scope.idlr);
+	console.log('SUPORTECTRL 3: ' + $scope.email);
+	console.log('SUPORTECTRL 4: ' + $scope.departamento);
+	console.log('SUPORTECTRL 5: ' + $scope.questao);
 
 })
 
