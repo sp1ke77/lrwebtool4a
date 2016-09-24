@@ -299,7 +299,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
 
 							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave: " + localStorage.getItem("token"))){ } 
-							else window.location.reload();
+							else window.location.reload(); $state.go('app.intro');
 						}
 						
 					});
@@ -323,7 +323,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 			localStorage.removeItem("profile");
 			localStorage.removeItem('account');
 			if(alert("Dispositivo removido")){} 
-			else window.location.reload();
+			else window.location.reload(); $state.go('app.intro');
 		}
 
 	};
