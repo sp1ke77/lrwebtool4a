@@ -84,6 +84,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$rootScope.formES = $sce.trustAsResourceUrl($scope.fes1);
 	
 	console.log('CONTACTCTRL 3: ' + $rootScope.formPT);
+	console.log('CONTACTCTRL 3: ' + $rootScope.formES);
 	
 	$scope.next = function() {
 		$ionicSlideBoxDelegate.next();
