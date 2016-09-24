@@ -296,7 +296,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 							
 						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
 
-							if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){ } 
+							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave: " + localStorage.getItem("token"))){ } 
 							else $state.go('app.intro');
 						}
 						
