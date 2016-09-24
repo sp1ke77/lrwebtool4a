@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngSanitize'])
+angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 
 .controller('AppCtrl', function($scope, $rootScope, $state) {
 
