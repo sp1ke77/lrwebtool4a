@@ -59,14 +59,14 @@ angular.module('starter', ['ionic','starter.controllers'])
   })
   
    
-    .state('app.m4m', {
+   /* .state('app.m4m', {
     url: "/m4m",
     views: {
       'menuContent': {
         templateUrl: "templates/m4m.html",
       }
     }
-  })
+  })*/
   
     .state('app.contatos', {
     url: "/contatos",
@@ -86,9 +86,9 @@ angular.module('starter', ['ionic','starter.controllers'])
         controller: 'SuporteCtrl'
       }
     }
-  })
+  });
   
-  .state('app.admin', {
+  /*.state('app.admin', {
     url: "/admin",
     views: {
       'menuContent': {
@@ -96,7 +96,7 @@ angular.module('starter', ['ionic','starter.controllers'])
         controller: 'AdminCtrl'
       }
     }
-  });
+  });*/
   
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/intro');

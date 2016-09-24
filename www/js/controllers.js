@@ -297,7 +297,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
 
 							if(alert("Dispositivo Registado com os dados : " + localStorage.getItem("username") + " / " + localStorage.getItem("token"))){ } 
-							else window.location.reload();
+							else $state.go('app.intro');
 						}
 						
 					});
@@ -327,11 +327,11 @@ angular.module('starter.controllers', ['ngSanitize'])
 	};
 })
 
-.controller('AdminCtrl', function($rootScope, $scope, $http, $filter) {
+/*.controller('AdminCtrl', function($rootScope, $scope, $http, $filter) {
 	
 	
 	
-})
+})*/
  
 .filter('hrefToJS', function ($sce, $sanitize) {
     return function (text) {
