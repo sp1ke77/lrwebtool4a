@@ -11,6 +11,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$scope.GoToSuporte = function() {
 		$state.go('app.suporte');
 	}
+
 	
 	// Load Registry
 	$rootScope.username 	= localStorage.getItem("username");
@@ -298,7 +299,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
 
 							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave: " + localStorage.getItem("token"))){ } 
-							else $state.go('app.intro');
+							else window.location.reload();
 						}
 						
 					});
