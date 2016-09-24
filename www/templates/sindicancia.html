@@ -79,20 +79,7 @@
 		
 		<br /><br /><br /><br /> 
  
-		<div class="crunchify-social">
-        <a class="crunchify-link crunchify-facebook"
-                socialshare
-                socialshare-provider="email"
-                socialshare-body="Hello! http://720kb.net"
-                socialshare-to="test@test.ing"
-                socialshare-cc="test@test.ing"
-                socialshare-media="https://www.google.it/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
-                socialshare-subject="Very important email"
-                socialshare-popup-height="300"
-                socialshare-popup-width="400">
-            <i class="fa fa-envelope"></i> Share via Email
-        </a>
-    </div>
+
  <div>
         <button class="crunchify-link crunchify-facebook btn btn-medium font-bold"
                 socialshare
@@ -100,6 +87,7 @@
                 socialshare-type="sharer"
                 socialshare-text="720kb"
                 socialshare-url="http://720kb.net"
+                socialshare-redirect-uri="<script> window.history.back(); </script>"
                 socialshare-popup-height="200"
                 socialshare-popup-width="200"
                 socialshare-trigger="click">
@@ -108,13 +96,13 @@
     </div>
     
      <div>
-            <button class="btn btn-medium font-bold"
+            <button class="crunchify-link crunchify-facebook btn btn-medium font-bold"
                     socialshare
                     socialshare-provider="facebook"
                     socialshare-type="send"
                     socialshare-via="145634995501895"
                     socialshare-url="http://720kb.net"
-                    socialshare-redirect-uri="http://localhost"
+                    socialshare-redirect-uri="<script> window.history.back(); </script>"
                     socialshare-popup-height="300"
                     socialshare-popup-width="400"
                     socialshare-trigger="click">
@@ -122,7 +110,7 @@
             </button>
         </div>
  
-         <button class="btn btn-medium font-bold"
+         <button class="crunchify-link crunchify-facebook  btn btn-medium font-bold"
                 socialshare
                 socialshare-provider="facebook"
                 socialshare-type="feed"
@@ -131,14 +119,21 @@
                 socialshare-text="720kb"
                 socialshare-caption="720kb is enough"
                 socialshare-url="http://720kb.net"
-                socialshare-redirect-uri="http://localhost"
+                socialshare-redirect-uri="<script> window.history.back(); </script>"
                 socialshare-popup-height="300"
                 socialshare-popup-width="400"
                 socialshare-trigger="click">
             <i class="fa fa-facebook"></i> Share on Facebook (feed dialog)
         </button>
  
-  <div facebook class="facebookShare" data-title='{{title}}' data-picture-url='http://i.imgur.com/WACv9Cl.jpg' data-url='{{url}}' data-shares='shares' data-callback='callback'>{{ shares }}  </div>
+
+  
+  
+  
+  
+  
+  
+  
   </ion-content>
   	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
 
