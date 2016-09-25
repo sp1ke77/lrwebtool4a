@@ -78,35 +78,64 @@
 			<a class="crunchify-link crunchify-sms" href="{{htmlsms6}}" target="_blank">SMS</a>
 		</div>
 		
-		<br /><br />
-		
-		
+		<br /><br /><br /><br /> 
+ 
 
-		
-		
-		<div class="page-header">
-  <h1>Share Dialog</h1>
-</div>
+ <div>
+        <button class="crunchify-link crunchify-facebook btn btn-medium font-bold"
+                socialshare
+                socialshare-provider="facebook"
+                socialshare-type="sharer"
+                socialshare-text="720kb"
+                socialshare-url="http://720kb.net"
+                socialshare-popup-height="200"
+                socialshare-popup-width="200"
+                socialshare-trigger="click">
+            <i class="fa fa-facebook"></i> Share on Facebook (sharer)
+        </button>
+    </div>
+    
+    
 
-<p>Click the button below to trigger a Share Dialog</p>
+    
+     <div>
+            <button class="crunchify-link crunchify-facebook btn btn-medium font-bold"
+                    socialshare
+                    socialshare-provider="facebook"
+                    socialshare-type="send"
+                    socialshare-via="328481047490615"
+                    socialshare-url="http://lrwebtool.com"
+                    socialshare-redirect-uri=""
+                    socialshare-popup-height="300"
+                    socialshare-popup-width="400"
+                    socialshare-trigger="click">
+                <i class="fa fa-facebook"></i> Share on Facebook (send dialog)
+            </button>
+        </div>
+ 
+         <button class="crunchify-link crunchify-facebook  btn btn-medium font-bold"
+                socialshare
+                socialshare-provider="facebook"
+                socialshare-type="feed"
+                socialshare-via="328481047490615"
+                socialshare-media="http://720kb.net/assets/img/720kb-fb.png"
+                socialshare-text="720kb"
+                socialshare-caption="720kb is enough"
+                socialshare-url="http://720kb.net"
+                socialshare-redirect-uri=""
+                socialshare-popup-height="300"
+                socialshare-popup-width="400"
+                socialshare-trigger="click">
+            <i class="fa fa-facebook"></i> Share on Facebook (feed dialog)
+        </button>
+ 
 
-<div id="shareBtn" class="btn btn-success clearfix">Share</div>
-
-
-
-<script>
-document.getElementById('shareBtn').onclick = function() {
-  FB.ui({
-    method: 'share',
-    display: 'popup',
-    href: 'https://developers.facebook.com/docs/',
-  }, function(response){});
-}
-</script>
-		
-		
-		<br /><br /> 
-
+  
+  
+  
+  
+  
+  
   
   </ion-content>
   	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
