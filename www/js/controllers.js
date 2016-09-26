@@ -157,6 +157,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 
 	$rootScope.htmlurlrecrutamento 	= 'http://lrwebtool.com/recrutar';
 	$rootScope.username 	= localStorage.getItem("username");
+	$rootScope.email		= 'Pertença ao Gupo Exclusivo da LR!!!<br><br>Saiba mais aqui.<br>';
 
 	// PC 1
 	$rootScope.titulo1		= 'Celebridades';
@@ -170,7 +171,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 	//$rootScope.htmlwhatsapp1 	= '<a class="crunchify-link crunchify-whatsapp" href="whatsapp://send?text='+$rootScope.url1+'" data-action="share/whatsapp/share target="_blank">WhatsApp</a>';
 	if (isIOS) { $rootScope.htmlsms1 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;} 
 	if (isAndroid) { $rootScope.htmlsms1 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;}
-	$rootScope.htmlemail1 	= 'mailto:?subject='+$rootScope.titulo1+'&body='+$rootScope.titulo1+'http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username;
+	$rootScope.htmlemail1 	= 'mailto:?subject='+$rootScope.titulo1+'&body='+$rootScope.email+' '+$rootScope.titulo1+'http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username;
 
 	// PC 2
 	$rootScope.titulo2		= 'Cristina%20Ferreira';
@@ -182,6 +183,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 	
 	if (isIOS) { $rootScope.htmlsms2 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug2+'/?id='+$rootScope.username+' '+$rootScope.titulo2;} 
 	if (isAndroid) { $rootScope.htmlsms2 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug2+'/?id='+$rootScope.username+' '+$rootScope.titulo2;}
+	$rootScope.htmlemail2 	= 'mailto:?subject='+$rootScope.titulo2+'&body='+$rootScope.email+' '+$rootScope.titulo2+'http://lrwebtool.com/'+$rootScope.slug2+'/?id='+$rootScope.username;
 	
 	// PC 3
 	$rootScope.titulo3		= 'Mickael%20Carreira';
@@ -193,6 +195,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 	
 	if (isIOS) { $scope.htmlsms3 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug3+'/?id='+$rootScope.username+' '+$rootScope.titulo3;} 
 	if (isAndroid) { $scope.htmlsms3 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug3+'/?id='+$rootScope.username+' '+$rootScope.titulo3;}
+	$rootScope.htmlemail3 	= 'mailto:?subject='+$rootScope.titulo3+'&body='+$rootScope.email+' '+$rootScope.titulo3+'http://lrwebtool.com/'+$rootScope.slug3+'/?id='+$rootScope.username;
 	
 	// PC 4
 	$rootScope.titulo4		= 'Ricardo%20Carriço';
@@ -204,6 +207,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 	
 	if (isIOS) { $scope.htmlsms4 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug4+'/?id='+$rootScope.username+' '+$rootScope.titulo4;} 
 	if (isAndroid) { $scope.htmlsms4 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug4+'/?id='+$rootScope.username+' '+$rootScope.titulo4;}
+	$rootScope.htmlemail4 	= 'mailto:?subject='+$rootScope.titulo4+'&body='+$rootScope.email+' '+$rootScope.titulo4+'http://lrwebtool.com/'+$rootScope.slug4+'/?id='+$rootScope.username;
 	
 	// PC 5
 	$rootScope.titulo5		= 'Monica%20Naranjo';
@@ -215,6 +219,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 	
 	if (isIOS) { $scope.htmlsms5 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username+' '+$rootScope.titulo5;} 
 	if (isAndroid) { $scope.htmlsms5 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username+' '+$rootScope.titulo5;}
+	$rootScope.htmlemail5 	= 'mailto:?subject='+$rootScope.titulo5+'&body='+$rootScope.email+' '+$rootScope.titulo5+'http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username;
 	
 	// PC 6
 	$rootScope.titulo6		= 'Cristina%20Ferreira%20-%20Para%20Homem';
@@ -226,6 +231,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 	
 	if (isIOS) { $scope.htmlsms6 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+' '+$rootScope.titulo6;} 
 	if (isAndroid) { $scope.htmlsms6 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+' '+$rootScope.titulo6;}
+    $rootScope.htmlemail6 	= 'mailto:?subject='+$rootScope.titulo6+'&body='+$rootScope.email+' '+$rootScope.titulo6+'http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username;  
       	
 })
 	
