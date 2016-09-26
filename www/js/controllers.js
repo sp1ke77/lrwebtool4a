@@ -162,7 +162,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 	$rootScope.titulo1		= 'Celebridades';
 	$rootScope.slug1		= 'celebridades';
 	//$rootScope.url1			= encodeURIComponent('http://lrwebtool.com/celebridades/?id=sp1ke77');
-	$rootScope.htmlfacebook1 	= '<a class="crunchify-link crunchify-facebook  btn btn-medium font-bold" socialshare socialshare-provider="facebook" socialshare-type="feed" socialshare-via="328481047490615"  socialshare-media="http://720kb.net/assets/img/720kb-fb.png" socialshare-text="720kb"  socialshare-caption="720kb is enough" socialshare-url="http://720kb.net"   socialshare-redirect-uri="http://lrwebtool.com/close.html/"  socialshare-popup-height="300"     socialshare-popup-width="400"    socialshare-trigger="click">   <i class="fa fa-facebook"></i> Share on Facebook (feed dialog) </a>';
+	$rootScope.htmlfacebook1 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" >Facebook</a>';
 	$rootScope.htmltwitter1 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
 	$rootScope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
 	$rootScope.htmllinkedin1 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1+'" target="_blank">LinkedIn</a>';
@@ -339,7 +339,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 .filter('hrefToJS', function ($sce, $sanitize) {
     return function (text) {
         var regex = /href="([\S]+)"/g;
-        var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_self', 'location=no')\"");
+        var newString = $sanitize(text).replace(regex, "onClick=\"window.open('$1', '_system', 'location=yes')\"");
         return $sce.trustAsHtml(newString);
     }
 });
