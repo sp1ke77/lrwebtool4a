@@ -157,7 +157,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 
 	$rootScope.htmlurlrecrutamento 	= 'http://lrwebtool.com/recrutar';
 	$rootScope.username 	= localStorage.getItem("username");
-	$rootScope.email		= 'Pertença ao Gupo Exclusivo da LR!!!<br><br>Saiba mais aqui.<br>';
+	$rootScope.email		= 'Pertença ao Gupo Exclusivo da LR!!!\n\nSaiba mais aqui.\n';
 
 	// PC 1
 	$rootScope.titulo1		= 'Celebridades';
@@ -171,7 +171,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 	//$rootScope.htmlwhatsapp1 	= '<a class="crunchify-link crunchify-whatsapp" href="whatsapp://send?text='+$rootScope.url1+'" data-action="share/whatsapp/share target="_blank">WhatsApp</a>';
 	if (isIOS) { $rootScope.htmlsms1 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;} 
 	if (isAndroid) { $rootScope.htmlsms1 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;}
-	$rootScope.htmlemail1 	= 'mailto:?subject='+$rootScope.titulo1+'&body='+$rootScope.email+' '+$rootScope.titulo1+'http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username;
+	$rootScope.htmlemail1 	= 'mailto:?subject='+$rootScope.titulo1+'&body='+$rootScope.email+'\n '+$rootScope.titulo1+'\nhttp://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username;
 
 	// PC 2
 	$rootScope.titulo2		= 'Cristina%20Ferreira';
