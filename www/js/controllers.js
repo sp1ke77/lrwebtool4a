@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
+angular.module('starter.controllers', ['ngSanitize'])
 
 .controller('AppCtrl', function($scope, $rootScope, $state) {
 
@@ -157,7 +157,7 @@ angular.module('starter.controllers', ['ngSanitize','720kb.socialshare'])
 
 	$rootScope.htmlurlrecrutamento 	= 'http://lrwebtool.com/recrutar';
 	$rootScope.username 	= localStorage.getItem("username");
-	$rootScope.email		= 'Pertença ao Gupo Exclusivo da LR!!! Saiba mais aqui.';
+	$rootScope.email		= 'Perten&#231;a%20ao%20Grupo%20Exclusivo%20da%20LR!!!%20Saiba%20mais%20aqui.';
 
 	// PC 1
 	$rootScope.titulo1		= 'Celebridades';
