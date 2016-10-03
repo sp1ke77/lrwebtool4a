@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.lrwebtool.mobile" version="1.0.150">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.lrwebtool.mobile" version="1.0.154">
 
    <name>LRWEBTOOL</name>
    <description>Ferramenta Online para Parceiros LR</description>
@@ -55,7 +55,6 @@
         <icon   src="res/icon/ios/icon-small@3x.png"                platform="ios" width="87"   height="87" />
     </platform>
 
-	<access origin="*" subdomains="true" />
 	<access origin="mailto:*" launch-external="yes" />
 	<access origin="tel:*" launch-external="yes" />
 	<access origin="sms:*" launch-external="yes" />
@@ -67,6 +66,8 @@
 	<allow-intent href="http://*/*" />
 	<allow-intent href="https://*/*" />
 	<allow-intent href="tel:*" />
+	<allow-intent href="mailto:*" />
+	<allow-intent href="sms:*" />
 	<allow-intent href="whatsapp:*" />
 	
 	<content src="index.html" />
