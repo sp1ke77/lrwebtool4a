@@ -157,7 +157,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 	$rootScope.htmlurlrecrutamento 	= 'http://lrwebtool.com/recrutar';
 	$rootScope.username 	= localStorage.getItem("username");
-	$rootScope.email		= 'Perten&#231;a%20ao%20Grupo%20Exclusivo%20da%20LR!!!%20Saiba%20mais%20aqui.';
+	$rootScope.email		= 'Pertença%20ao%20Grupo%20Exclusivo%20da%20LR!!!%20Saiba%20mais%20aqui.';
 
 	// PC 1
 	$rootScope.titulo1		= 'Celebridades';
