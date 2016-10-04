@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ngSanitize'])
 
-.controller('AppCtrl', function($scope, $rootScope, $state, $http) {
+.controller('AppCtrl', function($scope, $rootScope, $state) {
 
 	// External Links Redir
 	$scope.GotoLink = function (url) {
@@ -15,24 +15,27 @@ angular.module('starter.controllers', ['ngSanitize'])
 	// Load Registry
 	$rootScope.username 	= localStorage.getItem("username");
 	$rootScope.token 		= localStorage.getItem("token");
-	$rootScope.verifycode 	= "afhrfae74tr8348we4ftn23f8";
 	$rootScope.account 		= localStorage.getItem("account");
 
-
-	// Get user info updates from server
-	
-	$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$rootScope.username+'&T='+$rootScope.token+'&V='+$rootScope.verifycode)
-					.success(function(data, status, headers,config){
-						$scope.result = data.content.rendered; 
-						$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
-					});
-	
-	
-	
    
 })
 
-.controller('IntroCtrl', function($scope,$rootScope, $state, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+.controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+
+				// Load Registry
+				$rootScope.username 	= localStorage.getItem("username");
+				$rootScope.token 		= localStorage.getItem("token");
+				$rootScope.verifycode 	= "afhrfae74tr8348we4ftn23f8";
+				$rootScope.account 		= localStorage.getItem("account");
+
+
+				// Get user info updates from server
+				
+				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$rootScope.username+'&T='+$rootScope.token+'&V='+$rootScope.verifycode)
+								.success(function(data, status, headers,config){
+									$scope.result = data.content.rendered; 
+									$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
+								});
 
 				$scope.profile = localStorage.getItem('profile');
 				
