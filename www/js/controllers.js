@@ -150,20 +150,27 @@ angular.module('starter.controllers', ['ngSanitize'])
 									console.log('INTROCTRL HTTP RES: ' + $scope.result);
 									$scope.saveresult = sessionStorage.setItem('profile', data.content.rendered);
 									
-								});
+								})
+								.finally(function() {
+								   // Stop the ion-refresher from spinning
+								   $scope.$broadcast('scroll.refreshComplete');
+								   
+								   $scope.profile2 = sessionStorage.getItem('profile');
+									console.log('INTROCTRL SESSION RES: ' + $scope.profile2);
+									
+									if($scope.profile2 != undefined && $scope.profile2 != null){
+										$scope.profile2split 		= $scope.profile2.split(',');
+										$rootScope.pc1		 		= $scope.profile2split[7];console.log('INTROCTRL PC1: ' + $rootScope.pc1);
+										$rootScope.pc2		 		= $scope.profile2split[8];console.log('INTROCTRL PC2: ' + $rootScope.pc2);
+										$rootScope.pc3		 		= $scope.profile2split[9];console.log('INTROCTRL PC3: ' + $rootScope.pc3);
+										$rootScope.pc4		 		= $scope.profile2split[10];console.log('INTROCTRL PC4: ' + $rootScope.pc4);
+										$rootScope.pc5		 		= $scope.profile2split[11];console.log('INTROCTRL PC5: ' + $rootScope.pc5);
+										$rootScope.pc6		 		= $scope.profile2split[12];console.log('INTROCTRL PC6: ' + $rootScope.pc6);
+									}
+								   
+								 });
 
-				$scope.profile2 = sessionStorage.getItem('profile');
-				console.log('INTROCTRL SESSION RES: ' + $scope.profile2);
 				
-				if($scope.profile2 != undefined && $scope.profile2 != null){
-					$scope.profile2split 		= $scope.profile2.split(',');
-					$rootScope.pc1		 		= $scope.profile2split[7];console.log('INTROCTRL PC1: ' + $rootScope.pc1);
-					$rootScope.pc2		 		= $scope.profile2split[8];console.log('INTROCTRL PC2: ' + $rootScope.pc2);
-					$rootScope.pc3		 		= $scope.profile2split[9];console.log('INTROCTRL PC3: ' + $rootScope.pc3);
-					$rootScope.pc4		 		= $scope.profile2split[10];console.log('INTROCTRL PC4: ' + $rootScope.pc4);
-					$rootScope.pc5		 		= $scope.profile2split[11];console.log('INTROCTRL PC5: ' + $rootScope.pc5);
-					$rootScope.pc6		 		= $scope.profile2split[12];console.log('INTROCTRL PC6: ' + $rootScope.pc6);
-				}
 			}
 	
 	
