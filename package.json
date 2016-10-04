@@ -1,6 +1,6 @@
 {
   "name": "lrwebtool",
-  "version": "1.0.154",
+  "version": "1.0.157",
   "description": "LR WEBTOOL",
   "dependencies": {
     "gulp": "^3.5.6",

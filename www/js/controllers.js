@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ngSanitize'])
 
-.controller('AppCtrl', function($scope, $rootScope, $state) {
+.controller('AppCtrl', function($scope, $rootScope, $state, $http) {
 
 	// External Links Redir
 	$scope.GotoLink = function (url) {
@@ -12,11 +12,22 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$state.go('app.suporte');
 	}
 
-	
 	// Load Registry
 	$rootScope.username 	= localStorage.getItem("username");
 	$rootScope.token 		= localStorage.getItem("token");
+	$rootScope.verifycode 	= "afhrfae74tr8348we4ftn23f8";
 	$rootScope.account 		= localStorage.getItem("account");
+
+
+	// Get user info updates from server
+	
+	$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$rootScope.username+'&T='+$rootScope.token+'&V='+$rootScope.verifycode)
+					.success(function(data, status, headers,config){
+						$scope.result = data.content.rendered; 
+						$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
+					});
+	
+	
 	
    
 })
@@ -32,9 +43,23 @@ angular.module('starter.controllers', ['ngSanitize'])
 					$rootScope.profilelistapt 	= $scope.profilesplit[2];
 					$rootScope.profilelistaes 	= $scope.profilesplit[3];
 					$rootScope.profilename 		= $scope.profilesplit[4];
+					$rootScope.profileidlr 		= $scope.profilesplit[5];
+					$rootScope.profilemail 		= $scope.profilesplit[6];
+					$rootScope.pc1		 		= $scope.profilesplit[7];
+					$rootScope.pc2		 		= $scope.profilesplit[8];
+					$rootScope.pc3		 		= $scope.profilesplit[9];
+					$rootScope.pc4		 		= $scope.profilesplit[10];
+					$rootScope.pc5		 		= $scope.profilesplit[11];
+					$rootScope.pc6		 		= $scope.profilesplit[12];
 				}
 				
-				console.log('INTROCTRL: ' + $rootScope.profilename);
+				console.log('INTROCTRL1: ' + $rootScope.profilename);
+				console.log('INTROCTRL2: ' + $rootScope.pc1);
+				console.log('INTROCTRL3: ' + $rootScope.pc2);
+				console.log('INTROCTRL4: ' + $rootScope.pc3);
+				console.log('INTROCTRL5: ' + $rootScope.pc4);
+				console.log('INTROCTRL6: ' + $rootScope.pc5);
+				console.log('INTROCTRL7: ' + $rootScope.pc6);
 
 	
 
@@ -159,6 +184,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$rootScope.username 	= localStorage.getItem("username");
 	$rootScope.email		= 'Pertença%20ao%20Grupo%20Exclusivo%20da%20LR!!!%20Saiba%20mais%20aqui.';
 
+
 	// PC 1
 	$rootScope.titulo1		= 'Celebridades';
 	$rootScope.slug1		= 'celebridades';
@@ -172,7 +198,8 @@ angular.module('starter.controllers', ['ngSanitize'])
 	if (isIOS) { $rootScope.htmlsms1 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;} 
 	if (isAndroid) { $rootScope.htmlsms1 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+' '+$rootScope.titulo1;}
 	$rootScope.htmlemail1 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo1+': http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username;
-
+	
+	
 	// PC 2
 	$rootScope.titulo2		= 'Cristina%20Ferreira';
 	$rootScope.slug2		= 'celebridades-cf';
@@ -184,6 +211,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	if (isIOS) { $rootScope.htmlsms2 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug2+'/?id='+$rootScope.username+' '+$rootScope.titulo2;} 
 	if (isAndroid) { $rootScope.htmlsms2 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug2+'/?id='+$rootScope.username+' '+$rootScope.titulo2;}
 	$rootScope.htmlemail2 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo2+': http://lrwebtool.com/'+$rootScope.slug2+'/?id='+$rootScope.username;
+	
 	
 	// PC 3
 	$rootScope.titulo3		= 'Mickael%20Carreira';
@@ -197,6 +225,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	if (isAndroid) { $scope.htmlsms3 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug3+'/?id='+$rootScope.username+' '+$rootScope.titulo3;}
 	$rootScope.htmlemail3 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo3+': http://lrwebtool.com/'+$rootScope.slug3+'/?id='+$rootScope.username;
 	
+	
 	// PC 4
 	$rootScope.titulo4		= 'Ricardo%20Carriço';
 	$rootScope.slug4		= 'celebridades-rc';
@@ -209,6 +238,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	if (isAndroid) { $scope.htmlsms4 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug4+'/?id='+$rootScope.username+' '+$rootScope.titulo4;}
 	$rootScope.htmlemail4 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo4+': http://lrwebtool.com/'+$rootScope.slug4+'/?id='+$rootScope.username;
 	
+	
 	// PC 5
 	$rootScope.titulo5		= 'Monica%20Naranjo';
 	$rootScope.slug5		= 'celebridades-mn';
@@ -220,6 +250,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	if (isIOS) { $scope.htmlsms5 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username+' '+$rootScope.titulo5;} 
 	if (isAndroid) { $scope.htmlsms5 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username+' '+$rootScope.titulo5;}
 	$rootScope.htmlemail5 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo5+': http://lrwebtool.com/'+$rootScope.slug5+'/?id='+$rootScope.username;
+	
 	
 	// PC 6
 	$rootScope.titulo6		= 'Cristina%20Ferreira%20-%20Para%20Homem';
