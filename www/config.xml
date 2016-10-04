@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.lrwebtool.mobile" version="1.0.158">
+<widget 
+	xmlns="http://www.w3.org/ns/widgets" 
+	xmlns:gap="http://phonegap.com/ns/1.0" 
+	xmlns:android   = "http://schemas.android.com/apk/res/android"
+	id="com.lrwebtool.mobile" 
+	version="1.0.158"
+	versionCode="2"
+	versionName="1.0.158" 
+	CFBundleVersion="1.0.158"
+	packageVersion="1.0.158"
+>
+	<!--
+		versionCode="2" -> Android
+		versionName="1.0.158"  -> Android
+		CFBundleVersion="1.0.158"  -> iOS
+		packageVersion="1.0.158"  -> Windowa
+	-->
 
    <name>LRWEBTOOL</name>
    <description>Ferramenta Online para Parceiros LR</description>
    <author href="http://l4marketing.com" email="admin@l4marketing.com">L4 Marketing LLC</author>
 
+	<!-- PHONEGAP Preferences -->
 	<gap:platform name="ios" />
 	<gap:platform name="android" />
 	<gap:platform name="windows" />
-
 	<preference name="phonegap-version" value="cli-6.3.0" />
 	<preference name="targetSdkVersion" value="14" />
-
 	<feature name="http://api.phonegap.com/1.0/device" />
+
+	<!-- PLUGINS -->
 	<plugin name="cordova-plugin-whitelist" source="npm"/>
 	<plugin name="cordova-plugin-device" source="npm" />
 	<plugin name="cordova-plugin-inappbrowser" source="npm" />
@@ -22,12 +39,16 @@
 	<plugin name="cordova-plugin-network-information" source="npm" />
 	<plugin name="cordova-plugin-vibration" source="npm" />
 
+	<!-- Core/Common Preferences -->
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<preference name="keyboardDisplayRequiresUserAction" value="false" />
 	<preference name="DisallowOverscroll" value="false" />
-
 	<icon src="icon.png" />
+	
+	<!--Android Preferences-->
     <platform name="android">
+		<preference name="LoadingDialog" value="A CARREGAR"/>
+		<preference name="LoadingPageDialog" value="A CARREGAR"/>
         <icon   src="res/icon/android/drawable-ldpi/icon.png"               density="ldpi" />
         <icon   src="res/icon/android/drawable-mdpi/icon.png"               density="mdpi" />
         <icon   src="res/icon/android/drawable-hdpi/icon.png"               density="hdpi" />
@@ -36,6 +57,7 @@
         <icon   src="res/icon/android/drawable-xxxhdpi/icon.png"            density="xxxhdpi" />
     </platform>
 
+	<!--iOS Preferences-->
     <platform name="ios">
         <icon   src="res/icon/ios/icon.png"                         platform="ios" width="57"   height="57" />
         <icon   src="res/icon/ios/icon@2x.png"                      platform="ios" width="114"  height="114" />
@@ -55,6 +77,7 @@
         <icon   src="res/icon/ios/icon-small@3x.png"                platform="ios" width="87"   height="87" />
     </platform>
 
+	<!-- Whitelists -->
 	<access origin="mailto:*" launch-external="yes" />
 	<access origin="tel:*" launch-external="yes" />
 	<access origin="sms:*" launch-external="yes" />
@@ -70,6 +93,7 @@
 	<allow-intent href="sms:*" />
 	<allow-intent href="whatsapp:*" />
 	
+	<!-- Start page -->
 	<content src="index.html" />
 
 </widget>
