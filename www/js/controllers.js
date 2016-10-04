@@ -22,50 +22,6 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 .controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
 
-				// Load Registry
-				$rootScope.username 	= localStorage.getItem("username");
-				$rootScope.token 		= localStorage.getItem("token");
-				$rootScope.verifycode 	= "afhrfae74tr8348we4ftn23f8";
-				$rootScope.account 		= localStorage.getItem("account");
-
-
-				// Get user info updates from server
-				
-				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$rootScope.username+'&T='+$rootScope.token+'&V='+$rootScope.verifycode)
-								.success(function(data, status, headers,config){
-									$scope.result = data.content.rendered; 
-									$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
-								});
-
-				$scope.profile = localStorage.getItem('profile');
-				
-				if($scope.profile != undefined && $scope.profile != null){
-					$scope.profilesplit 		= $scope.profile.split(',');
-					$rootScope.profileusername 	= $scope.profilesplit[0];
-					$rootScope.profiletoken 	= $scope.profilesplit[1];
-					$rootScope.profilelistapt 	= $scope.profilesplit[2];
-					$rootScope.profilelistaes 	= $scope.profilesplit[3];
-					$rootScope.profilename 		= $scope.profilesplit[4];
-					$rootScope.profileidlr 		= $scope.profilesplit[5];
-					$rootScope.profilemail 		= $scope.profilesplit[6];
-					$rootScope.pc1		 		= $scope.profilesplit[7];
-					$rootScope.pc2		 		= $scope.profilesplit[8];
-					$rootScope.pc3		 		= $scope.profilesplit[9];
-					$rootScope.pc4		 		= $scope.profilesplit[10];
-					$rootScope.pc5		 		= $scope.profilesplit[11];
-					$rootScope.pc6		 		= $scope.profilesplit[12];
-				}
-				
-				console.log('INTROCTRL1: ' + $rootScope.profilename);
-				console.log('INTROCTRL2: ' + $rootScope.pc1);
-				console.log('INTROCTRL3: ' + $rootScope.pc2);
-				console.log('INTROCTRL4: ' + $rootScope.pc3);
-				console.log('INTROCTRL5: ' + $rootScope.pc4);
-				console.log('INTROCTRL6: ' + $rootScope.pc5);
-				console.log('INTROCTRL7: ' + $rootScope.pc6);
-
-	
-
 	// Called to navigate to the main app
 	$scope.startApp = function() {
 		$state.go('app.api');
@@ -175,7 +131,41 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 })
 
-.controller('SindiCtrl', function($rootScope, $scope, $filter) {
+.controller('SindiCtrl', function($rootScope, $scope, $filter, $http) {
+	
+	
+	
+			$scope.refreshpcs = function() {
+				// Load Registry
+				$rootScope.username 	= localStorage.getItem("username");
+				$rootScope.token 		= localStorage.getItem("token");
+				$rootScope.verifycode 	= "afhrfae74tr8348we4ftn23f8";
+
+
+				// Get user info updates from server
+				
+				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$rootScope.username+'&T='+$rootScope.token+'&V='+$rootScope.verifycode)
+								.success(function(data, status, headers,config){
+									$scope.result = data.content.rendered;
+									console.log('INTROCTRL HTTP RES: ' + $scope.result);
+									$scope.saveresult = sessionStorage.setItem('profile', data.content.rendered);
+									
+								});
+
+				$scope.profile2 = sessionStorage.getItem('profile');
+				console.log('INTROCTRL SESSION RES: ' + $scope.profile2);
+				
+				if($scope.profile2 != undefined && $scope.profile2 != null){
+					$scope.profile2split 		= $scope.profile2.split(',');
+					$rootScope.pc1		 		= $scope.profile2split[7];console.log('INTROCTRL PC1: ' + $rootScope.pc1);
+					$rootScope.pc2		 		= $scope.profile2split[8];console.log('INTROCTRL PC2: ' + $rootScope.pc2);
+					$rootScope.pc3		 		= $scope.profile2split[9];console.log('INTROCTRL PC3: ' + $rootScope.pc3);
+					$rootScope.pc4		 		= $scope.profile2split[10];console.log('INTROCTRL PC4: ' + $rootScope.pc4);
+					$rootScope.pc5		 		= $scope.profile2split[11];console.log('INTROCTRL PC5: ' + $rootScope.pc5);
+					$rootScope.pc6		 		= $scope.profile2split[12];console.log('INTROCTRL PC6: ' + $rootScope.pc6);
+				}
+			}
+	
 	
 	var deviceInformation = ionic.Platform.device();
 
