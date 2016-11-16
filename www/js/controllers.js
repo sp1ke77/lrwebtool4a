@@ -57,10 +57,9 @@ angular.module('starter.controllers', ['ngSanitize'])
 							$rootScope.profilename 		= $scope.profilesplit[4];
 
 $ionicPlatform.ready(function() {
-	var userlanguage = navigator.globalization.getLocaleName( function (locale) { $scope.locale = locale.value });
-	localStorage.setItem('language', userlanguage );
-	$scope.language = localStorage.getItem('language');
+	navigator.globalization.getLocaleName( function (locale) { $scope.locale = locale.value });
 });
+
 })
 
 .controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate, $sce) {
