@@ -381,13 +381,14 @@ $ionicPlatform.ready(function() {
      //find application version
      if (window.cordova) {
          var uuid = $cordovaDevice.getUUID();
-         var cordova = $cordovaDevice.getCordova();
          var model = $cordovaDevice.getModel();
          var platform = $cordovaDevice.getPlatform();
          var platformVersion = $cordovaDevice.getVersion();
+
+         navigator.globalization.getLocaleName( function (locale) { $scope.locale = locale.value });
+
          var mobileDetails = {
              'uuid': uuid,
-             'cordova': cordova,
              'model': model,
              'platform': platform,
              'platformVersion': platformVersion,
@@ -398,7 +399,6 @@ $ionicPlatform.ready(function() {
          $scope.model = model;
          $scope.platform = platform;
          $scope.platformVersion = platformVersion;
-         $scope.cordova = cordova;
 
      }
  });

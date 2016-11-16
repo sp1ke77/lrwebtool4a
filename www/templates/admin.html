@@ -1,4 +1,4 @@
-<ion-view view-title="RESTRICTED AREA">
+<ion-view view-title="Device Info">
 	<ion-content padding="false" overflow-scroll="true">
 <ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
 		<div class="padding">
@@ -8,10 +8,13 @@
 Modelo : {{model}}
 </li>
 <li class="item">
-Platforma : {{platform}} {{platformVersion}} / {{cordova}}
+Platforma : {{platform}} {{platformVersion}}
 </li>
 <li class="item">
 UUID : {{uuid}}
+</li>
+<li class="item">
+Lingua : {{locale}}
 </li>
 </ul>
 
