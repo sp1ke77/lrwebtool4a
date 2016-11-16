@@ -22,7 +22,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 })
 
-.controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
+.controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform) {
 
 	// Called to navigate to the main app
 	$scope.startApp = function() {
