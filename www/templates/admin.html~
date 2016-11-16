@@ -3,20 +3,7 @@
 <ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
 		<div class="padding">
 	
-<ul class="list">
-<li class="item">
-Manufacturer : {{manufacturer}}
-</li>
-<li class="item">
-Model : {{model}}
-</li>
-<li class="item">
-Platform : {{platform}}
-</li>
-<li class="item">
-UUID : {{uuid}}
-</li>
-</ul>
+
 
 		</div>
 		 

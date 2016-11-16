@@ -16,7 +16,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$rootScope.username 	= localStorage.getItem("username");
 	$rootScope.token 		= localStorage.getItem("token");
 	$rootScope.account 		= localStorage.getItem("account");
-	$scope.profileusername  = localStorage.getItem("username");
+
    
 })
 
@@ -44,15 +44,6 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$scope.toggleLeftSideMenu = function() {
 		$ionicSideMenuDelegate.toggleLeft();
 	};
-	
-		$scope.profile = localStorage.getItem('profile');
-
-							$scope.profilesplit 		= $scope.profile.split(',');
-							$rootScope.profileusername 	= $scope.profilesplit[0];
-							$rootScope.profiletoken 	= $scope.profilesplit[1];
-							$rootScope.profilelistapt 	= $scope.profilesplit[2];
-							$rootScope.profilelistaes 	= $scope.profilesplit[3];
-							$rootScope.profilename 		= $scope.profilesplit[4];
 	
 })
 
@@ -197,6 +188,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	// PC 1
 	$rootScope.titulo1		= 'Celebridades';
 	$rootScope.slug1		= 'celebridades';
+	//$rootScope.url1			= encodeURIComponent('http://lrwebtool.com/celebridades/?id=sp1ke77');
 	$rootScope.htmlfacebook1 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" >Facebook</a>';
 	$rootScope.htmltwitter1 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
 	$rootScope.htmlgoogleplus1 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
@@ -375,11 +367,11 @@ angular.module('starter.controllers', ['ngSanitize'])
 	};
 })
 
-.controller('AdminCtrl', function($rootScope, $scope, $http, $filter) {
+/*.controller('AdminCtrl', function($rootScope, $scope, $http, $filter) {
 	
 	
 	
-})
+})*/
  
 .filter('hrefToJS', function ($sce, $sanitize) {
     return function (text) {
