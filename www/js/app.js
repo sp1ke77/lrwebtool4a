@@ -14,9 +14,6 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
       StatusBar.styleDefault();
     }
 
-	var userlanguage = navigator.globalization.getLocaleName( function (locale) { $scope.locale = locale.value });
-	localStorage.setItem('language', userlanguage );
-
   });
 })
 
