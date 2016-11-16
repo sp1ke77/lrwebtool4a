@@ -23,6 +23,13 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 .controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform, $cordovaDevice) {
 
+		$ionicPlatform.ready(function() {
+			 if (window.cordova) {
+				 navigator.globalization.getLocaleName( function (locale) { $rootScope.locale = locale.value });
+			 }
+		});
+
+
 	// Called to navigate to the main app
 	$scope.startApp = function() {
 		$state.go('app.api');
@@ -55,31 +62,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$rootScope.profilelistaes 	= $scope.profilesplit[3];
 		$rootScope.profilename 		= $scope.profilesplit[4];
 
-$ionicPlatform.ready(function() {
-     //find application version
-     if (window.cordova) {
-         var uuid = $cordovaDevice.getUUID();
-         var model = $cordovaDevice.getModel();
-         var platform = $cordovaDevice.getPlatform();
-         var platformVersion = $cordovaDevice.getVersion();
 
-         navigator.globalization.getLocaleName( function (locale) { $scope.locale = locale.value });
-
-         var mobileDetails = {
-             'uuid': uuid,
-             'model': model,
-             'platform': platform,
-             'platformVersion': platformVersion,
-         };
-         console.log('Mobile Phone details:', mobileDetails)
-
-         $scope.uuid = uuid;
-         $scope.model = model;
-         $scope.platform = platform;
-         $scope.platformVersion = platformVersion;
-
-     }
- });
 
 })
 
