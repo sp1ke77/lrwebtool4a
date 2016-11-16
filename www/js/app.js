@@ -86,7 +86,7 @@ angular.module('starter', ['ionic','starter.controllers'])
         controller: 'SuporteCtrl'
       }
     }
-  });
+  })
   
   .state('app.admin', {
     url: "/admin",
