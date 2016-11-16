@@ -19,10 +19,9 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$scope.profileusername  = localStorage.getItem("username");
 
 
-
 })
 
-.controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform) {
+.controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform, $cordovaDevice) {
 
 	// Called to navigate to the main app
 	$scope.startApp = function() {
@@ -49,16 +48,38 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 		$scope.profile = localStorage.getItem('profile');
 
-							$scope.profilesplit 		= $scope.profile.split(',');
-							$rootScope.profileusername 	= $scope.profilesplit[0];
-							$rootScope.profiletoken 	= $scope.profilesplit[1];
-							$rootScope.profilelistapt 	= $scope.profilesplit[2];
-							$rootScope.profilelistaes 	= $scope.profilesplit[3];
-							$rootScope.profilename 		= $scope.profilesplit[4];
+		$scope.profilesplit 		= $scope.profile.split(',');
+		$rootScope.profileusername 	= $scope.profilesplit[0];
+		$rootScope.profiletoken 	= $scope.profilesplit[1];
+		$rootScope.profilelistapt 	= $scope.profilesplit[2];
+		$rootScope.profilelistaes 	= $scope.profilesplit[3];
+		$rootScope.profilename 		= $scope.profilesplit[4];
 
 $ionicPlatform.ready(function() {
-	navigator.globalization.getLocaleName( function (locale) { $scope.locale = locale.value });
-});
+     //find application version
+     if (window.cordova) {
+         var uuid = $cordovaDevice.getUUID();
+         var model = $cordovaDevice.getModel();
+         var platform = $cordovaDevice.getPlatform();
+         var platformVersion = $cordovaDevice.getVersion();
+
+         navigator.globalization.getLocaleName( function (locale) { $scope.locale = locale.value });
+
+         var mobileDetails = {
+             'uuid': uuid,
+             'model': model,
+             'platform': platform,
+             'platformVersion': platformVersion,
+         };
+         console.log('Mobile Phone details:', mobileDetails)
+
+         $scope.uuid = uuid;
+         $scope.model = model;
+         $scope.platform = platform;
+         $scope.platformVersion = platformVersion;
+
+     }
+ });
 
 })
 
