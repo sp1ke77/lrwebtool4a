@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic','starter.controllers'])
+angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -13,8 +13,8 @@ angular.module('starter', ['ionic','starter.controllers'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
-    
-           
+
+
   });
 })
 
@@ -47,7 +47,7 @@ angular.module('starter', ['ionic','starter.controllers'])
       }
     }
   })
-  
+
     .state('app.sindicancia', {
     url: "/sindicancia",
     views: {
@@ -57,8 +57,8 @@ angular.module('starter', ['ionic','starter.controllers'])
       }
     }
   })
-  
-   
+
+
    /* .state('app.m4m', {
     url: "/m4m",
     views: {
@@ -67,7 +67,7 @@ angular.module('starter', ['ionic','starter.controllers'])
       }
     }
   })*/
-  
+
     .state('app.contatos', {
     url: "/contatos",
     views: {
@@ -87,7 +87,7 @@ angular.module('starter', ['ionic','starter.controllers'])
       }
     }
   })
-  
+
   .state('app.admin', {
     url: "/admin",
     views: {
@@ -97,7 +97,7 @@ angular.module('starter', ['ionic','starter.controllers'])
       }
     }
   });
-  
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/intro');
 });
