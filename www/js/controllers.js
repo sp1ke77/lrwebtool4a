@@ -18,6 +18,8 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$rootScope.account 		= localStorage.getItem("account");
 	$scope.profileusername  = localStorage.getItem("username");
 
+
+
 })
 
 .controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate) {
@@ -53,6 +55,8 @@ angular.module('starter.controllers', ['ngSanitize'])
 							$rootScope.profilelistapt 	= $scope.profilesplit[2];
 							$rootScope.profilelistaes 	= $scope.profilesplit[3];
 							$rootScope.profilename 		= $scope.profilesplit[4];
+
+	$rootScope.language 	= localStorage.getItem("language");
 
 })
 
