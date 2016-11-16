@@ -398,6 +398,7 @@ $ionicPlatform.ready(function() {
          $scope.model = model;
          $scope.platform = platform;
          $scope.platformVersion = platformVersion;
+         $scope.cordova = cordova;
 
      }
  });
