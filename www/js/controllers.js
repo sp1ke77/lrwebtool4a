@@ -378,16 +378,29 @@ angular.module('starter.controllers', ['ngSanitize'])
 .controller('AdminCtrl', function($ionicPlatform, $scope, $cordovaDevice) {
 
 $ionicPlatform.ready(function() {
-$scope.$apply(function() {
-// sometimes binding does not work! :/
-// getting device infor from $cordovaDevice
-var device = $cordovaDevice.getDevice();
-$scope.manufacturer = device.manufacturer;
-$scope.model = device.model;
-$scope.platform = device.platform;
-$scope.uuid = device.uuid;
-});
-});
+     //find application version
+     if (window.cordova) {
+         var uuid = $cordovaDevice.getUUID();
+         var cordova = $cordovaDevice.getCordova();
+         var model = $cordovaDevice.getModel();
+         var platform = $cordovaDevice.getPlatform();
+         var platformVersion = $cordovaDevice.getVersion();
+         var mobileDetails = {
+             'uuid': uuid,
+             'cordova': cordova,
+             'model': model,
+             'platform': platform,
+             'platformVersion': platformVersion,
+         };
+         console.log('Mobile Phone details:', mobileDetails)
+
+         $scope.uuid = uuid;
+         $scope.model = model;
+         $scope.platform = platform;
+         $scope.platformVersion = platformVersion;
+
+     }
+ });
 
 })
 
