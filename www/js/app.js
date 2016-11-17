@@ -37,7 +37,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 				 $rootScope.platformVersion = platformVersion;
 
 			 }
-			console.log('Mobile Phone details:', mobileDetails)
+			console.log('Mobile Phone details RUN:', mobileDetails)
 
 
   });
