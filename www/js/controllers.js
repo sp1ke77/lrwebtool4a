@@ -18,17 +18,6 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$rootScope.account 		= localStorage.getItem("account");
 	$scope.profileusername  = localStorage.getItem("username");
 
-	$ionicPlatform.ready(function() {
-		if (window.cordova) {
-			navigator.globalization.getLocaleName( function (locale) {
-				$rootScope.locale = locale.value;
-			});
-		}
-
-		console.log('APPCTRL : ' + $rootScope.locale);
-
-	});
-
 
 })
 
@@ -68,14 +57,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$rootScope.profilelistaes 	= $scope.profilesplit[3];
 		$rootScope.profilename 		= $scope.profilesplit[4];
 
-		$ionicPlatform.ready(function() {
-			 if (window.cordova) {
-				navigator.globalization.getLocaleName( function (locale) {
-					$rootScope.locale = locale.value;
-				});
-			 }
-			 console.log('INTROCTRL : ' + $rootScope.locale);
-		});
+
 
 })
 

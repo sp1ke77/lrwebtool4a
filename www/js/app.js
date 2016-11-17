@@ -20,9 +20,9 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 				 var model = $cordovaDevice.getModel();
 				 var platform = $cordovaDevice.getPlatform();
 				 var platformVersion = $cordovaDevice.getVersion();
-				 var language = 'INICIALIZAÇÃO DE VAR';
+				 var language = 'X';
 
-				 navigator.globalization.getLocaleName( function (locale) { language = locale.value; });
+				 navigator.globalization.getLocaleName( function (locale) { var language = locale; });
 
 				 var mobileDetails = {
 					 'uuid': uuid,
