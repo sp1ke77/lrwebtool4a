@@ -47,15 +47,6 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
   })
 
 
-   /* .state('app.m4m', {
-    url: "/m4m",
-    views: {
-      'menuContent': {
-        templateUrl: "templates/m4m.html",
-      }
-    }
-  })*/
-
     .state('app.contatos', {
     url: "/contatos",
     views: {

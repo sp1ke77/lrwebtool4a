@@ -33,11 +33,23 @@
 			  <div ng-if="language == 'pt-PT'">Redes Sociais</div>
 			  <div ng-if="language == 'es-ES'">Redes Sociales</div>
 			</ion-item>
+
+
+			<div ng-if="language == 'pt-PT'">
 			<ion-item class="item item-icon-left" nav-clear menu-close ng-click="GotoLink('http://lrwebtool.com/recrutar/?id={{profileusername}}')">
 			  <i class="icon ion-person-add"></i>
-			  <div ng-if="language == 'pt-PT'">Recrutar</div>
-			  <div ng-if="language == 'es-ES'">Recluta</div>
+			  <div>Recrutar</div>
 			</ion-item>
+			</div>
+
+			<div ng-if="language == 'es-ES'">
+			<ion-item class="item item-icon-left" nav-clear menu-close ng-click="GotoLink('http://lrwebtool.com/es/recrutar/?id={{profileusername}}')">
+			  <i class="icon ion-person-add"></i>
+			  Recluta
+			</ion-item>
+			</div>
+
+
 			<ion-item class="item item-icon-left" nav-clear menu-close ng-click="GotoLink('https://mail4mkt.com/')">
 			  <i class="icon ion-android-drafts"></i>
 			  <div ng-if="language == 'pt-PT'">Email Marketing</div>
@@ -71,7 +83,7 @@
     </ion-content>
 
 	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
-		<h1 class="title2" >v1.1.228 - 2016, L4Marketing LLC</h1>
+		<h1 class="title2" >v1.1.237 - 2016, L4Marketing LLC</h1>
 	</ion-footer-bar>
 	</ion-side-menu>
 </ion-side-menus>
