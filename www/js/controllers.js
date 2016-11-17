@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngSanitize','ngFlag'])
+angular.module('starter.controllers', ['ngSanitize','ngFlag','ngCordova'])
 
 .controller('AppCtrl', function($ionicPlatform, $scope, $rootScope, $state, $cordovaDevice, $cordovaGlobalization) {
 $ionicPlatform.ready(function() {

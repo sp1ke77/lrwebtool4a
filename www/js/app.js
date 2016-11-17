@@ -1,6 +1,6 @@
-angular.module('starter', ['ionic','starter.controllers','ngCordova'])
+angular.module('starter', ['ionic','starter.controllers'])
 
-.run(function($ionicPlatform, $rootScope, $cordovaGlobalization) {
+.run(function($ionicPlatform) {
 
 $ionicPlatform.ready(function() {
 
