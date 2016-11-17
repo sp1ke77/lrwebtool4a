@@ -2,17 +2,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 
 .run(function($ionicPlatform, $rootScope, $cordovaGlobalization) {
 
-  $ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {console.log('Error getting language\n');}
-					);
-			 }
-  });
+
 
 })
 

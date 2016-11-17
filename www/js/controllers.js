@@ -22,6 +22,23 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 
 .controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform, $cordovaDevice, $cordovaGlobalization) {
 
+$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {
+						  console.log('Error getting language\n');
+						  $rootScope.language = 'pt-PT';
+						  }
+					);
+			 } else { $rootScope.language = 'pt-PT';}
+  });
+
+
+
 	// Called to navigate to the main app
 	$scope.startApp = function() {
 		$state.go('app.api');
