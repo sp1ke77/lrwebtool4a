@@ -16,33 +16,26 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
     }*/
 
 			if (window.cordova) {
-				 var uuid = $cordovaDevice.getUUID();
-				 var model = $cordovaDevice.getModel();
-				 var platform = $cordovaDevice.getPlatform();
-				 var platformVersion = $cordovaDevice.getVersion();
-				 var language = '';
-				 var locale = '';
+				 var language = navigator.globalization.getLocaleName;
+				 var locale = navigator.globalization.getLocaleName;
+
+					document.addEventListener("deviceready", function () {
+						$cordovaGlobalization.getPreferredLanguage(function(language) {
+
+						console.log('LOCALE RUN:' + language)
+
+						}).then(success, error);
+					}, false);
 
 				 navigator.globalization.getLocaleName( function (locale) { var language = locale.value; });
 
-				 var mobileDetails = {
-					 'uuid': uuid,
-					 'model': model,
-					 'platform': platform,
-					 'platformVersion': platformVersion,
-					 'language': language,
-				 };
 
 
-				 $rootScope.uuid = uuid;
-				 $rootScope.model = model;
-				 $rootScope.platform = platform;
-				 $rootScope.platformVersion = platformVersion;
 				 $rootScope.language = language;
 				 $rootScope.locale = locale.value;
 
 			 }
-			console.log('Mobile Phone details RUN:', mobileDetails)
+
 			console.log('LOCALE RUN:', $rootScope.language)
 
   });
