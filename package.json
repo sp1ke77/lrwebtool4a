@@ -17,8 +17,13 @@
   "cordovaPlugins": [
     "cordova-plugin-whitelist",
     "cordova-plugin-device",
+    "cordova-plugin-dialogs",
+    "cordova-plugin-vibration",
+    "cordova-plugin-network-information",
+    "cordova-plugin-inappbrowser",
     "cordova-plugin-splashscreen",
     "cordova-plugin-console",
+    "cordova-plugin-globalization",
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": []
