@@ -30,6 +30,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 					 'platform': platform,
 					 'platformVersion': platformVersion,
 					 'language': language,
+					 'locale': locale,
 				 };
 
 
