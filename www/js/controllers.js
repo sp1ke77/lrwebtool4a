@@ -77,12 +77,15 @@ $ionicPlatform.ready(function() {
 
 		$scope.profile = localStorage.getItem('profile');
 
-		$scope.profilesplit 		= $scope.profile.split(',');
-		$rootScope.profileusername 	= $scope.profilesplit[0];
-		$rootScope.profiletoken 	= $scope.profilesplit[1];
-		$rootScope.profilelistapt 	= $scope.profilesplit[2];
-		$rootScope.profilelistaes 	= $scope.profilesplit[3];
-		$rootScope.profilename 		= $scope.profilesplit[4];
+		if ($scope.profile != null){
+
+			$scope.profilesplit 		= $scope.profile.split(',');
+			$rootScope.profileusername 	= $scope.profilesplit[0];
+			$rootScope.profiletoken 	= $scope.profilesplit[1];
+			$rootScope.profilelistapt 	= $scope.profilesplit[2];
+			$rootScope.profilelistaes 	= $scope.profilesplit[3];
+			$rootScope.profilename 		= $scope.profilesplit[4];
+		}
 
 })
 
