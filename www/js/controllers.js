@@ -2,7 +2,7 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 
 .controller('AppCtrl', function($ionicPlatform, $scope, $rootScope, $state, $cordovaDevice, $cordovaGlobalization) {
 
-		$ionicPlatform.ready(function() {
+$ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
@@ -12,7 +12,7 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 					  function () {console.log('Error getting language\n');}
 					);
 			 }
-		});
+
 
 	// External Links Redir
 	$scope.GotoLink = function (url) {
@@ -30,14 +30,14 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 	$rootScope.account 		= localStorage.getItem("account");
 	$scope.profileusername  = localStorage.getItem("username");
 
-
+});
 
 
 })
 
 .controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform, $cordovaDevice, $cordovaGlobalization) {
 
-		$ionicPlatform.ready(function() {
+$ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
@@ -47,7 +47,7 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 					  function () {console.log('Error getting language\n');}
 					);
 			 }
-		});
+
 
 	// Called to navigate to the main app
 	$scope.startApp = function() {
@@ -82,7 +82,7 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 		$rootScope.profilename 		= $scope.profilesplit[4];
 
 
-
+});
 
 
 })
