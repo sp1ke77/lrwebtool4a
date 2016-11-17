@@ -1,12 +1,16 @@
 <ion-view view-title="Inicio">
 	<ion-slide-box on-slide-changed="slideChanged(index)">
 		<ion-slide>
-			<div class="slide-content">
+			<div class="slide-content" ng-if="language == 'pt-PT'">
 				<h3><strong>BEM VINDO <br>{{profilename}}</strong></h3>
 				<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
 				<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menu</button>
-				<h3>locale : {{locale}}</h3>
-				<h3>language : {{language}}</h3>
+			</div>
+
+			<div class="slide-content" ng-if="language == 'es-ES'">
+				<h3><strong>BEN VENIDO <br>{{profilename}}</strong></h3>
+				<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
+				<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menu</button>
 			</div>
 		</ion-slide>
 	</ion-slide-box>

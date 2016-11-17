@@ -8,13 +8,14 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 			if (window.cordova) {
 
 					navigator.globalization.getPreferredLanguage(
-					  function (language) {console.log('language: ' + language.value + '\n');},
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
 					  function () {console.log('Error getting language\n');}
 					);
 
 			 }
-
-			console.log('LOCALE RUN 2:', $rootScope.language)
 
   });
 
