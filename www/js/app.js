@@ -21,18 +21,15 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 
 					document.addEventListener("deviceready", function () {
 						$cordovaGlobalization.getPreferredLanguage(function(language) {
+							$rootScope.language = language;
+							$rootScope.locale = locale.value;
+							console.log('LOCALE RUN:' + language)
 
-						console.log('LOCALE RUN:' + language)
-
-						}).then(success, error);
-					}, false);
-
-				 navigator.globalization.getLocaleName( function (locale) { var language = locale.value; });
-
+						});
+					});
 
 
-				 $rootScope.language = language;
-				 $rootScope.locale = locale.value;
+
 
 			 }
 
