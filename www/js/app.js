@@ -3,17 +3,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 .run(function($ionicPlatform, $rootScope, $cordovaGlobalization) {
 
   $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    /*if (window.cordova && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(false);
-      cordova.plugins.Keyboard.disableScroll(false);
 
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }*/
 
 			if (window.cordova) {
 				 var language = navigator.globalization.getLocaleName;
@@ -21,19 +11,15 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 
 					document.addEventListener("deviceready", function () {
 						$cordovaGlobalization.getPreferredLanguage(function(language) {
-							$rootScope.language = language;
-							$rootScope.locale = locale.value;
-							console.log('LOCALE RUN:' + language)
+							$rootScope.language = language.value;
+							console.log('LOCALE RUN 1:' + language.value);
 
 						});
 					});
 
-
-
-
 			 }
 
-			console.log('LOCALE RUN:', $rootScope.language)
+			console.log('LOCALE RUN 2:', $rootScope.language)
 
   });
 
