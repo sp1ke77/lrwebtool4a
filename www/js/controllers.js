@@ -2,18 +2,6 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 
 .controller('AppCtrl', function($ionicPlatform, $scope, $rootScope, $state, $cordovaDevice, $cordovaGlobalization) {
 
-/*$ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {console.log('Error getting language\n');}
-					);
-			 }*/
-
-
 	// External Links Redir
 	$scope.GotoLink = function (url) {
 		window.open(url,'_system');
@@ -30,24 +18,9 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 	$rootScope.account 		= localStorage.getItem("account");
 	$scope.profileusername  = localStorage.getItem("username");
 
-/*});*/
-
-
 })
 
 .controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform, $cordovaDevice, $cordovaGlobalization) {
-
-/*$ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {console.log('Error getting language\n');}
-					);
-			 }*/
-
 
 	// Called to navigate to the main app
 	$scope.startApp = function() {
@@ -81,26 +54,10 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 		$rootScope.profilelistaes 	= $scope.profilesplit[3];
 		$rootScope.profilename 		= $scope.profilesplit[4];
 
-
-/*});*/
-
-
 })
 
 .controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate, $sce, $cordovaGlobalization, $ionicPlatform) {
 
-
-		$ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {console.log('Error getting language\n');}
-					);
-			 }
-		});
 
 	//local storage data
 	$scope.profile = localStorage.getItem('profile');
@@ -139,18 +96,6 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 })
 
 .controller('SuporteCtrl', function($scope, $http, $cordovaGlobalization, $ionicPlatform) {
-
-			$ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {console.log('Error getting language\n');}
-					);
-			 }
-		});
 
 	$scope.profile = localStorage.getItem('profile');
 
@@ -196,18 +141,6 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 })
 
 .controller('SindiCtrl', function($rootScope, $scope, $filter, $http, $cordovaGlobalization, $ionicPlatform) {
-
-		$ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {console.log('Error getting language\n');}
-					);
-			 }
-		});
 
 			$scope.refreshpcs = function() {
 				// Load Registry
@@ -341,18 +274,6 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 
 .controller('RegisterCtrl', function($rootScope, $scope, $http, $state, $filter, $ionicSideMenuDelegate, $cordovaGlobalization, $ionicPlatform) {
 
-		$ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {console.log('Error getting language\n');}
-					);
-			 }
-		});
-
 	$scope.registerdevice = function() {
 
 			localStorage.setItem("username", $scope.username);
@@ -435,19 +356,6 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 
 .controller('UnregisterCtrl', function($rootScope, $scope, $cordovaGlobalization, $ionicPlatform) {
 
-		$ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {console.log('Error getting language\n');}
-					);
-			 }
-		});
-
-
 	$scope.unregisterdevice = function() {
 		if(window.localStorage.getItem("username") == undefined && window.localStorage.getItem("token") == undefined) {
 			if(alert("Desculpe, Não tem dispositivos registados")){}
@@ -466,18 +374,6 @@ angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 })
 
 .controller('AdminCtrl', function($ionicPlatform, $scope, $cordovaDevice, $cordovaGlobalization) {
-
-		$ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {console.log('Error getting language\n');}
-					);
-			 }
-		});
 
 $ionicPlatform.ready(function() {
      //find application version
