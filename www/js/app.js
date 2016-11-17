@@ -6,16 +6,11 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 
 
 			if (window.cordova) {
-				 var language = navigator.globalization.getLocaleName;
-				 var locale = navigator.globalization.getLocaleName;
 
-					document.addEventListener("deviceready", function () {
-						$cordovaGlobalization.getPreferredLanguage(function(language) {
-							$rootScope.language = language.value;
-							console.log('LOCALE RUN 1:' + language.value);
-
-						});
-					});
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {console.log('language: ' + language.value + '\n');},
+					  function () {console.log('Error getting language\n');}
+					);
 
 			 }
 
