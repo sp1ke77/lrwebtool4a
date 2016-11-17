@@ -1,6 +1,6 @@
 angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 
-.run(function($ionicPlatform, $rootScope, $cordovaDevice, $scope) {
+.run(function($ionicPlatform, $rootScope, $cordovaDevice) {
 
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,7 +21,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 				 var platform = $cordovaDevice.getPlatform();
 				 var platformVersion = $cordovaDevice.getVersion();
 
-				 navigator.globalization.getLocaleName( function (locale) { $scope.locale = locale.value; });
+				 navigator.globalization.getLocaleName( function (locale) { $rootScope.locale = locale.value; });
 
 				 var mobileDetails = {
 					 'uuid': uuid,
@@ -38,7 +38,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 
 			 }
 			console.log('Mobile Phone details RUN:', mobileDetails)
-
+			console.log('LOCALE RUN:', $rootScope.locale)
 
   });
 
