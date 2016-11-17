@@ -21,7 +21,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$ionicPlatform.ready(function() {
 			 if (window.cordova) {
 				navigator.globalization.getLocaleName( function (locale) {
-					$rootScope.locale = locale.value
+					$rootScope.locale = locale.value;
 				});
 			 }
 		});
@@ -38,18 +38,18 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$state.go('app.api');
 	};
 
-	/*$scope.next = function() {
+	$scope.next = function() {
 		$ionicSlideBoxDelegate.next();
-	};*/
+	};
 
-	/*$scope.previous = function() {
+	$scope.previous = function() {
 		$ionicSlideBoxDelegate.previous();
-	};*/
+	};
 
 	// Called each time the slide changes
-	/*$scope.slideChanged = function(index) {
+	$scope.slideChanged = function(index) {
 		$scope.slideIndex = index;
-	};*/
+	};
 
 	// Open side menu
 	$scope.toggleLeftSideMenu = function() {
@@ -65,7 +65,13 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$rootScope.profilelistaes 	= $scope.profilesplit[3];
 		$rootScope.profilename 		= $scope.profilesplit[4];
 
-
+		$ionicPlatform.ready(function() {
+			 if (window.cordova) {
+				navigator.globalization.getLocaleName( function (locale) {
+					$rootScope.locale = locale.value;
+				});
+			 }
+		});
 
 })
 
