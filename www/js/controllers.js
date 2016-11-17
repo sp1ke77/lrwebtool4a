@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ngSanitize'])
 
-.controller('AppCtrl', function($scope, $rootScope, $state) {
+.controller('AppCtrl', function($ionicPlatform, $scope, $rootScope, $state, $cordovaDevice) {
 
 	// External Links Redir
 	$scope.GotoLink = function (url) {
@@ -18,6 +18,14 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$rootScope.account 		= localStorage.getItem("account");
 	$scope.profileusername  = localStorage.getItem("username");
 
+	$ionicPlatform.ready(function() {
+			 if (window.cordova) {
+				navigator.globalization.getLocaleName( function (locale) {
+					$rootScope.locale = locale.value
+				});
+			 }
+		});
+
 
 })
 
@@ -30,7 +38,6 @@ angular.module('starter.controllers', ['ngSanitize'])
 				});
 			 }
 		});
-if (window.cordova) { $rootScope.locale = locale.value }
 
 	// Called to navigate to the main app
 	$scope.startApp = function() {

@@ -1,6 +1,6 @@
 angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 
-.run(function($ionicPlatform, $rootScope) {
+.run(function($ionicPlatform, $rootScope, $cordovaDevice) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
