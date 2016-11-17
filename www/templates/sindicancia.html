@@ -1,14 +1,14 @@
-<ion-view view-title="REDES SOCIAIS"  cache-view="false" ng-init="refreshpcs()">
+<ion-view cache-view="false" ng-init="refreshpcs()">
   <ion-content padding="true" overflow-scroll="true">
-		
+
 		<ion-refresher pulling-text="Puxe para atualizar..." on-refresh="refreshpcs()"></ion-refresher>
-		
+
 		<p style="text-align: center;">
 		<br /><br />
 		<strong>Escolha o Funil e</strong>
 		<strong> clique no botão da rede social</strong>
 		<strong> que pretende divulgar.</strong></p>
-				
+
 		<div ng-if="pc1 == '1'" class="crunchify-social">
 		<br /><br />
 		<p style="text-align: center;"><img title="Celebridadesface" width="90%" src="img/Celebridadesface.jpg" alt="Celebridadesface" />
@@ -21,7 +21,7 @@
 			<a class="crunchify-link crunchify-facebook" href="{{htmlemail1}}" target="_blank">EMAIL</a>
 		</p>
 		</div>
-		
+
 
 
 		<div ng-if="pc2 == '1'" class="crunchify-social">
@@ -78,7 +78,7 @@
 			<a class="crunchify-link crunchify-facebook" href="{{htmlemail5}}" target="_blank">EMAIL</a>
 		</p>
 		</div>
-		
+
 		<div ng-if="pc6 == '1'" class="crunchify-social">
 		<br /><br />
 		<p style="text-align: center;"><img title="Celebridadesface-cfh" max-width="600px" width="90%" src="img/Celebridadesface-cfh.jpg" alt="Celebridadesface-cfh" />
@@ -91,17 +91,26 @@
 			<a class="crunchify-link crunchify-facebook" href="{{htmlemail6}}" target="_blank">EMAIL</a>
 		</p>
 		</div>
-		
-		<br /><br /><br /><br /> 
 
-  
+		<br /><br /><br /><br />
+
+
   </ion-content>
-  	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
 
+	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
+	<div ng-if="language == 'pt-PT'">
 		<h1 class="title">LR WEBTOOL</h1>
 		<div class="buttons" ng-click="GoToSuporte()">
 			<button class="button">Suporte</button>
 		</div>
+	</div>
+
+	<div ng-if="language == 'es-ES'">
+		<h1 class="title">LR WEBTOOL</h1>
+		<div class="buttons" ng-click="GoToSuporte()">
+			<button class="button">Suporte</button>
+		</div>
+	</div>
 	</ion-footer-bar>
 
 </ion-view>

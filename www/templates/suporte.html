@@ -1,10 +1,10 @@
-<ion-view view-title="SUPORTE">
+<ion-view>
   <ion-content padding="false" overflow-scroll="false">
 
 <div class="padding">
 	<div class="list">
 
-		<form method="post">	
+		<form method="post">
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Nome</span>
@@ -14,41 +14,50 @@
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">ID de Parceiro</span>
 				<input type="text" placeholder="PT12345678" name="idlr" ng-model="suporte.idlr"  required>
-			</label> 
+			</label>
 
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Email</span>
 				<input type="text" placeholder="email@email.xxx" name="email" ng-model="suporte.email"  required>
-			</label>  
-			
+			</label>
+
 			 <label class="item item-input item-select">
 					<div class="input-label">Departamento:</div>
-				   
+
 				   <select ng-model="suporte.departamento" ng-options="departamento.value as departamento.nome for departamento in departamentos" required>
-					<option value="">Escolha o departamento</option>	
+					<option value="">Escolha o departamento</option>
 				   </select>
-			</label>	   
+			</label>
 			<label class="item item-input item-stacked-label">
 				<span class="input-label">Questão</span>
 				<textarea placeholder="Coloque Aqui a Sua Questão" ng-model="suporte.questao" required></textarea>
-			</label>  
-		  
+			</label>
+
 			<button ng-click="submit()" ng-disabled="!((!!suporte.questao ) && (!!suporte.departamento ))" class="button button-block button-positive">ENVIAR</button>
 
-		</form>  
-	   
+		</form>
 
-	   
-	   
+
+
+
 	</div>
 </div>
   </ion-content>
-  	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
 
+  	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
+	<div ng-if="language == 'pt-PT'">
 		<h1 class="title">LR WEBTOOL</h1>
 		<div class="buttons" ng-click="GoToSuporte()">
 			<button class="button">Suporte</button>
 		</div>
+	</div>
+
+	<div ng-if="language == 'es-ES'">
+		<h1 class="title">LR WEBTOOL</h1>
+		<div class="buttons" ng-click="GoToSuporte()">
+			<button class="button">Suporte</button>
+		</div>
+	</div>
 	</ion-footer-bar>
 
 </ion-view>

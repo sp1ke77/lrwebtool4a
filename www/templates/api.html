@@ -1,4 +1,4 @@
-<ion-view view-title="ATIVAÇÃO" cache-view="false">
+<ion-view cache-view="false">
 	<ion-content padding="false" overflow-scroll="true">
 
 		<div class="padding">
@@ -15,24 +15,33 @@
 				<label class="item item-input item-stacked-label">
 					<span class="input-label">Chave API</span>
 					<input type="tel" placeholder="{{token}}" name="token" ng-model="token" ng-minlength="9" ng-maxlength="9" required>
-				</label>  
+				</label>
 
 				<button class="button button-block button-balanced" ng-if="username" ng-if="token" ng-controller="RegisterCtrl" ng-click="registerdevice()">Adicionar Dispositivo</button>
 				<button class="button button-block button-assertive" ng-if="username" ng-if="token" ng-controller="UnregisterCtrl" ng-click="unregisterdevice()">Remover Dispositivo</button>
 
-			<br/><br/> 
+			<br/><br/>
 			<p>Os mesmos dados são aplicáveis a qualquer equipamento que possua.</p>
 
 		</div>
 		</div>
-		
-	</ion-content>
-		<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
 
+	</ion-content>
+
+	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
+	<div ng-if="language == 'pt-PT'">
 		<h1 class="title">LR WEBTOOL</h1>
 		<div class="buttons" ng-click="GoToSuporte()">
 			<button class="button">Suporte</button>
 		</div>
+	</div>
+
+	<div ng-if="language == 'es-ES'">
+		<h1 class="title">LR WEBTOOL</h1>
+		<div class="buttons" ng-click="GoToSuporte()">
+			<button class="button">Suporte</button>
+		</div>
+	</div>
 	</ion-footer-bar>
 
 </ion-view>

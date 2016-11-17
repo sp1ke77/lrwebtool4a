@@ -1,33 +1,65 @@
-<ion-view view-title="Device Info">
+<ion-view>
 	<ion-content padding="false" overflow-scroll="true">
-<ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
+
+	<div ng-if="language == 'pt-PT'">
+		<h1 class="title">DEVICE INFO</h1>
+		<ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
 		<div class="padding">
-
-<ul class="list">
-<li class="item">
-Modelo : {{model}}
-</li>
-<li class="item">
-Platforma : {{platform}} {{platformVersion}}
-</li>
-<li class="item">
-UUID : {{uuid}}
-</li>
-<li class="item">
-Lingua : {{locale}}
-</li>
-</ul>
-
+			<ul class="list">
+				<li class="item">
+					Modelo : {{model}}
+				</li>
+				<li class="item">
+					Platforma : {{platform}} {{platformVersion}}
+				</li>
+				<li class="item">
+					UUID : {{uuid}}
+				</li>
+				<li class="item">
+					Lingua : {{locale}}
+				</li>
+			</ul>
 		</div>
+	</div>
 
+	<div ng-if="language == 'es-ES'">
+		<h1 class="title">DEVICE INFO (ES)</h1>
+		<ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
+		<div class="padding">
+			<ul class="list">
+				<li class="item">
+					Modelo : {{model}}
+				</li>
+				<li class="item">
+					Platforma : {{platform}} {{platformVersion}}
+				</li>
+				<li class="item">
+					UUID : {{uuid}}
+				</li>
+				<li class="item">
+					Lingua : {{locale}}
+				</li>
+			</ul>
+		</div>
+	</div>
 	</ion-content>
-	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
 
+	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
+	<div ng-if="language == 'pt-PT'">
 		<h1 class="title">LR WEBTOOL</h1>
 		<div class="buttons" ng-click="GoToSuporte()">
 			<button class="button">Suporte</button>
 		</div>
+	</div>
+
+	<div ng-if="language == 'es-ES'">
+		<h1 class="title">LR WEBTOOL</h1>
+		<div class="buttons" ng-click="GoToSuporte()">
+			<button class="button">Suporte</button>
+		</div>
+	</div>
 	</ion-footer-bar>
+
 
 </ion-view>
 
