@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 
-<widget 
-	xmlns="http://www.w3.org/ns/widgets" 
-	xmlns:gap="http://phonegap.com/ns/1.0" 
+<widget
+	xmlns="http://www.w3.org/ns/widgets"
+	xmlns:gap="http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id="com.lrwebtool.mobile" 
+	id="com.lrwebtool.mobile"
 	version="1.0.158"
 	versionCode="2"
-	versionName="1.0.158" 
+	versionName="1.0.158"
 	CFBundleVersion="1.0.158"
 	packageVersion="1.0.158"
 >
@@ -38,13 +38,14 @@
 	<plugin name="cordova-plugin-dialogs" source="npm" />
 	<plugin name="cordova-plugin-network-information" source="npm" />
 	<plugin name="cordova-plugin-vibration" source="npm" />
+	<plugin name="cordova-plugin-globalization" source="npm" />
 
 	<!-- Core/Common Preferences -->
 	<preference name="StatusBarOverlaysWebView" value="true" />
 	<preference name="keyboardDisplayRequiresUserAction" value="false" />
 	<preference name="DisallowOverscroll" value="false" />
 	<icon src="icon.png" />
-	
+
 	<!--Android Preferences-->
     <platform name="android">
 		<preference name="LoadingDialog" value="A CARREGAR"/>
@@ -82,17 +83,17 @@
 	<access origin="tel:*" launch-external="yes" />
 	<access origin="sms:*" launch-external="yes" />
 	<access origin="whatsapp:*" launch-external="yes" />
-	
+
 	<allow-navigation href="http://*/*" />
 	<allow-navigation href="https://*/*" />
-	
+
 	<allow-intent href="http://*/*" />
 	<allow-intent href="https://*/*" />
 	<allow-intent href="tel:*" />
 	<allow-intent href="mailto:*" />
 	<allow-intent href="sms:*" />
 	<allow-intent href="whatsapp:*" />
-	
+
 	<!-- Start page -->
 	<content src="index.html" />
 
