@@ -124,11 +124,20 @@ $ionicPlatform.ready(function() {
 		$scope.suporte.email 		= $scope.profilesplit[6];
 	}
 
+	if ($rootScope.language == 'es-ES';){
+	$scope.departamentos = [
+			{ nome:'Webtool', value:'webtool-es' },
+			{ nome:'Financiero', value:'financeiro-es' },
+			{ nome:'Email Marketing', value:'emailmarketing-es' }
+		];
+	} else {
 	$scope.departamentos = [
 			{ nome:'Webtool', value:'webtool' },
 			{ nome:'Financeiro', value:'financeiro' },
 			{ nome:'Email Marketing', value:'emailmarketing' }
 		];
+	}
+
 
 
 
@@ -211,7 +220,7 @@ $ionicPlatform.ready(function() {
 	$rootScope.username 	= localStorage.getItem("username");
 	$rootScope.email		= 'Pertença%20ao%20Grupo%20Exclusivo%20da%20LR!!!%20Saiba%20mais%20aqui.';
 
-
+if ($rootScope.language == 'pt-PT';){
 	// PC 1
 	$rootScope.titulo1		= 'Celebridades';
 	$rootScope.slug1		= 'celebridades';
@@ -289,8 +298,9 @@ $ionicPlatform.ready(function() {
 	if (isIOS) { $scope.htmlsms6 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+' '+$rootScope.titulo6;}
 	if (isAndroid) { $scope.htmlsms6 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+' '+$rootScope.titulo6;}
     $rootScope.htmlemail6 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo6+': http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username;
+}
 
-
+if ($rootScope.language == 'es-ES';){
     // PC 7
 	$rootScope.titulo7		= 'Cristina%20Ferreira%20-%20Para%20Homem';
 	$rootScope.slug7		= 'celebridades-cfh';
@@ -328,6 +338,7 @@ $ionicPlatform.ready(function() {
 	if (isIOS) { $scope.htmlsms9 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug9+'/?id='+$rootScope.username+' '+$rootScope.titulo9;}
 	if (isAndroid) { $scope.htmlsms9 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug9+'/?id='+$rootScope.username+' '+$rootScope.titulo9;}
     $rootScope.htmlemail9 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo9+': http://lrwebtool.com/'+$rootScope.slug9+'/?id='+$rootScope.username;
+}
 
 })
 
@@ -345,12 +356,12 @@ $ionicPlatform.ready(function() {
 
 			$scope.result = "";
 
-			if ($scope.username == undefined){ if(alert("Dados Invalidos")){} else window.location.reload();}
-			if ($scope.username == null ){ if(alert("Dados Invalidos")){} else window.location.reload();}
-			else if ($scope.token == undefined ){ if(alert("Dados Invalidos")){} else window.location.reload();}
-			else if ($scope.token == null ){ if(alert("Dados Invalidos")){} else window.location.reload();}
-			else if ($scope.verifycode == null ){ if(alert("Dados Invalidos")){} else window.location.reload();}
-			else if ($scope.verifycode == undefined ){ if(alert("Dados Invalidos")){} else window.location.reload();}
+			if ($scope.username == undefined){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			if ($scope.username == null ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			else if ($scope.token == undefined ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			else if ($scope.token == null ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			else if ($scope.verifycode == null ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			else if ($scope.verifycode == undefined ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
 			else
 
 				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$scope.username+'&T='+$scope.token+'&V='+$scope.verifycode)
@@ -366,27 +377,27 @@ $ionicPlatform.ready(function() {
 							window.localStorage.removeItem("username");
 							window.localStorage.removeItem("token");
 							localStorage.removeItem("profile");
-							if(alert('Dados Invalidos')){}
+							if(alert('Dados Invalidos / Datos Incorrectos')){}
 							else window.location.reload();
 						}
 						if($scope.result == null){
 							window.localStorage.removeItem("username");
 							window.localStorage.removeItem("token");
 							localStorage.removeItem("profile");
-							if(alert("Dados Invalidos")){}
+							if(alert("Dados Invalidos / Datos Incorrectos")){}
 							else window.location.reload();
 						}
-						if($scope.result == 'ERRO\n'){
+						if($scope.result == 'ERRO / ERROR\n'){
 							window.localStorage.removeItem("username");
 							window.localStorage.removeItem("token");
 							localStorage.removeItem("profile");
-							if(alert("Dados Invalidos")){}
+							if(alert("Dados Invalidos / Datos Incorrectos")){}
 							else window.location.reload();
 						}
 
 
 
-						if(($scope.result != undefined) && ($scope.result != null) && ($scope.result != 'ERRO\n')){
+						if(($scope.result != undefined) && ($scope.result != null) && ($scope.result != 'ERRO / ERROR\n')){
 
 						localStorage.setItem('account', 'OK');
 						$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
@@ -401,7 +412,7 @@ $ionicPlatform.ready(function() {
 
 						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
 
-							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave: " + localStorage.getItem("token"))){ }
+							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave/Clave: " + localStorage.getItem("token"))){ }
 							else window.location.reload(); $state.go('app.intro');
 						}
 
