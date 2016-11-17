@@ -1,4 +1,5 @@
-<ion-view view-title="Inicio" ng-if="language == 'pt-PT'">
+<div ng-if="language == 'pt-PT'">
+<ion-view view-title="Inicio">
 	<ion-slide-box on-slide-changed="slideChanged(index)">
 		<ion-slide>
 			<div class="slide-content">
@@ -6,30 +7,21 @@
 				<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
 				<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menu</button>
 			</div>
-
-			<div class="slide-content" ng-if="language == 'es-ES'">
-				<h3><strong>BEN VENIDO <br>{{profilename}}</strong></h3>
-				<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
-				<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menu</button>
-			</div>
 		</ion-slide>
 	</ion-slide-box>
 </ion-view>
+</div>
 
-<ion-view view-title="Inicio" ng-if="language == 'es-ES'">
+<div ng-if="language == 'es-ES'">
+<ion-view view-title="Principio">
 	<ion-slide-box on-slide-changed="slideChanged(index)">
 		<ion-slide>
-			<div class="slide-content" ng-if="language == 'pt-PT'">
-				<h3><strong>BEM VINDO <br>{{profilename}}</strong></h3>
-				<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
-				<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menu</button>
-			</div>
-
-			<div class="slide-content" ng-if="language == 'es-ES'">
-				<h3><strong>BEN VENIDO <br>{{profilename}}</strong></h3>
-				<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
-				<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menu</button>
+			<div class="slide-content">
+				<h3><strong>BIENVENIDO <br>{{profilename}}</strong></h3>
+				<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registrar el Aparato</button>
+				<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver el Menú</button>
 			</div>
 		</ion-slide>
 	</ion-slide-box>
 </ion-view>
+</div>
