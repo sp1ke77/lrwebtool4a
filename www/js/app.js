@@ -21,13 +21,14 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 				 var platform = $cordovaDevice.getPlatform();
 				 var platformVersion = $cordovaDevice.getVersion();
 
-				 navigator.globalization.getLocaleName( function (locale) { $rootScope.locale = locale.value; });
+				 navigator.globalization.getLocaleName( function (locale) { var language = locale.value; });
 
 				 var mobileDetails = {
 					 'uuid': uuid,
 					 'model': model,
 					 'platform': platform,
 					 'platformVersion': platformVersion,
+					 'language': language,
 				 };
 
 
@@ -35,10 +36,11 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 				 $rootScope.model = model;
 				 $rootScope.platform = platform;
 				 $rootScope.platformVersion = platformVersion;
+				 $rootScope.language = language;
 
 			 }
 			console.log('Mobile Phone details RUN:', mobileDetails)
-			console.log('LOCALE RUN:', $rootScope.locale)
+			console.log('LOCALE RUN:', $rootScope.language)
 
   });
 
