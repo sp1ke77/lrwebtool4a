@@ -19,12 +19,15 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$scope.profileusername  = localStorage.getItem("username");
 
 	$ionicPlatform.ready(function() {
-			 if (window.cordova) {
-				navigator.globalization.getLocaleName( function (locale) {
-					$rootScope.locale = locale.value;
-				});
-			 }
-		});
+		if (window.cordova) {
+			navigator.globalization.getLocaleName( function (locale) {
+				$rootScope.locale = locale.value;
+			});
+		}
+
+		console.log('APPCTRL : ' + $rootScope.locale);
+
+	});
 
 
 })
@@ -71,6 +74,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 					$rootScope.locale = locale.value;
 				});
 			 }
+			 console.log('INTROCTRL : ' + $rootScope.locale);
 		});
 
 })
@@ -175,7 +179,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$rootScope.username+'&T='+$rootScope.token+'&V='+$rootScope.verifycode)
 								.success(function(data, status, headers,config){
 									$scope.result = data.content.rendered;
-									console.log('INTROCTRL HTTP RES: ' + $scope.result);
+									console.log('SINDICTRL HTTP RES: ' + $scope.result);
 									$scope.saveresult = sessionStorage.setItem('profile', data.content.rendered);
 
 								})
@@ -184,16 +188,16 @@ angular.module('starter.controllers', ['ngSanitize'])
 								   $scope.$broadcast('scroll.refreshComplete');
 
 								   $scope.profile2 = sessionStorage.getItem('profile');
-									console.log('INTROCTRL SESSION RES: ' + $scope.profile2);
+									console.log('SINDICTRL SESSION RES: ' + $scope.profile2);
 
 									if($scope.profile2 != undefined && $scope.profile2 != null){
 										$scope.profile2split 		= $scope.profile2.split(',');
-										$rootScope.pc1		 		= $scope.profile2split[7];console.log('INTROCTRL PC1: ' + $rootScope.pc1);
-										$rootScope.pc2		 		= $scope.profile2split[8];console.log('INTROCTRL PC2: ' + $rootScope.pc2);
-										$rootScope.pc3		 		= $scope.profile2split[9];console.log('INTROCTRL PC3: ' + $rootScope.pc3);
-										$rootScope.pc4		 		= $scope.profile2split[10];console.log('INTROCTRL PC4: ' + $rootScope.pc4);
-										$rootScope.pc5		 		= $scope.profile2split[11];console.log('INTROCTRL PC5: ' + $rootScope.pc5);
-										$rootScope.pc6		 		= $scope.profile2split[12];console.log('INTROCTRL PC6: ' + $rootScope.pc6);
+										$rootScope.pc1		 		= $scope.profile2split[7];console.log('SINDICTRL PC1: ' + $rootScope.pc1);
+										$rootScope.pc2		 		= $scope.profile2split[8];console.log('SINDICTRL PC2: ' + $rootScope.pc2);
+										$rootScope.pc3		 		= $scope.profile2split[9];console.log('SINDICTRL PC3: ' + $rootScope.pc3);
+										$rootScope.pc4		 		= $scope.profile2split[10];console.log('SINDICTRL PC4: ' + $rootScope.pc4);
+										$rootScope.pc5		 		= $scope.profile2split[11];console.log('SINDICTRL PC5: ' + $rootScope.pc5);
+										$rootScope.pc6		 		= $scope.profile2split[12];console.log('SINDICTRL PC6: ' + $rootScope.pc6);
 									}
 
 								 });

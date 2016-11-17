@@ -1,6 +1,7 @@
 <ion-view view-title="Inicio">
-	<ion-slide-box on-slide-changed="slideChanged(index)">
-		<ion-slide>
+	<ion-content padding="false" overflow-scroll="true">
+	<ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
+
 			<div class="slide-content">
 				<h3><strong>BEM VINDO <br>{{profilename}}</strong></h3>
 				<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
@@ -11,6 +12,6 @@
 				{{platform}},
 				{{platformVersion}}
 			</div>
-		</ion-slide>
-	</ion-slide-box>
+	</ion-content>
+
 </ion-view>

@@ -29,7 +29,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 					 'platform': platform,
 					 'platformVersion': platformVersion,
 				 };
-				 console.log('Mobile Phone details:', mobileDetails)
+
 
 				 $rootScope.uuid = uuid;
 				 $rootScope.model = model;
@@ -37,7 +37,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 				 $rootScope.platformVersion = platformVersion;
 
 			 }
-
+			console.log('Mobile Phone details:', mobileDetails)
 
 
   });
