@@ -1,19 +1,18 @@
 <ion-view>
 
-	<ion-header-bar align-title="center" class="bar-balanced custom-lrwine">
-	<div ng-if="language == 'pt-PT'">
-		<h1 class="title">LR WEBTOOL</h1>
-	</div>
+	<ion-nav-title>
+		<div ng-if="language == 'pt-PT'">
+			<h1 class="title">Informações do Dispositivo</h1>
+		</div>
 
-	<div ng-if="language == 'es-ES'">
-		<h1 class="title">LR WEBTOOL</h1>
-	</div>
-	</ion-header-bar>
+		<div ng-if="language == 'es-ES'">
+			<h1 class="title">Informações do Dispositivo</h1>
+		</div>
+	</ion-nav-title>
 
 	<ion-content padding="false" overflow-scroll="true">
 
 	<div ng-if="language == 'pt-PT'">
-		<h1 class="title">DEVICE INFO</h1>
 		<ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
 		<div class="padding">
 			<ul class="list">
