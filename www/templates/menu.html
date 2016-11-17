@@ -27,56 +27,56 @@
 
         <ion-item class="item item-icon-left" nav-clear menu-close href="#/app/intro">
           <i class="icon ion-android-home"></i>
-          Inicio
+          <div ng-if="language == 'pt-PT'">Inicio</div>
         </ion-item>
 
         <ion-item class="item item-icon-left" nav-clear menu-close href="#/app/api">
           <i class="icon ion-android-list"></i>
-          Ativação
+          <div ng-if="language == 'pt-PT'">Ativação</div>
         </ion-item>
 
         <div ng-if="account == 'OK'">
 			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/sindicancia">
 			  <i class="icon ion-ios-world"></i>
-			  Redes Sociais
+			  <div ng-if="language == 'pt-PT'">Redes Sociais</div>
 			</ion-item>
 
 			<ion-item class="item item-icon-left" nav-clear menu-close ng-click="GotoLink('http://lrwebtool.com/recrutar/?id={{profileusername}}')">
 			  <i class="icon ion-person-add"></i>
-			  Recrutar
+			  <div ng-if="language == 'pt-PT'">Recrutar</div>
 			</ion-item>
 
 			<ion-item class="item item-icon-left" nav-clear menu-close ng-click="GotoLink('https://mail4mkt.com/')">
 			  <i class="icon ion-android-drafts"></i>
-			  Email Marketing
+			  <div ng-if="language == 'pt-PT'">Email Marketing</div>
 			</ion-item>
 
 			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/contatos">
 			  <i class="icon ion-android-contacts"></i>
-			  Registar Contato
+			  <div ng-if="language == 'pt-PT'">Registar Contato</div>
 			</ion-item>
 
 			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/suporte">
 			<i class="icon ion-android-chat"></i>
-			Suporte
+			<div ng-if="language == 'pt-PT'">Suporte</div>
 			</ion-item>
 		</div>
 		<div ng-if="username == 'sp1ke77'">
 			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/admin">
 			<i class="icon ion-locked"></i>
-			Device Info
+			<div ng-if="language == 'pt-PT'">Device Info</div>
 			</ion-item>
 		</div>
       </ion-list>
 
       <div class="padding">
-          <div class="title3" ng-if="account == 'OK'">Ligado como</div>
+          <div class="title3" ng-if="language == 'pt-PT'"ng-if="account == 'OK'">Ligado como</div>
           <div class="title3" ng-if="account == 'OK'">{{profilename}}</div>
           <div class="title3" ng-if="account == 'OK'">{{locale}}</div>
       </div>
     </ion-content>
      	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
-			<h1 class="title2">versão 1.1.159 - 2016, L4Marketing LLC</h1>
+			<h1 class="title2" >v1.1.159 - 2016, L4Marketing LLC</h1>
 
 	</ion-footer-bar>
   </ion-side-menu>

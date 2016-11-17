@@ -1,39 +1,66 @@
 <ion-view cache-view="false">
-	<ion-content padding="false" overflow-scroll="true">
 
-	<ion-header-bar align-title="center" class="bar-balanced custom-lrwine">
+	<ion-nav-title>
 		<div ng-if="language == 'pt-PT'">
-			<h1 class="title">LR WEBTOOL</h1>
+			<h1 class="title">Ativação</h1>
 		</div>
 
 		<div ng-if="language == 'es-ES'">
-			<h1 class="title">LR WEBTOOL</h1>
+			<h1 class="title">Activación</h1>
 		</div>
-	</ion-header-bar>
+	</ion-nav-title>
+
+
+	<ion-content padding="false" overflow-scroll="true">
 
 		<div class="padding">
-		<div class="list">
 
-			<br/>
-			<p>Insira o Nome de Utilizador e Chave API fornecido no backoffice da LR Webtool para ativar o seu equipamento.</p><br/>
+			<div class="list" ng-if="language == 'pt-PT'">
 
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Nome de Utilizador</span>
-					<input type="text" placeholder="{{username}}" name="username" ng-model="username" ng-minlength="4" required>
-				</label>
+				<br/>
+				<p>Insira o Nome de Utilizador e Chave API fornecido no backoffice da LR Webtool para ativar o seu equipamento.</p><br/>
 
-				<label class="item item-input item-stacked-label">
-					<span class="input-label">Chave API</span>
-					<input type="tel" placeholder="{{token}}" name="token" ng-model="token" ng-minlength="9" ng-maxlength="9" required>
-				</label>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Nome de Utilizador</span>
+						<input type="text" placeholder="{{username}}" name="username" ng-model="username" ng-minlength="4" required>
+					</label>
 
-				<button class="button button-block button-balanced" ng-if="username" ng-if="token" ng-controller="RegisterCtrl" ng-click="registerdevice()">Adicionar Dispositivo</button>
-				<button class="button button-block button-assertive" ng-if="username" ng-if="token" ng-controller="UnregisterCtrl" ng-click="unregisterdevice()">Remover Dispositivo</button>
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Chave API</span>
+						<input type="tel" placeholder="{{token}}" name="token" ng-model="token" ng-minlength="9" ng-maxlength="9" required>
+					</label>
 
-			<br/><br/>
-			<p>Os mesmos dados são aplicáveis a qualquer equipamento que possua.</p>
+					<button class="button button-block button-balanced" ng-if="username" ng-if="token" ng-controller="RegisterCtrl" ng-click="registerdevice()">Adicionar Dispositivo</button>
+					<button class="button button-block button-assertive" ng-if="username" ng-if="token" ng-controller="UnregisterCtrl" ng-click="unregisterdevice()">Remover Dispositivo</button>
 
-		</div>
+				<br/><br/>
+				<p>Os mesmos dados são aplicáveis a qualquer equipamento que possua.</p>
+
+			</div>
+
+			<div class="list" ng-if="language == 'es-ES'">
+
+				<br/>
+				<p>Introducir el nombre de usuario y clave de API, se puede encontrar la clave de activación en el back office de LRWebTool para activar el dispositivo.</p><br/>
+
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Nombre de utilizador</span>
+						<input type="text" placeholder="{{username}}" name="username" ng-model="username" ng-minlength="4" required>
+					</label>
+
+					<label class="item item-input item-stacked-label">
+						<span class="input-label">Clave API</span>
+						<input type="tel" placeholder="{{token}}" name="token" ng-model="token" ng-minlength="9" ng-maxlength="9" required>
+					</label>
+
+					<button class="button button-block button-balanced" ng-if="username" ng-if="token" ng-controller="RegisterCtrl" ng-click="registerdevice()">Agregar Dispositivo</button>
+					<button class="button button-block button-assertive" ng-if="username" ng-if="token" ng-controller="UnregisterCtrl" ng-click="unregisterdevice()">Eliminar Dispositivo</button>
+
+				<br/><br/>
+				<p>Los mismos datos se puede aplicar a cualquier equipo que tenga.</p>
+
+			</div>
+
 		</div>
 
 	</ion-content>
@@ -49,7 +76,7 @@
 	<div ng-if="language == 'es-ES'">
 		<h1 class="title">LR WEBTOOL</h1>
 		<div class="buttons" ng-click="GoToSuporte()">
-			<button class="button">Suporte</button>
+			<button class="button">Soporte</button>
 		</div>
 	</div>
 	</ion-footer-bar>
