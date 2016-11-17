@@ -17,21 +17,6 @@ $ionicPlatform.ready(function() {
       StatusBar.styleDefault();
     }
 
-
-
-
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {
-						  console.log('Error getting language\n');
-						  $rootScope.language = 'pt-PT';
-						  }
-					);
-			 } else { $rootScope.language = 'pt-PT';}
   });
 
 })
