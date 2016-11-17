@@ -12,12 +12,6 @@
 	CFBundleVersion="1.0.158"
 	packageVersion="1.0.158"
 >
-	<!--
-		versionCode="2" -> Android
-		versionName="1.0.158"  -> Android
-		CFBundleVersion="1.0.158"  -> iOS
-		packageVersion="1.0.158"  -> Windowa
-	-->
 
    <name>LRWEBTOOL</name>
    <description>Ferramenta Online para Parceiros LR</description>
