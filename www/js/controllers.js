@@ -1,7 +1,20 @@
 angular.module('starter.controllers', ['ngSanitize','ngFlag'])
 
 .controller('AppCtrl', function($ionicPlatform, $scope, $rootScope, $state, $cordovaDevice, $cordovaGlobalization) {
-
+$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {
+						  console.log('Error getting language\n');
+						  $rootScope.language = 'pt-PT';
+						  }
+					);
+			 } else { $rootScope.language = 'pt-PT';}
+  });
 	// External Links Redir
 	$scope.GotoLink = function (url) {
 		window.open(url,'_system');
@@ -74,7 +87,20 @@ $ionicPlatform.ready(function() {
 })
 
 .controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate, $sce, $cordovaGlobalization, $ionicPlatform) {
-
+$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {
+						  console.log('Error getting language\n');
+						  $rootScope.language = 'pt-PT';
+						  }
+					);
+			 } else { $rootScope.language = 'pt-PT';}
+  });
 
 	//local storage data
 	$scope.profile = localStorage.getItem('profile');
@@ -112,8 +138,21 @@ $ionicPlatform.ready(function() {
 
 })
 
-.controller('SuporteCtrl', function($scope, $http, $cordovaGlobalization, $ionicPlatform) {
-
+.controller('SuporteCtrl', function($scope, $rootScope, $http, $cordovaGlobalization, $ionicPlatform) {
+$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {
+						  console.log('Error getting language\n');
+						  $rootScope.language = 'pt-PT';
+						  }
+					);
+			 } else { $rootScope.language = 'pt-PT';}
+  });
 	$scope.profile = localStorage.getItem('profile');
 
 	if($scope.profile != undefined && $scope.profile != null){
@@ -124,7 +163,7 @@ $ionicPlatform.ready(function() {
 		$scope.suporte.email 		= $scope.profilesplit[6];
 	}
 
-	if ($rootScope.language == 'es-ES';){
+	if ($rootScope.language == 'es-ES'){
 	$scope.departamentos = [
 			{ nome:'Webtool', value:'webtool-es' },
 			{ nome:'Financiero', value:'financeiro-es' },
@@ -167,7 +206,20 @@ $ionicPlatform.ready(function() {
 })
 
 .controller('SindiCtrl', function($rootScope, $scope, $filter, $http, $cordovaGlobalization, $ionicPlatform) {
-
+$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {
+						  console.log('Error getting language\n');
+						  $rootScope.language = 'pt-PT';
+						  }
+					);
+			 } else { $rootScope.language = 'pt-PT';}
+  });
 			$scope.refreshpcs = function() {
 				// Load Registry
 				$rootScope.username 	= localStorage.getItem("username");
@@ -220,7 +272,7 @@ $ionicPlatform.ready(function() {
 	$rootScope.username 	= localStorage.getItem("username");
 	$rootScope.email		= 'Pertença%20ao%20Grupo%20Exclusivo%20da%20LR!!!%20Saiba%20mais%20aqui.';
 
-if ($rootScope.language == 'pt-PT';){
+if ($rootScope.language == 'pt-PT'){
 	// PC 1
 	$rootScope.titulo1		= 'Celebridades';
 	$rootScope.slug1		= 'celebridades';
@@ -300,7 +352,7 @@ if ($rootScope.language == 'pt-PT';){
     $rootScope.htmlemail6 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo6+': http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username;
 }
 
-if ($rootScope.language == 'es-ES';){
+if ($rootScope.language == 'es-ES'){
     // PC 7
 	$rootScope.titulo7		= 'Cristina%20Ferreira%20-%20Para%20Homem';
 	$rootScope.slug7		= 'celebridades-cfh';
@@ -343,7 +395,20 @@ if ($rootScope.language == 'es-ES';){
 })
 
 .controller('RegisterCtrl', function($rootScope, $scope, $http, $state, $filter, $ionicSideMenuDelegate, $cordovaGlobalization, $ionicPlatform) {
-
+$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {
+						  console.log('Error getting language\n');
+						  $rootScope.language = 'pt-PT';
+						  }
+					);
+			 } else { $rootScope.language = 'pt-PT';}
+  });
 	$scope.registerdevice = function() {
 
 			localStorage.setItem("username", $scope.username);
@@ -425,7 +490,20 @@ if ($rootScope.language == 'es-ES';){
 })
 
 .controller('UnregisterCtrl', function($rootScope, $scope, $cordovaGlobalization, $ionicPlatform) {
-
+$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {
+						  console.log('Error getting language\n');
+						  $rootScope.language = 'pt-PT';
+						  }
+					);
+			 } else { $rootScope.language = 'pt-PT';}
+  });
 	$scope.unregisterdevice = function() {
 		if(window.localStorage.getItem("username") == undefined && window.localStorage.getItem("token") == undefined) {
 			if(alert("Desculpe, Não tem dispositivos registados")){}
@@ -443,7 +521,7 @@ if ($rootScope.language == 'es-ES';){
 	};
 })
 
-.controller('AdminCtrl', function($ionicPlatform, $scope, $cordovaDevice, $cordovaGlobalization) {
+.controller('AdminCtrl', function($ionicPlatform, $rootScope, $scope, $cordovaDevice, $cordovaGlobalization) {
 
 $ionicPlatform.ready(function() {
      //find application version
