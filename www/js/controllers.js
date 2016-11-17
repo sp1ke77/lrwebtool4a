@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ngSanitize'])
 
-.controller('AppCtrl', function($ionicPlatform, $scope, $rootScope, $state, $cordovaDevice) {
+.controller('AppCtrl', function($ionicPlatform, $scope, $rootScope, $state, $cordovaDevice, $cordovaGlobalization) {
 
 	// External Links Redir
 	$scope.GotoLink = function (url) {
@@ -18,10 +18,22 @@ angular.module('starter.controllers', ['ngSanitize'])
 	$rootScope.account 		= localStorage.getItem("account");
 	$scope.profileusername  = localStorage.getItem("username");
 
+		$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {console.log('Error getting language\n');}
+					);
+			 }
+		});
+
 
 })
 
-.controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform, $cordovaDevice) {
+.controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform, $cordovaDevice, $cordovaGlobalization) {
 
 
 
@@ -58,10 +70,22 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$rootScope.profilename 		= $scope.profilesplit[4];
 
 
+		$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {console.log('Error getting language\n');}
+					);
+			 }
+		});
+
 
 })
 
-.controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate, $sce) {
+.controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate, $sce, $cordovaGlobalization, $ionicPlatform) {
 
 
 	//local storage data
@@ -98,9 +122,21 @@ angular.module('starter.controllers', ['ngSanitize'])
 		$ionicSideMenuDelegate.toggleLeft();
 	};
 
+		$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {console.log('Error getting language\n');}
+					);
+			 }
+		});
+
 })
 
-.controller('SuporteCtrl', function($scope, $http) {
+.controller('SuporteCtrl', function($scope, $http, $cordovaGlobalization, $ionicPlatform) {
 
 	$scope.profile = localStorage.getItem('profile');
 
@@ -141,13 +177,33 @@ angular.module('starter.controllers', ['ngSanitize'])
 	console.log('SUPORTECTRL 4: ' + $scope.suporte.departamento);
 	console.log('SUPORTECTRL 5: ' + $scope.suporte.questao);
 
-
+		$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {console.log('Error getting language\n');}
+					);
+			 }
+		});
 
 })
 
-.controller('SindiCtrl', function($rootScope, $scope, $filter, $http) {
+.controller('SindiCtrl', function($rootScope, $scope, $filter, $http, $cordovaGlobalization, $ionicPlatform) {
 
-
+		$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {console.log('Error getting language\n');}
+					);
+			 }
+		});
 
 			$scope.refreshpcs = function() {
 				// Load Registry
@@ -279,7 +335,19 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 })
 
-.controller('RegisterCtrl', function($rootScope, $scope, $http, $state, $filter, $ionicSideMenuDelegate) {
+.controller('RegisterCtrl', function($rootScope, $scope, $http, $state, $filter, $ionicSideMenuDelegate, $cordovaGlobalization, $ionicPlatform) {
+
+		$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {console.log('Error getting language\n');}
+					);
+			 }
+		});
 
 	$scope.registerdevice = function() {
 
@@ -361,7 +429,20 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 })
 
-.controller('UnregisterCtrl', function($rootScope, $scope) {
+.controller('UnregisterCtrl', function($rootScope, $scope, $cordovaGlobalization, $ionicPlatform) {
+
+		$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {console.log('Error getting language\n');}
+					);
+			 }
+		});
+
 
 	$scope.unregisterdevice = function() {
 		if(window.localStorage.getItem("username") == undefined && window.localStorage.getItem("token") == undefined) {
@@ -380,7 +461,19 @@ angular.module('starter.controllers', ['ngSanitize'])
 	};
 })
 
-.controller('AdminCtrl', function($ionicPlatform, $scope, $cordovaDevice) {
+.controller('AdminCtrl', function($ionicPlatform, $scope, $cordovaDevice, $cordovaGlobalization) {
+
+		$ionicPlatform.ready(function() {
+			if (window.cordova) {
+					navigator.globalization.getPreferredLanguage(
+					  function (language) {
+						  console.log('language: ' + language.value + '\n');
+						  $rootScope.language = language.value;
+						  },
+					  function () {console.log('Error getting language\n');}
+					);
+			 }
+		});
 
 $ionicPlatform.ready(function() {
      //find application version
