@@ -5,11 +5,11 @@
 				<h3><strong>BEM VINDO <br>{{profilename}}</strong></h3>
 				<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
 				<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menu</button>
-				{{locale}},
+				<h3>{{language}},
 				{{uuid}},
 				{{model}},
 				{{platform}},
-				{{platformVersion}}
+				{{platformVersion}}</h3>
 			</div>
 		</ion-slide>
 	</ion-slide-box>
