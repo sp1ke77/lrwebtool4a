@@ -31,13 +31,7 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 .controller('IntroCtrl', function($scope,$rootScope, $state, $http, $ionicSlideBoxDelegate, $ionicSideMenuDelegate, $ionicPlatform, $cordovaDevice) {
 
-		$ionicPlatform.ready(function() {
-			 if (window.cordova) {
-				navigator.globalization.getLocaleName( function (locale) {
-					$rootScope.locale = locale.value
-				});
-			 }
-		});
+
 
 	// Called to navigate to the main app
 	$scope.startApp = function() {
@@ -58,9 +52,9 @@ angular.module('starter.controllers', ['ngSanitize'])
 	};*/
 
 	// Open side menu
-	/*$scope.toggleLeftSideMenu = function() {
+	$scope.toggleLeftSideMenu = function() {
 		$ionicSideMenuDelegate.toggleLeft();
-	};*/
+	};
 
 		$scope.profile = localStorage.getItem('profile');
 

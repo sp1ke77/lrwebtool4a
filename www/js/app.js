@@ -1,6 +1,7 @@
 angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 
 .run(function($ionicPlatform, $rootScope, $cordovaDevice) {
+
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -14,18 +15,33 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
       StatusBar.styleDefault();
     }
 
-	if (window.cordova) {
-		navigator.globalization.getLocaleName(function(l) {
-			console.log(l);
-			locale.setLocale(l.value);
-			$rootScope.locale = l;
-		}, function(err) {
-			console.log('get local err', err);
-		});
-	}
+			if (window.cordova) {
+				 var uuid = $cordovaDevice.getUUID();
+				 var model = $cordovaDevice.getModel();
+				 var platform = $cordovaDevice.getPlatform();
+				 var platformVersion = $cordovaDevice.getVersion();
+
+				 navigator.globalization.getLocaleName( function (locale) { $scope.locale = locale.value });
+
+				 var mobileDetails = {
+					 'uuid': uuid,
+					 'model': model,
+					 'platform': platform,
+					 'platformVersion': platformVersion,
+				 };
+				 console.log('Mobile Phone details:', mobileDetails)
+
+				 $rootScope.uuid = uuid;
+				 $rootScope.model = model;
+				 $rootScope.platform = platform;
+				 $rootScope.platformVersion = platformVersion;
+
+			 }
+
 
 
   });
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
