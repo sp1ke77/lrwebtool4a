@@ -21,6 +21,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 				 var platform = $cordovaDevice.getPlatform();
 				 var platformVersion = $cordovaDevice.getVersion();
 				 var language = '';
+				 var locale = '';
 
 				 navigator.globalization.getLocaleName( function (locale) { var language = locale.value; });
 
