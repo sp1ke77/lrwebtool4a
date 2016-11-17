@@ -12,11 +12,14 @@
 
 
 
-  <ion-content padding="false" overflow-scroll="false">
+<ion-content padding="false" overflow-scroll="false">
 
 <div class="padding">
 	<div class="list">
 
+
+<!-- //////////////////////// PORTUGUES ///////////////////// -->
+<div ng-if="language == 'pt-PT'">
 		<form method="post">
 
 			<label class="item item-input item-stacked-label">
@@ -49,7 +52,44 @@
 			<button ng-click="submit()" ng-disabled="!((!!suporte.questao ) && (!!suporte.departamento ))" class="button button-block button-positive">ENVIAR</button>
 
 		</form>
+</div>
 
+
+<!-- //////////////////////// ESPANHOL ///////////////////// -->
+<div ng-if="language == 'es-ES'">
+		<form method="post">
+
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Nombre</span>
+				<input type="text" placeholder="webtool" name="name" ng-model="suporte.name" required>
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">ID de Socio</span>
+				<input type="text" placeholder="ES12345678" name="idlr" ng-model="suporte.idlr"  required>
+			</label>
+
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Email</span>
+				<input type="text" placeholder="email@email.xxx" name="email" ng-model="suporte.email"  required>
+			</label>
+
+			 <label class="item item-input item-select">
+					<div class="input-label">Departamento:</div>
+
+				   <select ng-model="suporte.departamento" ng-options="departamento.value as departamento.nome for departamento in departamentos" required>
+					<option value="">Elegir departamento</option>
+				   </select>
+			</label>
+			<label class="item item-input item-stacked-label">
+				<span class="input-label">Pregunta</span>
+				<textarea placeholder="Ponga aquí su Pregunta" ng-model="suporte.questao" required></textarea>
+			</label>
+
+			<button ng-click="submit()" ng-disabled="!((!!suporte.questao ) && (!!suporte.departamento ))" class="button button-block button-positive">ENVIAR</button>
+
+		</form>
+</div>
 
 
 
@@ -57,7 +97,7 @@
 </div>
   </ion-content>
 
-  	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
+	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
 	<div ng-if="language == 'pt-PT'">
 		<h1 class="title">LR WEBTOOL</h1>
 		<div class="buttons" ng-click="GoToSuporte()">
@@ -68,7 +108,7 @@
 	<div ng-if="language == 'es-ES'">
 		<h1 class="title">LR WEBTOOL</h1>
 		<div class="buttons" ng-click="GoToSuporte()">
-			<button class="button">Suporte</button>
+			<button class="button">Soporte</button>
 		</div>
 	</div>
 	</ion-footer-bar>

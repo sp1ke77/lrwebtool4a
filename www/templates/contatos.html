@@ -11,7 +11,9 @@
 	</ion-nav-title>
 
   <ion-slide-box>
-	<ion-slide class="slider-slide2">
+
+	<!-- //////////////////////// PORTUGUES ///////////////////// -->
+	<ion-slide class="slider-slide2" ng-if="language == 'pt-PT'">
 
 			<div class="slide-content2">
 				<h3><strong>PORTUGAL</strong></h3>
@@ -48,7 +50,7 @@
 			</div>
 		</ion-slide>
 
-		<ion-slide class="slider-slide2" ng-if="profilelistaes != ''">
+		<ion-slide class="slider-slide2" ng-if="language == 'pt-PT'" ng-if="profilelistaes != ''">
 
 			<div class="slide-content2">
 				<h3><strong>ESPANHA</strong></h3>
@@ -85,6 +87,49 @@
 			</div>
 		</ion-slide>
 
+		<!-- //////////////////////// ESPANHOL ///////////////////// -->
+		<ion-slide class="slider-slide2" ng-if="language == 'es-ES'" ng-if="profilelistaes != ''">
+
+			<div class="slide-content2">
+				<h3><strong>ESPAÑA</strong></h3>
+		 <div class="padding">
+		<div class="list">
+			<form id="mail4mkt" action="{{formES}}" method="post" accept-charset="utf-8" >
+
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Nombre</span>
+					<input id="FNAME" type="text" class="form-control" name="FNAME" placeholder="Primero y ultimo nombre" value="" ng-model="M4MFNAME" />
+				</label>
+
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Email</span>
+					<input id="EMAIL" type="email" class="form-control" name="EMAIL" placeholder="ejemplo@ejemplo.xyz" value="" ng-model="M4MEMAIL" />
+				</label>
+
+				<label class="item item-input item-stacked-label">
+					<span class="input-label">Teléfono</span>
+					<input id="PHONE" type="tel" class="form-control" name="PHONE" placeholder="999888777" value=""/>
+				</label>
+
+				<div class="clearfix"><!-- --></div>
+
+				<div class="actions">
+					<button id="M4Msubmit" type="submit" ng-disabled="!(!!M4MFNAME && !!M4MEMAIL )" class="button button-block button-positive">Registrar Contacto</button>
+				</div>
+
+				<div class="clearfix"><!-- --></div>
+
+			</form>
+		</div>
+		</div>
+			</div>
+		</ion-slide>
+
+
+
+
+
+
 	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
 	<div ng-if="language == 'pt-PT'">
 		<h1 class="title">LR WEBTOOL</h1>
@@ -96,7 +141,7 @@
 	<div ng-if="language == 'es-ES'">
 		<h1 class="title">LR WEBTOOL</h1>
 		<div class="buttons" ng-click="GoToSuporte()">
-			<button class="button">Suporte</button>
+			<button class="button">Soporte</button>
 		</div>
 	</div>
 	</ion-footer-bar>
