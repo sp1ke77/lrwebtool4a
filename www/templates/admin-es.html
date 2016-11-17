@@ -1,13 +1,26 @@
-<ion-view view-title="RESTRICTED AREA">
+<ion-view view-title="Device Info">
 	<ion-content padding="false" overflow-scroll="true">
 <ion-refresher pulling-text="Puxe para recarregar..." on-refresh="doRefresh()"> </ion-refresher>
 		<div class="padding">
-	
 
+<ul class="list">
+<li class="item">
+Modelo : {{model}}
+</li>
+<li class="item">
+Platforma : {{platform}} {{platformVersion}}
+</li>
+<li class="item">
+UUID : {{uuid}}
+</li>
+<li class="item">
+Lingua : {{locale}}
+</li>
+</ul>
 
 		</div>
-		 
-	</ion-content> 	
+
+	</ion-content>
 	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
 
 		<h1 class="title">LR WEBTOOL</h1>
@@ -17,4 +30,4 @@
 	</ion-footer-bar>
 
 </ion-view>
-  
+

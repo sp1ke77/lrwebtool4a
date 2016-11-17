@@ -25,33 +25,35 @@ angular.module('starter.controllers', ['ngSanitize'])
 
 		$ionicPlatform.ready(function() {
 			 if (window.cordova) {
-				 navigator.globalization.getLocaleName( function (locale) { $rootScope.locale = locale.value });
+				navigator.globalization.getLocaleName( function (locale) {
+					$rootScope.locale = locale.value
+				});
 			 }
 		});
-
+if (window.cordova) { $rootScope.locale = locale.value }
 
 	// Called to navigate to the main app
 	$scope.startApp = function() {
 		$state.go('app.api');
 	};
 
-	$scope.next = function() {
+	/*$scope.next = function() {
 		$ionicSlideBoxDelegate.next();
-	};
+	};*/
 
-	$scope.previous = function() {
+	/*$scope.previous = function() {
 		$ionicSlideBoxDelegate.previous();
-	};
+	};*/
 
 	// Called each time the slide changes
-	$scope.slideChanged = function(index) {
+	/*$scope.slideChanged = function(index) {
 		$scope.slideIndex = index;
-	};
+	};*/
 
 	// Open side menu
-	$scope.toggleLeftSideMenu = function() {
+	/*$scope.toggleLeftSideMenu = function() {
 		$ionicSideMenuDelegate.toggleLeft();
-	};
+	};*/
 
 		$scope.profile = localStorage.getItem('profile');
 

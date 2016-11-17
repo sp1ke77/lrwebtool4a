@@ -1,0 +1,107 @@
+<ion-view view-title="REDES SOCIAIS"  cache-view="false" ng-init="refreshpcs()">
+  <ion-content padding="true" overflow-scroll="true">
+		
+		<ion-refresher pulling-text="Puxe para atualizar..." on-refresh="refreshpcs()"></ion-refresher>
+		
+		<p style="text-align: center;">
+		<br /><br />
+		<strong>Escolha o Funil e</strong>
+		<strong> clique no botão da rede social</strong>
+		<strong> que pretende divulgar.</strong></p>
+				
+		<div ng-if="pc1 == '1'" class="crunchify-social">
+		<br /><br />
+		<p style="text-align: center;"><img title="Celebridadesface" width="90%" src="img/Celebridadesface.jpg" alt="Celebridadesface" />
+			<a ng-bind-html="htmlfacebook1 | hrefToJS"></a>
+			<a ng-bind-html="htmltwitter1 | hrefToJS"></a>
+			<a ng-bind-html="htmlgoogleplus1 | hrefToJS"></a>
+			<a ng-bind-html="htmllinkedin1 | hrefToJS"></a>
+			<!--a class="crunchify-link crunchify-whatsapp" href="{{htmlwhatsapp1}}" data-action="share/whatsapp/share target="_blank">WhatsApp</a -->
+			<a class="crunchify-link crunchify-sms" href="{{htmlsms1}}" target="_blank">SMS</a>
+			<a class="crunchify-link crunchify-facebook" href="{{htmlemail1}}" target="_blank">EMAIL</a>
+		</p>
+		</div>
+		
+
+
+		<div ng-if="pc2 == '1'" class="crunchify-social">
+		<br /><br />
+		<p style="text-align: center;"><img title="Celebridadesface-cf" width="90%" src="img/Celebridadesface-cf.jpg" alt="Celebridadesface-cf" />
+			<a ng-bind-html="htmlfacebook2 | hrefToJS"></a>
+			<a ng-bind-html="htmltwitter2 | hrefToJS"></a>
+			<a ng-bind-html="htmlgoogleplus2 | hrefToJS"></a>
+			<a ng-bind-html="htmllinkedin2 | hrefToJS"></a>
+			<!--a class="crunchify-link crunchify-whatsapp" href="{{htmlwhatsapp2}}" data-action="share/whatsapp/share target="_blank">WhatsApp</a -->
+			<a class="crunchify-link crunchify-sms" href="{{htmlsms2}}" target="_blank">SMS</a>
+			<a class="crunchify-link crunchify-facebook" href="{{htmlemail2}}" target="_blank">EMAIL</a>
+		</p>
+		</div>
+
+
+		<div ng-if="pc3 == '1'" class="crunchify-social">
+		<br /><br />
+		<p style="text-align: center;"><img title="Celebridadesface-mc" max-width="600px" width="90%" src="img/Celebridadesface-mc.jpg" alt="Celebridadesface-mc" />
+			<a ng-bind-html="htmlfacebook3 | hrefToJS"></a>
+			<a ng-bind-html="htmltwitter3 | hrefToJS"></a>
+			<a ng-bind-html="htmlgoogleplus3 | hrefToJS"></a>
+			<a ng-bind-html="htmllinkedin3 | hrefToJS"></a>
+			<!--a class="crunchify-link crunchify-whatsapp" href="{{htmlwhatsapp3}}" data-action="share/whatsapp/share target="_blank">WhatsApp</a -->
+			<a class="crunchify-link crunchify-sms" href="{{htmlsms3}}" target="_blank">SMS</a>
+			<a class="crunchify-link crunchify-facebook" href="{{htmlemail3}}" target="_blank">EMAIL</a>
+		</p>
+		</div>
+
+
+		<div ng-if="pc4 == '1'" class="crunchify-social">
+		<br /><br />
+		<p style="text-align: center;"><img title="Celebridadesface-rc" max-width="600px" width="90%" src="img/Celebridadesface-rc.jpg" alt="Celebridadesface-rc" />
+			<a ng-bind-html="htmlfacebook4 | hrefToJS"></a>
+			<a ng-bind-html="htmltwitter4 | hrefToJS"></a>
+			<a ng-bind-html="htmlgoogleplus4 | hrefToJS"></a>
+			<a ng-bind-html="htmllinkedin4 | hrefToJS"></a>
+			<!-- a class="crunchify-link crunchify-whatsapp" href="{{htmlwhatsapp4}}" data-action="share/whatsapp/share target="_blank">WhatsApp</a -->
+			<a class="crunchify-link crunchify-sms" href="{{htmlsms4}}" target="_blank">SMS</a>
+			<a class="crunchify-link crunchify-facebook" href="{{htmlemail4}}" target="_blank">EMAIL</a>
+		</p>
+		</div>
+
+
+		<div ng-if="pc5 == '1'" class="crunchify-social">
+		<br /><br />
+		<p style="text-align: center;"><img title="Celebridadesface-mn" max-width="600px" width="90%" src="img/Celebridadesface-mn.jpg" alt="Celebridadesface-mn" />
+			<a ng-bind-html="htmlfacebook5 | hrefToJS"></a>
+			<a ng-bind-html="htmltwitter5 | hrefToJS"></a>
+			<a ng-bind-html="htmlgoogleplus5 | hrefToJS"></a>
+			<a ng-bind-html="htmllinkedin5 | hrefToJS"></a>
+			<!-- a class="crunchify-link crunchify-whatsapp" href="{{htmlwhatsapp5}}" data-action="share/whatsapp/share target="_blank">WhatsApp</a -->
+			<a class="crunchify-link crunchify-sms" href="{{htmlsms5}}" target="_blank">SMS</a>
+			<a class="crunchify-link crunchify-facebook" href="{{htmlemail5}}" target="_blank">EMAIL</a>
+		</p>
+		</div>
+		
+		<div ng-if="pc6 == '1'" class="crunchify-social">
+		<br /><br />
+		<p style="text-align: center;"><img title="Celebridadesface-cfh" max-width="600px" width="90%" src="img/Celebridadesface-cfh.jpg" alt="Celebridadesface-cfh" />
+			<a ng-bind-html="htmlfacebook6 | hrefToJS"></a>
+			<a ng-bind-html="htmltwitter6 | hrefToJS"></a>
+			<a ng-bind-html="htmlgoogleplus6 | hrefToJS"></a>
+			<a ng-bind-html="htmllinkedin6 | hrefToJS"></a>
+			<!-- a class="crunchify-link crunchify-whatsapp" href="{{htmlwhatsapp6}}" data-action="share/whatsapp/share target="_blank">WhatsApp</a -->
+			<a class="crunchify-link crunchify-sms" href="{{htmlsms6}}" target="_blank">SMS</a>
+			<a class="crunchify-link crunchify-facebook" href="{{htmlemail6}}" target="_blank">EMAIL</a>
+		</p>
+		</div>
+		
+		<br /><br /><br /><br /> 
+
+  
+  </ion-content>
+  	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
+
+		<h1 class="title">LR WEBTOOL</h1>
+		<div class="buttons" ng-click="GoToSuporte()">
+			<button class="button">Suporte</button>
+		</div>
+	</ion-footer-bar>
+
+</ion-view>
