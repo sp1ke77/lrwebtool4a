@@ -30,7 +30,6 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 					 'platform': platform,
 					 'platformVersion': platformVersion,
 					 'language': language,
-					 'locale': locale,
 				 };
 
 
@@ -39,6 +38,7 @@ angular.module('starter', ['ionic','starter.controllers','ngCordova'])
 				 $rootScope.platform = platform;
 				 $rootScope.platformVersion = platformVersion;
 				 $rootScope.language = language;
+				 $rootScope.locale = locale.value;
 
 			 }
 			console.log('Mobile Phone details RUN:', mobileDetails)
