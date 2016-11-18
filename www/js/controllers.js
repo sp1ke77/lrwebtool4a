@@ -10,20 +10,20 @@ $ionicPlatform.ready(function() {
 
 							  if ($rootScope.language != null){
 								$rootScope.savelanguage = localStorage.setItem('language', language.value);
-								$state.go('app.intro');
+
 							  } else {
 								$rootScope.language = localStorage.getItem('language');
-								$state.go('app.intro');
+
 							  }
 						  },
 					  function () {
 						  console.log('Error getting language\n');
 						  $rootScope.getlanguage = localStorage.getItem('language');
-						  if ($rootScope.getlanguage != null) { $rootScope.language = $rootScope.getlanguage; $state.go('app.intro');}
-						  else { $rootScope.language = 'pt-PT';$state.go('app.intro');}
+						  if ($rootScope.getlanguage != null) { $rootScope.language = $rootScope.getlanguage; }
+						  else { $rootScope.language = 'pt-PT';}
 						  }
 					);
-			 } else { $rootScope.language = 'pt-PT';$state.go('app.intro');}
+			 } else { $rootScope.language = 'pt-PT';}
   });
 	// External Links Redir
 	$scope.GotoLink = function (url) {
