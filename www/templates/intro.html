@@ -1,8 +1,9 @@
-<ion-view cache-view="false">
+<ion-view>
 	<ion-slide-box on-slide-changed="slideChanged(index)">
 		<ion-slide>
-			<div ng-if="language == 'pt-PT'">
-				<div class="slide-content">
+
+			<div class="slide-content">
+				<div ng-show="language == 'pt-PT'">
 					<h3><strong>BEM VINDO <br>{{profilename}}</strong></h3>
 					<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
 					<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menu</button>
@@ -10,8 +11,9 @@
 				</div>
 			</div>
 
-			<div ng-if="language == 'es-ES'">
-				<div class="slide-content">
+
+			<div class="slide-content">
+				<div ng-show="language == 'es-ES'">
 					<h3><strong>BIENVENIDO <br>{{profilename}}</strong></h3>
 					<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Agregar dispositivo</button>
 					<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menú</button>
