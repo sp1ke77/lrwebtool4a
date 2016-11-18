@@ -115,8 +115,7 @@ if($rootScope.refreshgate == '1') {
 	$rootScope.refreshgate = '0';
 	console.log('IntroCtrl RefreshGate Exit : ' + $rootScope.refreshgate);
 	$scope.refreshintro = function() {
-		$state.reload('app.intro');
-		$scope.$broadcast('scroll.refreshComplete');
+		$state.go('app.intro');
 	}
 }
 
