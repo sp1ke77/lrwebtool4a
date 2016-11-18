@@ -304,6 +304,11 @@ $ionicPlatform.ready(function() {
 										$rootScope.pc7		 		= $scope.profile2split[13];console.log('SINDICTRL PC7: ' + $rootScope.pc7);
 										$rootScope.pc8		 		= $scope.profile2split[14];console.log('SINDICTRL PC8: ' + $rootScope.pc8);
 										$rootScope.pc9		 		= $scope.profile2split[15];console.log('SINDICTRL PC9: ' + $rootScope.pc9);
+										$rootScope.pc10		 		= $scope.profile2split[16];console.log('SINDICTRL PC10: ' + $rootScope.pc10);
+										$rootScope.pc1es		 	= $scope.profile2split[17];console.log('SINDICTRL PC1ES: ' + $rootScope.pc1es);
+										$rootScope.pc2es		 	= $scope.profile2split[18];console.log('SINDICTRL PC2ES: ' + $rootScope.pc2es);
+										$rootScope.pc3es		 	= $scope.profile2split[19];console.log('SINDICTRL PC3ES: ' + $rootScope.pc3es);
+										$rootScope.pc4es		 	= $scope.profile2split[20];console.log('SINDICTRL PC4ES: ' + $rootScope.pc4es);
 									}
 
 								 });
@@ -400,9 +405,7 @@ if ($rootScope.language == 'pt-PT'){
 	if (isIOS) { $scope.htmlsms6 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+' '+$rootScope.titulo6;}
 	if (isAndroid) { $scope.htmlsms6 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username+' '+$rootScope.titulo6;}
     $rootScope.htmlemail6 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo6+': http://lrwebtool.com/'+$rootScope.slug6+'/?id='+$rootScope.username;
-}
 
-if ($rootScope.language == 'es-ES'){
     // PC 7
 	$rootScope.titulo7		= 'Cristina%20Ferreira%20-%20Para%20Homem';
 	$rootScope.slug7		= 'celebridades-cfh';
@@ -440,6 +443,81 @@ if ($rootScope.language == 'es-ES'){
 	if (isIOS) { $scope.htmlsms9 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug9+'/?id='+$rootScope.username+' '+$rootScope.titulo9;}
 	if (isAndroid) { $scope.htmlsms9 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug9+'/?id='+$rootScope.username+' '+$rootScope.titulo9;}
     $rootScope.htmlemail9 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo9+': http://lrwebtool.com/'+$rootScope.slug9+'/?id='+$rootScope.username;
+
+
+    // PC 10
+	$rootScope.titulo10		= 'Cristina%20Ferreira%20-%20Para%20Homem';
+	$rootScope.slug10		= 'celebridades-cfh';
+	$scope.htmlfacebook10 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter10 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo10+'&amp;url=http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus10 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin10 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo10+'" target="_blank">LinkedIn</a>';
+
+	if (isIOS) { $scope.htmlsms10 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username+' '+$rootScope.titulo10;}
+	if (isAndroid) { $scope.htmlsms10 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username+' '+$rootScope.titulo10;}
+    $rootScope.htmlemail10 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo10+': http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username;
+
+}
+
+if ($rootScope.language == 'es-ES'){
+
+
+    // PC 1 ES
+	$rootScope.titulo1es		= 'Cristina%20Ferreira%20-%20Para%20Homem';
+	$rootScope.slug1es		= 'celebridades-cfh';
+	$scope.htmlfacebook1es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter1es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1es+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus1es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin1es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1es+'" target="_blank">LinkedIn</a>';
+
+	if (isIOS) { $scope.htmlsms1es 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+' '+$rootScope.titulo1es;}
+	if (isAndroid) { $scope.htmlsms1es 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+' '+$rootScope.titulo1es;}
+    $rootScope.htmlemail1es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo1es+': http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username;
+
+
+
+    // PC 2 ES
+	$rootScope.titulo2es		= 'Cristina%20Ferreira%20-%20Para%20Homem';
+	$rootScope.slug2es		= 'celebridades-cfh';
+	$scope.htmlfacebook2es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter2es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo2es+'&amp;url=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus2es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin2es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo2es+'" target="_blank">LinkedIn</a>';
+
+	if (isIOS) { $scope.htmlsms2es 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+' '+$rootScope.titulo2es;}
+	if (isAndroid) { $scope.htmlsms2es 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+' '+$rootScope.titulo2es;}
+    $rootScope.htmlemail2es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo2es+': http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username;
+
+
+
+    // PC 3 ES
+	$rootScope.titulo3es		= 'Cristina%20Ferreira%20-%20Para%20Homem';
+	$rootScope.slug3es		= 'celebridades-cfh';
+	$scope.htmlfacebook3es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter3es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo3es+'&amp;url=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus3es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin3es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo3es+'" target="_blank">LinkedIn</a>';
+
+	if (isIOS) { $scope.htmlsms3es 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+' '+$rootScope.titulo3es;}
+	if (isAndroid) { $scope.htmlsms3es 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+' '+$rootScope.titulo3es;}
+    $rootScope.htmlemail3es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo3es+': http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username;
+
+
+
+    // PC 4 ES
+	$rootScope.titulo4es		= 'Cristina%20Ferreira%20-%20Para%20Homem';
+	$rootScope.slug4es		= 'celebridades-cfh';
+	$scope.htmlfacebook4es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter4es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo4es+'&amp;url=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus4es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin4es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo4es+'" target="_blank">LinkedIn</a>';
+
+	if (isIOS) { $scope.htmlsms4es 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+' '+$rootScope.titulo4es;}
+	if (isAndroid) { $scope.htmlsms4es 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+' '+$rootScope.titulo4es;}
+    $rootScope.htmlemail4es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo4es+': http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username;
+
+
+
 }
 
 })
@@ -539,7 +617,7 @@ $ionicPlatform.ready(function() {
 						console.log('REGISTERCTRL account: ' + $scope.account);
 
 							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave/Clave: " + localStorage.getItem("token"))){ }
-							else window.location.reload(); $state.reload('app.intro');
+							else window.location.reload(); $state.go('app.intro');
 						}
 
 					});
@@ -586,7 +664,7 @@ $ionicPlatform.ready(function() {
 			localStorage.removeItem("profile");
 			localStorage.setItem('account','KO');
 			if(alert("Dispositivo removido")){}
-			else window.location.reload(); $state.reload('app.intro');
+			else window.location.reload(); $state.go('app.intro');
 		}
 
 	};
