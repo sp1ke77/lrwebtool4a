@@ -539,7 +539,7 @@ $ionicPlatform.ready(function() {
 						console.log('REGISTERCTRL account: ' + $scope.account);
 
 							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave/Clave: " + localStorage.getItem("token"))){ }
-							else window.location.reload(); $state.go('app.intro');
+							else window.location.reload(); $state.reload('app.intro');
 						}
 
 					});
@@ -586,7 +586,7 @@ $ionicPlatform.ready(function() {
 			localStorage.removeItem("profile");
 			localStorage.setItem('account','KO');
 			if(alert("Dispositivo removido")){}
-			else window.location.reload(); $state.go('app.intro');
+			else window.location.reload(); $state.reload('app.intro');
 		}
 
 	};
