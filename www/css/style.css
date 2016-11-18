@@ -18,7 +18,7 @@
     white-space: nowrap;
     font-weight: 600;
     color: #fff;
-    
+
     display: block;
     position: absolute;
     top: 0;
@@ -40,7 +40,7 @@
     white-space: nowrap;
     font-weight: 600;
     color: #000 !important;
-    
+
     display: block;
     z-index: 0;
     overflow: hidden;
@@ -63,7 +63,7 @@
   background: url('../img/blurry-app-bg.png') no-repeat center top;
   background-size: cover;
   text-align: center;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
 }
 
@@ -73,7 +73,7 @@
   background: url('#') no-repeat center top;
   background-size: cover;
   text-align: left;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
 }
 
@@ -81,7 +81,7 @@
 
 .slide-content {
 	position: absolute;
-	bottom: 200px;
+	bottom: 60px;
 	width: 100%;
 	padding: 20px;
 	box-sizing: border-box;
@@ -111,9 +111,9 @@
 .iframe-holder {
   height: 100%;
   width: 100%;
-  position: fixed; 
-  right: 0; 
-  bottom: 0; 
+  position: fixed;
+  right: 0;
+  bottom: 0;
   top: 0;
   -webkit-overflow-scrolling: touch !important;
   overflow: scroll !important;
@@ -128,12 +128,12 @@
 		.crunchify-whatsapp {
 		display: none !important;
 		}
-			
+
 		.crunchify-sms {
 		display: none !important;
 		}
 }
-	 
+
 	.crunchify-link {
 		padding: 12px 7px 12px 7px !important;
 		color: white;
@@ -153,77 +153,77 @@
 		width: 30%;
 		text-align: center;
 		text-decoration: none;
-		
+
 	}
-	 
+
 	.crunchify-link:hover,.crunchify-link:active {
 		color: white;
 	}
-	 
+
 	.crunchify-twitter {
 		background: #00aced;
 	}
-	 
+
 	.crunchify-twitter:hover,.crunchify-twitter:active {
 		background: #0084b4;
 	}
-	 
+
 	.crunchify-facebook {
 		background: #3B5997;
 	}
-	 
+
 	.crunchify-facebook:hover,.crunchify-facebook:active {
 		background: #2d4372;
 	}
-	 
+
 	.crunchify-googleplus {
 		background: #D64937;
 	}
-	 
+
 	.crunchify-googleplus:hover,.crunchify-googleplus:active {
 		background: #b53525;
 	}
-	 
+
 	.crunchify-buffer {
 		background: #444;
 	}
-	 
+
 	.crunchify-buffer:hover,.crunchify-buffer:active {
 		background: #222;
 	}
-	 
+
 	.crunchify-pinterest {
 		background: #bd081c;
 	}
-	 
+
 	.crunchify-pinterest:hover,.crunchify-pinterest:active {
 		background: #bd081c;
 	}
-	 
+
 	.crunchify-linkedin {
 		background: #0074A1;
 	}
-	 
+
 	.crunchify-linkedin:hover,.crunchify-linkedin:active {
 		background: #006288;
 	}
-	 
+
 	.crunchify-whatsapp {
 		background: #43d854;
 	}
-	 
+
 	.crunchify-whatsapp:hover,.crunchify-whatsapp:active {
 		background: #009688;
 	}
-	
+
 	.crunchify-sms {
 		background: #43d854;
 	}
-	 
+
 	.crunchify-sms:hover,.crunchify-sms:active {
 		background: #009688;
 	}
-	 
+
 	.crunchify-social {
 		margin: 10px 0px 25px 0px;
 		-webkit-font-smoothing: antialiased;
@@ -231,5 +231,5 @@
 		margin-left: auto ;
 		margin-right: auto ;
 		width: 90%;
-		
+
 	}
