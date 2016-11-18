@@ -50,20 +50,24 @@ $ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
-						  console.log('IntroCtrllanguage: ' + language.value + '\n');
+
 						  $rootScope.language = language.value;
+						  console.log('IntroCtrl language1: ' + $rootScope.language + '\n');
 
 							  if ($rootScope.language != null){
 								$rootScope.savelanguage = localStorage.setItem('language', language.value);
+								console.log('IntroCtrl language2: ' + $rootScope.savelanguage + '\n');
 							  } else {
 								$rootScope.language = localStorage.getItem('language');
+								console.log('IntroCtrl language3: ' + $rootScope.language + '\n');
 							  }
 						  },
 					  function () {
 						  console.log('Error getting language\n');
 						  $rootScope.getlanguage = localStorage.getItem('language');
+						  console.log('IntroCtrl language4: ' + $rootScope.getlanguage + '\n');
 						  if ($rootScope.getlanguage != null) { $rootScope.language = $rootScope.getlanguage; }
-						  else { $rootScope.language = 'pt-PT';}
+						  else { $rootScope.language = 'pt-PT'; console.log('IntroCtrl language5: ' + $rootScope.language + '\n');}
 						  }
 					);
 			 } else { $rootScope.language = 'pt-PT';}
