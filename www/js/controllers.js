@@ -56,7 +56,7 @@ $ionicPlatform.ready(function() {
 
 							  if ($rootScope.language != null){
 								$rootScope.savelanguage = localStorage.setItem('language', language.value);
-								console.log('IntroCtrl language2: ' + $rootScope.savelanguage + '\n');
+								console.log('IntroCtrl language2: ' + language.value + '\n');
 							  } else {
 								$rootScope.language = localStorage.getItem('language');
 								console.log('IntroCtrl language3: ' + $rootScope.language + '\n');
