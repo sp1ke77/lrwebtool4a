@@ -38,6 +38,7 @@ $ionicPlatform.ready(function() {
 	$rootScope.token 		= localStorage.getItem("token");
 	$rootScope.account 		= localStorage.getItem("account");
 	$scope.profileusername  = localStorage.getItem("username");
+	console.log('AppCtrl account: ' + $rootScope.account);
 
 })
 
@@ -515,7 +516,7 @@ $ionicPlatform.ready(function() {
 
 						if(($scope.result != undefined) && ($scope.result != null) && ($scope.result != 'ERRO / ERROR\n')){
 
-						localStorage.setItem('account', 'OK');
+						$scope.account = localStorage.setItem('account', 'OK');
 						$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
 						$scope.profile = localStorage.getItem('profile');
 
@@ -526,7 +527,8 @@ $ionicPlatform.ready(function() {
 							$rootScope.profilelistaes 	= $scope.profilesplit[3];
 							$rootScope.profilename 		= $scope.profilesplit[4];
 
-						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
+						console.log('REGISTERCTRL profilename: ' + $rootScope.profilename);
+						console.log('REGISTERCTRL account: ' + $scope.account);
 
 							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave/Clave: " + localStorage.getItem("token"))){ }
 							else $state.go('app.intro');
