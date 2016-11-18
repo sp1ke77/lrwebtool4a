@@ -1,6 +1,7 @@
 <ion-view cache-view="false" >
 	<ion-slide-box on-slide-changed="slideChanged(index)">
 		<ion-slide>
+		<span>{{language}}</span>
 		<div ng-controller="IntroCtrl">
 			<div ng-if="language == 'pt-PT'">
 				<div class="slide-content">
