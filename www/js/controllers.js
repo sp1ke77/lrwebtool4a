@@ -110,6 +110,16 @@ $scope.$on('$ionicView.enter', function() {
 			$rootScope.profilename 		= $scope.profilesplit[4];
 		}
 });
+console.log('IntroCtrl RefreshGate Entry : ' + $rootScope.refreshgate);
+if($rootScope.refreshgate == '1') {
+	$rootScope.refreshgate = '0';
+	console.log('IntroCtrl RefreshGate Exit : ' + $rootScope.refreshgate);
+	$scope.refreshintro = function() {
+		$state.reload('app.intro');
+		$scope.$broadcast('scroll.refreshComplete');
+	}
+}
+
 
 })
 
@@ -618,7 +628,7 @@ $ionicPlatform.ready(function() {
 						console.log('REGISTERCTRL account: ' + $scope.account);
 
 							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave/Clave: " + localStorage.getItem("token"))){ }
-							else window.location.reload(); $state.go('app.intro');
+							else window.location.reload(); $rootScope.refreshgate = '1'; $state.go('app.intro');
 						}
 
 					});
@@ -665,7 +675,7 @@ $ionicPlatform.ready(function() {
 			localStorage.removeItem("profile");
 			localStorage.setItem('account','KO');
 			if(alert("Dispositivo removido")){}
-			else window.location.reload(); $state.go('app.intro');
+			else window.location.reload(); $rootScope.refreshgate = '1'; $state.go('app.intro');
 		}
 
 	};
