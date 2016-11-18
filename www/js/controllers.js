@@ -418,7 +418,7 @@ if ($rootScope.language == 'pt-PT'){
 
     // PC 7
 	$rootScope.titulo7		= 'Cristina%20Ferreira%20-%20Para%20Homem';
-	$rootScope.slug7		= 'celebridades-cfh';
+	$rootScope.slug7		= 'celebridades-cfh1';
 	$scope.htmlfacebook7 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug7+'/?id='+$rootScope.username+'" >Facebook</a>';
 	$scope.htmltwitter7 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo7+'&amp;url=http://lrwebtool.com/'+$rootScope.slug7+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
 	$scope.htmlgoogleplus7 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug7+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
@@ -431,7 +431,7 @@ if ($rootScope.language == 'pt-PT'){
 
     // PC 8
 	$rootScope.titulo8		= 'Cristina%20Ferreira%20-%20Para%20Homem';
-	$rootScope.slug8		= 'celebridades-cfh';
+	$rootScope.slug8		= 'celebridades-cfh2';
 	$scope.htmlfacebook8 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug8+'/?id='+$rootScope.username+'" >Facebook</a>';
 	$scope.htmltwitter8 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo8+'&amp;url=http://lrwebtool.com/'+$rootScope.slug8+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
 	$scope.htmlgoogleplus8 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug8+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
@@ -443,8 +443,8 @@ if ($rootScope.language == 'pt-PT'){
 
 
     // PC 9
-	$rootScope.titulo9		= 'Cristina%20Ferreira%20-%20Para%20Homem';
-	$rootScope.slug9		= 'celebridades-cfh';
+	$rootScope.titulo9		= '';
+	$rootScope.slug9		= '';
 	$scope.htmlfacebook9 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug9+'/?id='+$rootScope.username+'" >Facebook</a>';
 	$scope.htmltwitter9 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo9+'&amp;url=http://lrwebtool.com/'+$rootScope.slug9+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
 	$scope.htmlgoogleplus9 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug9+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
@@ -456,8 +456,8 @@ if ($rootScope.language == 'pt-PT'){
 
 
     // PC 10
-	$rootScope.titulo10		= 'Cristina%20Ferreira%20-%20Para%20Homem';
-	$rootScope.slug10		= 'celebridades-cfh';
+	$rootScope.titulo10		= '';
+	$rootScope.slug10		= '';
 	$scope.htmlfacebook10 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username+'" >Facebook</a>';
 	$scope.htmltwitter10 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo10+'&amp;url=http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
 	$scope.htmlgoogleplus10 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug10+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
@@ -473,60 +473,58 @@ if ($rootScope.language == 'es-ES'){
 
 
     // PC 1 ES
-	$rootScope.titulo1es		= 'Cristina%20Ferreira%20-%20Para%20Homem';
-	$rootScope.slug1es		= 'celebridades-cfh';
-	$scope.htmlfacebook1es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+'" >Facebook</a>';
-	$scope.htmltwitter1es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1es+'&amp;url=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
-	$scope.htmlgoogleplus1es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
-	$scope.htmllinkedin1es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1es+'" target="_blank">LinkedIn</a>';
+	$rootScope.titulo1es	= 'Mónica%20Naranjo%20-%20Fragancia';
+	$rootScope.slug1es		= 'celebridades-mn';
+	$scope.htmlfacebook1es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/es/'+$rootScope.slug1es+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter1es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo1es+'&amp;url=http://lrwebtool.com/es/'+$rootScope.slug1es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus1es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/es/'+$rootScope.slug1es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin1es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/es/'+$rootScope.slug1es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo1es+'" target="_blank">LinkedIn</a>';
 
-	if (isIOS) { $scope.htmlsms1es 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+' '+$rootScope.titulo1es;}
-	if (isAndroid) { $scope.htmlsms1es 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username+' '+$rootScope.titulo1es;}
-    $rootScope.htmlemail1es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo1es+': http://lrwebtool.com/'+$rootScope.slug1es+'/?id='+$rootScope.username;
+	if (isIOS) { $scope.htmlsms1es 	= 'sms:&body=http://lrwebtool.com/es/'+$rootScope.slug1es+'/?id='+$rootScope.username+' '+$rootScope.titulo1es;}
+	if (isAndroid) { $scope.htmlsms1es 	= 'sms:?body=http://lrwebtool.com/es/'+$rootScope.slug1es+'/?id='+$rootScope.username+' '+$rootScope.titulo1es;}
+    //$rootScope.htmlemail1es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo1es+': http://lrwebtool.com/es/'+$rootScope.slug1es+'/?id='+$rootScope.username;
 
 
 
     // PC 2 ES
-	$rootScope.titulo2es		= 'Cristina%20Ferreira%20-%20Para%20Homem';
-	$rootScope.slug2es		= 'celebridades-cfh';
-	$scope.htmlfacebook2es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+'" >Facebook</a>';
-	$scope.htmltwitter2es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo2es+'&amp;url=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
-	$scope.htmlgoogleplus2es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
-	$scope.htmllinkedin2es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo2es+'" target="_blank">LinkedIn</a>';
+	$rootScope.titulo2es	= 'Mónica%20Naranjo%20-%20Fragancia';
+	$rootScope.slug2es		= 'celebridades-mnp';
+	$scope.htmlfacebook2es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/es/'+$rootScope.slug2es+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter2es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo2es+'&amp;url=http://lrwebtool.com/es/'+$rootScope.slug2es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus2es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/es/'+$rootScope.slug2es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin2es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/es/'+$rootScope.slug2es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo2es+'" target="_blank">LinkedIn</a>';
 
-	if (isIOS) { $scope.htmlsms2es 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+' '+$rootScope.titulo2es;}
-	if (isAndroid) { $scope.htmlsms2es 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username+' '+$rootScope.titulo2es;}
-    $rootScope.htmlemail2es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo2es+': http://lrwebtool.com/'+$rootScope.slug2es+'/?id='+$rootScope.username;
+	if (isIOS) { $scope.htmlsms2es 	= 'sms:&body=http://lrwebtool.com/es/'+$rootScope.slug2es+'/?id='+$rootScope.username+' '+$rootScope.titulo2es;}
+	if (isAndroid) { $scope.htmlsms2es 	= 'sms:?body=http://lrwebtool.com/es/'+$rootScope.slug2es+'/?id='+$rootScope.username+' '+$rootScope.titulo2es;}
+    //$rootScope.htmlemail2es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo2es+': http://lrwebtool.com/es/'+$rootScope.slug2es+'/?id='+$rootScope.username;
 
 
 
     // PC 3 ES
-	$rootScope.titulo3es		= 'Cristina%20Ferreira%20-%20Para%20Homem';
-	$rootScope.slug3es		= 'celebridades-cfh';
-	$scope.htmlfacebook3es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+'" >Facebook</a>';
-	$scope.htmltwitter3es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo3es+'&amp;url=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
-	$scope.htmlgoogleplus3es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
-	$scope.htmllinkedin3es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo3es+'" target="_blank">LinkedIn</a>';
+	$rootScope.titulo3es	= 'Mónica%20Naranjo%20-%20Fragancia';
+	$rootScope.slug3es		= 'celebridades-mnp1';
+	$scope.htmlfacebook3es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/es/'+$rootScope.slug3es+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter3es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo3es+'&amp;url=http://lrwebtool.com/es/'+$rootScope.slug3es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus3es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/es/'+$rootScope.slug3es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin3es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/es/'+$rootScope.slug3es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo3es+'" target="_blank">LinkedIn</a>';
 
-	if (isIOS) { $scope.htmlsms3es 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+' '+$rootScope.titulo3es;}
-	if (isAndroid) { $scope.htmlsms3es 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username+' '+$rootScope.titulo3es;}
-    $rootScope.htmlemail3es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo3es+': http://lrwebtool.com/'+$rootScope.slug3es+'/?id='+$rootScope.username;
+	if (isIOS) { $scope.htmlsms3es 	= 'sms:&body=http://lrwebtool.com/es/'+$rootScope.slug3es+'/?id='+$rootScope.username+' '+$rootScope.titulo3es;}
+	if (isAndroid) { $scope.htmlsms3es 	= 'sms:?body=http://lrwebtool.com/es/'+$rootScope.slug3es+'/?id='+$rootScope.username+' '+$rootScope.titulo3es;}
+    //$rootScope.htmlemail3es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo3es+': http://lrwebtool.com/es/'+$rootScope.slug3es+'/?id='+$rootScope.username;
 
 
 
     // PC 4 ES
-	$rootScope.titulo4es		= 'Cristina%20Ferreira%20-%20Para%20Homem';
-	$rootScope.slug4es		= 'celebridades-cfh';
-	$scope.htmlfacebook4es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+'" >Facebook</a>';
-	$scope.htmltwitter4es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo4es+'&amp;url=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
-	$scope.htmlgoogleplus4es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
-	$scope.htmllinkedin4es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo4es+'" target="_blank">LinkedIn</a>';
+	$rootScope.titulo4es	= 'Mónica%20Naranjo%20-%20Fragancia';
+	$rootScope.slug4es		= 'celebridades-mnp2';
+	$scope.htmlfacebook4es 	= '<a class="crunchify-link crunchify-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://lrwebtool.com/es/'+$rootScope.slug4es+'/?id='+$rootScope.username+'" >Facebook</a>';
+	$scope.htmltwitter4es 	= '<a class="crunchify-link crunchify-twitter" href="https://twitter.com/intent/tweet?text='+$rootScope.titulo4es+'&amp;url=http://lrwebtool.com/es/'+$rootScope.slug4es+'/?id='+$rootScope.username+'" target="_blank">Twitter</a>';
+	$scope.htmlgoogleplus4es 	= '<a class="crunchify-link crunchify-googleplus" href="https://plus.google.com/share?url=http://lrwebtool.com/es/'+$rootScope.slug4es+'/?id='+$rootScope.username+'" target="_blank">Google+</a>';
+	$scope.htmllinkedin4es 	= '<a class="crunchify-link crunchify-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http://lrwebtool.com/es/'+$rootScope.slug4es+'/?id='+$rootScope.username+'&amp;title='+$rootScope.titulo4es+'" target="_blank">LinkedIn</a>';
 
-	if (isIOS) { $scope.htmlsms4es 	= 'sms:&body=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+' '+$rootScope.titulo4es;}
-	if (isAndroid) { $scope.htmlsms4es 	= 'sms:?body=http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username+' '+$rootScope.titulo4es;}
-    $rootScope.htmlemail4es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo4es+': http://lrwebtool.com/'+$rootScope.slug4es+'/?id='+$rootScope.username;
-
-
+	if (isIOS) { $scope.htmlsms4es 	= 'sms:&body=http://lrwebtool.com/es/'+$rootScope.slug4es+'/?id='+$rootScope.username+' '+$rootScope.titulo4es;}
+	if (isAndroid) { $scope.htmlsms4es 	= 'sms:?body=http://lrwebtool.com/es/'+$rootScope.slug4es+'/?id='+$rootScope.username+' '+$rootScope.titulo4es;}
+    //$rootScope.htmlemail4es 	= 'mailto:?subject='+$rootScope.email+'&body='+$rootScope.titulo4es+': http://lrwebtool.com/es/'+$rootScope.slug4es+'/?id='+$rootScope.username;
 
 }
 
