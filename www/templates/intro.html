@@ -1,6 +1,9 @@
-<ion-view>
-	<ion-slide-box on-slide-changed="slideChanged(index)">
-		<ion-slide>
+<ion-view cache-view="false" class="slider-slide">
+
+
+
+
+	<ion-content padding="false" overflow-scroll="true">
 
 			<div class="slide-content">
 				<div ng-show="language == 'pt-PT'">
@@ -20,6 +23,22 @@
 					<div><flag country="es" size="32"></flag></div>
 				</div>
 			</div>
-		</ion-slide>
-	</ion-slide-box>
+	</ion-content>
+
+	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
+	<div ng-if="language == 'pt-PT'">
+		<h1 class="title">LR WEBTOOL</h1>
+		<div class="buttons" ng-click="GoToSuporte()">
+			<button class="button">Suporte</button>
+		</div>
+	</div>
+
+	<div ng-if="language == 'es-ES'">
+		<h1 class="title">LR WEBTOOL</h1>
+		<div class="buttons" ng-click="GoToSuporte()">
+			<button class="button">Soporte</button>
+		</div>
+	</div>
+	</ion-footer-bar>
+
 </ion-view>
