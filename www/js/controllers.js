@@ -482,12 +482,12 @@ $ionicPlatform.ready(function() {
 
 				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$scope.username+'&T='+$scope.token+'&V='+$scope.verifycode)
 					.success(function(data, status, headers,config){
-						console.log('REGISTERCTRL 1a: ' + $scope.username);
-						console.log('REGISTERCTRL 2b: ' + $scope.token);
-						console.log('REGISTERCTRL 3c: ' + $scope.verifycode);
-						console.log('REGISTERCTRL 4: data success');
+						console.log('REGISTERCTRL username: ' + $scope.username);
+						console.log('REGISTERCTRL token: ' + $scope.token);
+						console.log('REGISTERCTRL verifycode: ' + $scope.verifycode);
+						console.log('REGISTERCTRL : data success');
 						$scope.result = data.content.rendered; // for UI
-						console.log('REGISTERCTRL 5: ' + $scope.result);
+						console.log('REGISTERCTRL result: ' + $scope.result);
 
 						if($scope.result == undefined){
 							window.localStorage.removeItem("username");
@@ -576,7 +576,7 @@ $ionicPlatform.ready(function() {
 			localStorage.removeItem("profile");
 			localStorage.removeItem('account');
 			if(alert("Dispositivo removido")){}
-			else window.location.reload(); $state.go('app.intro');
+			else $state.go('app.intro');
 		}
 
 	};
