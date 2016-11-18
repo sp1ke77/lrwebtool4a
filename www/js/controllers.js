@@ -466,7 +466,7 @@ $ionicPlatform.ready(function() {
 			localStorage.setItem("username", $scope.username);
 			localStorage.setItem("token", $scope.token);
 			$scope.verifycode = "afhrfae74tr8348we4ftn23f8";
-			localStorage.removeItem('account');
+			localStorage.setItem('account','KO');
 			console.log('REGISTERCTRL 1: ' + $scope.username);
 			console.log('REGISTERCTRL 2: ' + $scope.token);
 			console.log('REGISTERCTRL 3: ' + $scope.verifycode);
@@ -578,7 +578,7 @@ $ionicPlatform.ready(function() {
 			window.localStorage.removeItem("username");
 			window.localStorage.removeItem("token");
 			localStorage.removeItem("profile");
-			localStorage.removeItem('account');
+			localStorage.setItem('account','KO');
 			if(alert("Dispositivo removido")){}
 			else $state.go('app.intro');
 		}
