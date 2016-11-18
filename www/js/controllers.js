@@ -516,7 +516,7 @@ $ionicPlatform.ready(function() {
 
 						if(($scope.result != undefined) && ($scope.result != null) && ($scope.result != 'ERRO / ERROR\n')){
 
-						$scope.account = localStorage.setItem('account', 'OK');
+						$scope.setaccount = localStorage.setItem('account', 'OK');
 						$scope.saveresult = localStorage.setItem('profile', data.content.rendered);
 						$scope.profile = localStorage.getItem('profile');
 
@@ -528,6 +528,8 @@ $ionicPlatform.ready(function() {
 							$rootScope.profilename 		= $scope.profilesplit[4];
 
 						console.log('REGISTERCTRL profilename: ' + $rootScope.profilename);
+
+						$scope.account = localStorage.getItem('account');
 						console.log('REGISTERCTRL account: ' + $scope.account);
 
 							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave/Clave: " + localStorage.getItem("token"))){ }
