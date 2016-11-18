@@ -500,7 +500,7 @@ $ionicPlatform.ready(function() {
 
 })
 
-.controller('UnregisterCtrl', function($rootScope, $scope, $cordovaGlobalization, $ionicPlatform) {
+.controller('UnregisterCtrl', function($rootScope, $state, $scope, $cordovaGlobalization, $ionicPlatform) {
 
 	$scope.unregisterdevice = function() {
 		if(window.localStorage.getItem("username") == undefined && window.localStorage.getItem("token") == undefined) {
