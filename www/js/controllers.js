@@ -432,12 +432,12 @@ $ionicPlatform.ready(function() {
 
 			$scope.result = "";
 
-			if ($scope.username == undefined){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
-			if ($scope.username == null ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
-			else if ($scope.token == undefined ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
-			else if ($scope.token == null ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
-			else if ($scope.verifycode == null ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
-			else if ($scope.verifycode == undefined ){ if(alert("Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			if ($scope.username == undefined){ if(alert("ERR1 Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			if ($scope.username == null ){ if(alert("ERR2 Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			else if ($scope.token == undefined ){ if(alert("ERR3 Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			else if ($scope.token == null ){ if(alert("ERR4 Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			else if ($scope.verifycode == null ){ if(alert("ERR5 Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
+			else if ($scope.verifycode == undefined ){ if(alert("ERR6 Dados Invalidos / Datos Incorrectos")){} else window.location.reload();}
 			else
 
 				$http.get('http://lrwebtool.com/wp-json/wp/v2/pages/14488?U='+$scope.username+'&T='+$scope.token+'&V='+$scope.verifycode)
@@ -453,21 +453,21 @@ $ionicPlatform.ready(function() {
 							window.localStorage.removeItem("username");
 							window.localStorage.removeItem("token");
 							localStorage.removeItem("profile");
-							if(alert('Dados Invalidos / Datos Incorrectos')){}
+							if(alert('ERR7 Dados Invalidos / Datos Incorrectos')){}
 							else window.location.reload();
 						}
 						if($scope.result == null){
 							window.localStorage.removeItem("username");
 							window.localStorage.removeItem("token");
 							localStorage.removeItem("profile");
-							if(alert("Dados Invalidos / Datos Incorrectos")){}
+							if(alert("ERR8 Dados Invalidos / Datos Incorrectos")){}
 							else window.location.reload();
 						}
 						if($scope.result == 'ERRO / ERROR\n'){
 							window.localStorage.removeItem("username");
 							window.localStorage.removeItem("token");
 							localStorage.removeItem("profile");
-							if(alert("Dados Invalidos / Datos Incorrectos")){}
+							if(alert("ERR9 Dados Invalidos / Datos Incorrectos")){}
 							else window.location.reload();
 						}
 
@@ -501,20 +501,7 @@ $ionicPlatform.ready(function() {
 })
 
 .controller('UnregisterCtrl', function($rootScope, $scope, $cordovaGlobalization, $ionicPlatform) {
-$ionicPlatform.ready(function() {
-			if (window.cordova) {
-					navigator.globalization.getPreferredLanguage(
-					  function (language) {
-						  console.log('language: ' + language.value + '\n');
-						  $rootScope.language = language.value;
-						  },
-					  function () {
-						  console.log('Error getting language\n');
-						  $rootScope.language = 'pt-PT';
-						  }
-					);
-			 } else { $rootScope.language = 'pt-PT';}
-  });
+
 	$scope.unregisterdevice = function() {
 		if(window.localStorage.getItem("username") == undefined && window.localStorage.getItem("token") == undefined) {
 			if(alert("Desculpe, Não tem dispositivos registados")){}
