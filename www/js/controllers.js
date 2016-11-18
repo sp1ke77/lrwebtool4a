@@ -5,7 +5,7 @@ $ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
-						  console.log('language: ' + language.value + '\n');
+						  console.log('AppCtrllanguage: ' + language.value + '\n');
 						  $rootScope.language = language.value;
 
 							  if ($rootScope.language != null){
@@ -47,7 +47,7 @@ $ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
-						  console.log('language: ' + language.value + '\n');
+						  console.log('IntroCtrllanguage: ' + language.value + '\n');
 						  $rootScope.language = language.value;
 
 							  if ($rootScope.language != null){
@@ -110,7 +110,7 @@ $ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
-						  console.log('language: ' + language.value + '\n');
+						  console.log('ContactCtrllanguage: ' + language.value + '\n');
 						  $rootScope.language = language.value;
 
 							  if ($rootScope.language != null){
@@ -170,7 +170,7 @@ $ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
-						  console.log('language: ' + language.value + '\n');
+						  console.log('SuporteCtrllanguage: ' + language.value + '\n');
 						  $rootScope.language = language.value;
 
 							  if ($rootScope.language != null){
@@ -245,7 +245,7 @@ $ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
-						  console.log('language: ' + language.value + '\n');
+						  console.log('SindiCtrllanguage: ' + language.value + '\n');
 						  $rootScope.language = language.value;
 
 							  if ($rootScope.language != null){
@@ -442,7 +442,7 @@ $ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
-						  console.log('language: ' + language.value + '\n');
+						  console.log('RegisterCtrllanguage: ' + language.value + '\n');
 						  $rootScope.language = language.value;
 
 							  if ($rootScope.language != null){
@@ -546,7 +546,7 @@ $ionicPlatform.ready(function() {
 			if (window.cordova) {
 					navigator.globalization.getPreferredLanguage(
 					  function (language) {
-						  console.log('language: ' + language.value + '\n');
+						  console.log('UnregisterCtrllanguage: ' + language.value + '\n');
 						  $rootScope.language = language.value;
 
 							  if ($rootScope.language != null){
