@@ -1,13 +1,9 @@
-<ion-view cache-view="false" class="slider-slide">
-
-<ion-scroll scrollbar-x="false" scrollbar-y="false" >
-</<ion-scroll>
-
-
-	<ion-content padding="false" overflow-scroll="true">
-
-			<div class="slide-content">
-				<div ng-show="language == 'pt-PT'">
+<ion-view cache-view="false" >
+	<ion-slide-box on-slide-changed="slideChanged(index)">
+		<ion-slide>
+		<div ng-controller="IntroCtrl">
+			<div ng-if="language == 'pt-PT'">
+				<div class="slide-content">
 					<h3><strong>BEM VINDO <br>{{profilename}}</strong></h3>
 					<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Registar Dispositivo</button>
 					<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menu</button>
@@ -15,31 +11,15 @@
 				</div>
 			</div>
 
-
-			<div class="slide-content">
-				<div ng-show="language == 'es-ES'">
+			<div ng-if="language == 'es-ES'">
+				<div class="slide-content">
 					<h3><strong>BIENVENIDO <br>{{profilename}}</strong></h3>
 					<button class="button button-balanced" ng-if="account != 'OK'" ng-click="startApp()">Agregar dispositivo</button>
 					<button class="button button-balanced" ng-if="account == 'OK'" ng-click="toggleLeftSideMenu()">Ver Menú</button>
 					<div><flag country="es" size="32"></flag></div>
 				</div>
 			</div>
-	</ion-content>
-
-	<ion-footer-bar align-title="center" class="bar-balanced custom-lrwine">
-	<div ng-if="language == 'pt-PT'">
-		<h1 class="title">LR WEBTOOL</h1>
-		<div class="buttons" ng-click="GoToSuporte()">
-			<button class="button">Suporte</button>
 		</div>
-	</div>
-
-	<div ng-if="language == 'es-ES'">
-		<h1 class="title">LR WEBTOOL</h1>
-		<div class="buttons" ng-click="GoToSuporte()">
-			<button class="button">Soporte</button>
-		</div>
-	</div>
-	</ion-footer-bar>
-
+		</ion-slide>
+	</ion-slide-box>
 </ion-view>
