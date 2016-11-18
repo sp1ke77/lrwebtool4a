@@ -529,7 +529,7 @@ $ionicPlatform.ready(function() {
 						console.log('REGISTERCTRL 6: ' + $rootScope.profilename);
 
 							if(alert("DISPOSITIVO ATIVADO\nUtilizador: " + localStorage.getItem("username") + "\nChave/Clave: " + localStorage.getItem("token"))){ }
-							else window.location.reload(); $rootScope.language = localStorage.getItem('language'); console.log('REGISTERCTRL exit language: ' + $rootScope.language); $state.go('app.intro');
+							else $state.go('app.intro');
 						}
 
 					});
