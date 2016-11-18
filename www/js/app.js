@@ -21,18 +21,7 @@ $ionicPlatform.ready(function() {
 
 })
 
-.config(function($provide) {
-    $provide.decorator('$state', function($delegate, $stateParams) {
-        $delegate.forceReload = function() {
-            return $delegate.go($delegate.current, $stateParams, {
-                reload: true,
-                inherit: false,
-                notify: true
-            });
-        };
-        return $delegate;
-    });
-})
+
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -40,13 +29,14 @@ $ionicPlatform.ready(function() {
   // sets up our default state, all views are loaded through here
   .state('app', {
     url: "/app",
-    //abstract: true,
+    abstract: true,
     templateUrl: "templates/menu.html",
     controller: 'AppCtrl'
   })
 
   .state('app.intro', {
     url: "/intro",
+    cache: false,
     views: {
       'menuContent': {
         templateUrl: "templates/intro.html",
@@ -104,10 +94,6 @@ $ionicPlatform.ready(function() {
       }
     }
   });
-
-
-	$urlRouterProvider.when('/', '/app/intro');
-
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/intro');

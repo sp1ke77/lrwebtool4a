@@ -69,7 +69,7 @@ $ionicPlatform.ready(function() {
 			 } else { $rootScope.language = 'pt-PT';}
   });
 
-
+$scope.$on('$ionicView.enter', function() {
 
 	// Called to navigate to the main app
 	$scope.startApp = function() {
@@ -105,7 +105,7 @@ $ionicPlatform.ready(function() {
 			$rootScope.profilelistaes 	= $scope.profilesplit[3];
 			$rootScope.profilename 		= $scope.profilesplit[4];
 		}
-
+});
 })
 
 .controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate, $sce, $cordovaGlobalization, $ionicPlatform) {
