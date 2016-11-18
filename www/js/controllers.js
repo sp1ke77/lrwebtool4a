@@ -110,6 +110,7 @@ $scope.$on('$ionicView.enter', function() {
 			$rootScope.profilename 		= $scope.profilesplit[4];
 		}
 });
+
 })
 
 .controller('ContactCtrl', function($scope, $rootScope, $ionicSlideBoxDelegate, $sce, $cordovaGlobalization, $ionicPlatform) {
