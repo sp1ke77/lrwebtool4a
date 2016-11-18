@@ -41,10 +41,18 @@ $ionicPlatform.ready(function() {
 					  function (language) {
 						  console.log('language: ' + language.value + '\n');
 						  $rootScope.language = language.value;
+
+							  if ($rootScope.language != null){
+								$rootScope.savelanguage = localStorage.setItem('language', language.value);
+							  } else {
+								$rootScope.language = localStorage.getItem('language');
+							  }
 						  },
 					  function () {
 						  console.log('Error getting language\n');
-						  $rootScope.language = 'pt-PT';
+						  $rootScope.getlanguage = localStorage.getItem('language');
+						  if ($rootScope.getlanguage != null) { $rootScope.language = $rootScope.getlanguage; }
+						  else { $rootScope.language = 'pt-PT';}
 						  }
 					);
 			 } else { $rootScope.language = 'pt-PT';}
