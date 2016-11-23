@@ -7,7 +7,7 @@
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
 	id="com.lrwebtool.mobile"
 	version="1.1.0"
-	versionCode="3"
+	versionCode="4"
 	versionName="1.1.0"
 	CFBundleVersion="1.1.0"
 	packageVersion="1.1.0"
