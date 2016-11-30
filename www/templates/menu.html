@@ -25,14 +25,14 @@
           <i class="icon ion-android-home"></i>
           <div ng-if="language == 'pt-PT'">Inicio</div>
           <div ng-if="language == 'es-ES'">Inicio</div>
-          <div ng-if="language != 'pt-PT' && language != 'es-ES'">Start</div>
+          <div ng-if="language != 'pt-PT' || language != 'es-ES'">Start</div>
         </ion-item>
 
         <ion-item class="item item-icon-left" nav-clear menu-close href="#/app/api">
           <i class="icon ion-android-list"></i>
           <div ng-if="language == 'pt-PT'">Ativação</div>
           <div ng-if="language == 'es-ES'">Activación</div>
-          <div ng-if="language != 'pt-PT' && language != 'es-ES'">Activation</div>
+          <div ng-if="language != 'pt-PT' || language != 'es-ES'">Activation</div>
         </ion-item>
 
         <div ng-if="account == 'OK'">
@@ -40,7 +40,7 @@
 			  <i class="icon ion-ios-world"></i>
 			  <div ng-if="language == 'pt-PT'">Redes Sociais</div>
 			  <div ng-if="language == 'es-ES'">Redes Sociales</div>
-			  <div ng-if="language != 'pt-PT' && language != 'es-ES'">Social Networks</div>
+			  <div ng-if="language != 'pt-PT' || language != 'es-ES'">Social Networks</div>
 			</ion-item>
 
 
@@ -59,7 +59,7 @@
 			</div>
 
 
-			<div ng-if="language != 'pt-PT' && language != 'es-ES'">
+			<div ng-if="language != 'pt-PT' || language != 'es-ES'">
 			<ion-item class="item item-icon-left" nav-clear menu-close>
 			  <i class="icon ion-person-add"></i>
 			  NOT AVAILABLE
@@ -70,21 +70,21 @@
 			  <i class="icon ion-android-drafts"></i>
 			  <div ng-if="language == 'pt-PT'">Email Marketing</div>
 			  <div ng-if="language == 'es-ES'">Email Marketing</div>
-			  <div ng-if="language != 'pt-PT' && language != 'es-ES'">Email Marketing</div>
+			  <div ng-if="language != 'pt-PT' || language != 'es-ES'">Email Marketing</div>
 			</ion-item>
 
 			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/contatos">
 			  <i class="icon ion-android-contacts"></i>
 			  <div ng-if="language == 'pt-PT'">Registar Contato</div>
 			  <div ng-if="language == 'es-ES'">Registrar Contacto</div>
-			  <div ng-if="language != 'pt-PT' && language != 'es-ES'">Register Contact</div>
+			  <div ng-if="language != 'pt-PT' || language != 'es-ES'">Register Contact</div>
 			</ion-item>
 
 			<ion-item class="item item-icon-left" nav-clear menu-close href="#/app/suporte">
 			<i class="icon ion-android-chat"></i>
 			<div ng-if="language == 'pt-PT'">Suporte</div>
 			<div ng-if="language == 'es-ES'">Soporte</div>
-			<div ng-if="language != 'pt-PT' && language != 'es-ES'">Support</div>
+			<div ng-if="language != 'pt-PT' || language != 'es-ES'">Support</div>
 			</ion-item>
 
 		</div>
@@ -95,7 +95,7 @@
 			<i class="icon ion-locked"></i>
 			<div ng-if="language == 'pt-PT'">Device Info</div>
 			<div ng-if="language == 'es-ES'">Device Info</div>
-			<div ng-if="language != 'pt-PT' && language != 'es-ES'">Device Info</div>
+			<div ng-if="language != 'pt-PT' || language != 'es-ES'">Device Info</div>
 			</ion-item>
 		</div>
 
@@ -109,7 +109,7 @@
           <div class="title3" ng-if="account == 'OK'">{{language}}</div>
       </div>
 
-      <div ng-if="language != 'pt-PT' && language != 'es-ES'">Not available in your country.</div>
+      <div ng-if="language != 'pt-PT' || language != 'es-ES'">Not available in your country.</div>
 
     </ion-content>
 
